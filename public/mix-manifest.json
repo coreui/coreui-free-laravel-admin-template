@@ -1,0 +1,19 @@
+{
+    "/js/charts.js": "/js/charts.js",
+    "/js/colors.js": "/js/colors.js",
+    "/js/loader.js": "/js/loader.js",
+    "/js/main.js": "/js/main.js",
+    "/css/style.css": "/css/style.css",
+    "/js/popovers.js": "/js/popovers.js",
+    "/js/tooltips.js": "/js/tooltips.js",
+    "/js/widgets.js": "/js/widgets.js",
+    "/css/all.css": "/css/all.css",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/popper.min.js": "/js/popper.min.js",
+    "/js/bootstrap.min.js": "/js/bootstrap.min.js",
+    "/js/pace.min.js": "/js/pace.min.js",
+    "/js/perfect-scrollbar.min.js": "/js/perfect-scrollbar.min.js",
+    "/js/coreui.min.js": "/js/coreui.min.js",
+    "/js/Chart.min.js": "/js/Chart.min.js",
+    "/js/custom-tooltips.min.js": "/js/custom-tooltips.min.js"
+}
