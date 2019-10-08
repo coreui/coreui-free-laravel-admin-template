@@ -54,6 +54,3 @@ mix.copy('node_modules/flag-icon-css/flags', 'public/flags');
 
 //images
 mix.copy('resources/img', 'public/img');
-
-/*  testowy loader - usunąć później */
-mix.js('resources/js/coreui/loader.js', 'public/js');
