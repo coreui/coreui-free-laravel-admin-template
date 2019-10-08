@@ -43,13 +43,15 @@
 
     <div class="app-body">
 
-        @include('coreui.shared.sidebar')
+      @include('coreui.shared.sidebar')
 
       <main class="main">
 
         @include('coreui.shared.breadcrumb')
 
-        @yield('content') <!-- </main> is in content  -->
+        @yield('content') 
+
+      </main>
 
       @include('coreui.shared.aside')
 

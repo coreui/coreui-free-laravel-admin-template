@@ -204,7 +204,6 @@
           </div>
           <!-- /.modal-->
         </div>
-      </main>
 
 @endsection
 

@@ -95,7 +95,6 @@
             <!-- /.row-->
           </div>
         </div>
-      </main>
       
 @endsection
 
