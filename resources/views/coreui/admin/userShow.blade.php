@@ -4,27 +4,17 @@
 
         <div class="container-fluid">
           <div class="animated fadeIn">
-            <div class="card">
-              <div class="card-header">
-                User  
-              </div>
-              <div class="card-body">
-                <div class="row">
-                    <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-block btn-primary">Logout</button></form> 
-                    <a href="{{ route('users.index') }}" class="btn btn-primary">Users List</a>
-                </div>
-                <div class="row">
-                  <div class="card">
+            <div class="row">
+              <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                <div class="card">
                     <div class="card-header">
                       <i class="fa fa-align-justify"></i> User {{ $user->name }}</div>
                     <div class="card-body">
-
-                        <h3>{{ $user->name }}</h3>
-                        <h3>{{ $user->email }}</h3>
-                        <h3>{{ $user->email_verified_at }}</h3>
-                        <a href="{{ route('users.index') }}" class="btn btn-block btn-primary">{{ __('Return') }}</a> 
+                        <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-block btn-primary">{{ __('Logout') }}</button></form> 
+                        <h4>Name: {{ $user->name }}</h4>
+                        <h4>E-mail: {{ $user->email }}</h4>
+                        <a href="{{ route('users.index') }}" class="btn btn-block btn-primary">{{ __('Return') }}</a>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>

@@ -4,21 +4,15 @@
 
         <div class="container-fluid">
           <div class="animated fadeIn">
-            <div class="card">
-              <div class="card-header">
-                Users  
-              </div>
-              <div class="card-body">
-                <div class="row">
-                    <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-block btn-primary">Logout</button></form>
-                    <a href="{{ route('users.index') }}" class="btn btn-primary">Users List</a>  
-                </div>
-                <div class="row">
-                  <div class="card">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                <div class="card">
                     <div class="card-header">
-                      <i class="fa fa-align-justify"></i> Users</div>
+                      <i class="fa fa-align-justify"></i>{{ __('Users') }}</div>
                     <div class="card-body">
-                      <table class="table table-responsive-sm table-striped">
+                        <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-block btn-primary">{{ __('Logout') }}</button></form> 
+                        <br>
+                        <table class="table table-responsive-sm table-striped">
                         <thead>
                           <tr>
                             <th>Username</th>
@@ -55,7 +49,6 @@
                         </tbody>
                       </table>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
