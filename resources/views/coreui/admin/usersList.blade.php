@@ -48,12 +48,6 @@
                                     @csrf
                                     <button class="btn btn-block btn-danger">Delete User</button>
                                 </form>
-
-
-<!--
-                                  <a href="{{ url('/users/' . $user->id, ['_method' => 'destroy']) }}" class="btn btn-block btn-danger">Remove</a>
--->
-
                                 @endif
                               </td>
                             </tr>

@@ -59,12 +59,3 @@ Route::prefix('notifications')->group(function () {
 Auth::routes();
 
 Route::resource('users', 'UsersController');
-
-/*
-Route::prefix('admin/users')->group(function () {
-    Route::get('/', 'admin\UsersController@index')->name('adminUsers');
-    Route::get('/{id}/remove', 'admin\UsersController@remove')->name('adminUserRemove');
-    Route::get('/{id}/edit', 'admin\UsersController@editForm')->name('adminUserEditForm');
-    Route::post('/edit', 'admin\UsersController@edit')->name('adminUserEdit');
-});
-*/
