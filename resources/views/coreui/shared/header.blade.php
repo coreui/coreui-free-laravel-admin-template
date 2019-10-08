@@ -79,8 +79,13 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <i class="fa fa-shield"></i> Lock Account</a>
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-lock"></i> Logout</a>
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <div class="dropdown-item">
+                <i class="fa fa-lock"></i> 
+                <button class="btn btn-ghost-dark">Logout</button>
+              </div>
+            </form>
           </div>
         </li>
       </ul>
