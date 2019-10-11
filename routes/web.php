@@ -58,4 +58,10 @@ Route::prefix('notifications')->group(function () {
 });
 Auth::routes();
 
-Route::resource('users', 'UsersController');
+Route::resource('users', 'UsersController')->except( ['create', 'store'] );
+
+/*
+Route::get('/test', function(){
+    return view('coreui.500');
+});
+*/
