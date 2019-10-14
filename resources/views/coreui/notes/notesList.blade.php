@@ -10,8 +10,10 @@
                     <div class="card-header">
                       <i class="fa fa-align-justify"></i>{{ __('Notes') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-primary">{{ __('Logout') }}</button></form> 
-                        <a href="{{ route('notes.create') }}" class="btn btn-primary">{{ __('Add Note') }}</a>
+                        <div class="row">
+                          <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-primary m-2">{{ __('Logout') }}</button></form> 
+                          <a href="{{ route('notes.create') }}" class="btn btn-primary m-2">{{ __('Add Note') }}</a>
+                        </div>
                         <br>
                         <table class="table table-responsive-sm table-striped">
                         <thead>

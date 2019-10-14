@@ -50,17 +50,6 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-        "array(6) { 
-            ["_token"]=> string(40) "YAEkHg0PKeG0cb4ou6u7SNyd1rQzqhr6nY2D4ktU" 
-            ["title"]=> string(6) "bleeee" 
-            ["content"]=> NULL 
-            ["applies_to_date"]=> string(10) "2019-10-17" 
-            ["status_id"]=> string(1) "1" 
-            ["note_type"]=> NULL 
-        } "*/
-        //var_dump($request->all());
-       // die();
         $validatedData = $request->validate([
             'title'             => 'required|min:1|max:64',
             'content'           => 'required',
@@ -79,44 +68,6 @@ class NotesController extends Controller
         $note->save();
         $request->session()->flash('message', 'Successfully created note');
         return redirect()->route('notes.index');
-
-/*
-                'title'         => $faker->sentence(4,true),
-                'content'       => $faker->paragraph(3,true),
-                'status_id'     => $statusIds[random_int(0,count($statusIds) - 1)],
-                'note_type'     => $noteType,
-                'applies_to_date' => $faker->date(),
-                'users_id'      => $usersIds[random_int(0,$numberOfUsers-1)]
-*/
-
-        /*
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'nerd_level' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
-
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('nerds/create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
-            // store
-            $nerd = new Nerd;
-            $nerd->name       = Input::get('name');
-            $nerd->email      = Input::get('email');
-            $nerd->nerd_level = Input::get('nerd_level');
-            $nerd->save();
-
-            // redirect
-            Session::flash('message', 'Successfully created nerd!');
-            return Redirect::to('nerds');
-        }
-        */
     }
 
     /**
@@ -139,7 +90,9 @@ class NotesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $note = Notes::find($id);
+        $statuses = Status::all();
+        return view('coreui.notes.edit', [ 'statuses' => $statuses, 'note' => $note ]);
     }
 
     /**
@@ -151,7 +104,24 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //var_dump('bazinga');
+        //die();
+        $validatedData = $request->validate([
+            'title'             => 'required|min:1|max:64',
+            'content'           => 'required',
+            'status_id'         => 'required',
+            'applies_to_date'   => 'required|date_format:Y-m-d',
+            'note_type'         => 'required'
+        ]);
+        $note = Notes::find($id);
+        $note->title     = $request->input('title');
+        $note->content   = $request->input('content');
+        $note->status_id = $request->input('status_id');
+        $note->note_type = $request->input('note_type');
+        $note->applies_to_date = $request->input('applies_to_date');
+        $note->save();
+        $request->session()->flash('message', 'Successfully edited note');
+        return redirect()->route('notes.index');
     }
 
     /**
@@ -162,6 +132,10 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Notes::find($id);
+        if($note){
+            $note->delete();
+        }
+        return redirect()->route('notes.index');
     }
 }
