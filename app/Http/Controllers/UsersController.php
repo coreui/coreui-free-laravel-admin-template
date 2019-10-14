@@ -68,8 +68,8 @@ class UsersController extends Controller
             'email'      => 'required|email|max:256'
         ]);
         $user = User::find($id);
-        $user->name       = $request->input('name');;
-        $user->email      = $request->input('email');;
+        $user->name       = $request->input('name');
+        $user->email      = $request->input('email');
         $user->save();
         $request->session()->flash('message', 'Successfully updated user');
         return redirect()->route('users.index');

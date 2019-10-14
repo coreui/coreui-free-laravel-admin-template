@@ -17,7 +17,30 @@ class UsersAndNotesSeeder extends Seeder
         $numberOfUsers = 10;
         $numberOfNotes = 100;
         $usersIds = array();
+        $statusIds = array();
         $faker = Faker::create();
+        /*  insert status  */
+        DB::table('status')->insert([
+            'name' => 'ongoing',
+            'class' => 'badge badge-pill badge-primary',
+        ]);
+        array_push($statusIds, DB::getPdo()->lastInsertId());
+        DB::table('status')->insert([
+            'name' => 'stopped',
+            'class' => 'badge badge-pill badge-secondary',
+        ]);
+        array_push($statusIds, DB::getPdo()->lastInsertId());
+        DB::table('status')->insert([
+            'name' => 'completed',
+            'class' => 'badge badge-pill badge-success',
+        ]);
+        array_push($statusIds, DB::getPdo()->lastInsertId());
+        DB::table('status')->insert([
+            'name' => 'expired',
+            'class' => 'badge badge-pill badge-warning',
+        ]);
+        array_push($statusIds, DB::getPdo()->lastInsertId());
+        /*  insert users   */
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@admin.com',
@@ -35,12 +58,17 @@ class UsersAndNotesSeeder extends Seeder
             ]);
             array_push($usersIds, DB::getPdo()->lastInsertId());
         }
+        /*  insert notes  */
         for($i = 0; $i<$numberOfNotes; $i++){
+            $noteType = $faker->word();
+            if(random_int(0,1)){
+                $noteType .= ' ' . $faker->word();
+            }
             DB::table('notes')->insert([
                 'title'         => $faker->sentence(4,true),
                 'content'       => $faker->paragraph(3,true),
-                'status'        => $faker->word(),
-                'note_type'     => $faker->word(),
+                'status_id'     => $statusIds[random_int(0,count($statusIds) - 1)],
+                'note_type'     => $noteType,
                 'applies_to_date' => $faker->date(),
                 'users_id'      => $usersIds[random_int(0,$numberOfUsers-1)]
             ]);

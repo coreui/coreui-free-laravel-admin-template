@@ -17,10 +17,10 @@ class CreateNotesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('content');
-            $table->string('status');
             $table->string('note_type');
             $table->date('applies_to_date');
             $table->integer('users_id')->unsigned();
+            $table->integer('status_id')->unsigned();
             $table->timestamps();
         });
     }

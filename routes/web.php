@@ -60,6 +60,8 @@ Auth::routes();
 
 Route::resource('users', 'UsersController')->except( ['create', 'store'] );
 
+Route::resource('notes', 'NotesController');
+
 /*
 Route::get('/test', function(){
     return view('coreui.500');
