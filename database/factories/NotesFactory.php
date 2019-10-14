@@ -10,7 +10,7 @@ $factory->define(Notes::class, function (Faker $faker) {
     return [     
         'title'         => $faker->sentence(4,true),
         'content'       => $faker->paragraph(3,true),
-        'status'        => $faker->word(),
+        'status_id'     => factory(App\Status::class)->create()->id,
         'note_type'     => $faker->word(),
         'applies_to_date' => $faker->date(),
         'users_id'      => factory(App\User::class)->create()->id
