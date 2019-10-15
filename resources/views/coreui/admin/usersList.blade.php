@@ -17,6 +17,7 @@
                           <tr>
                             <th>Username</th>
                             <th>E-mail</th>
+                            <th>Roles</th>
                             <th>Email verified at</th>
                             <th></th>
                             <th></th>
@@ -28,6 +29,7 @@
                             <tr>
                               <td>{{ $user->name }}</td>
                               <td>{{ $user->email }}</td>
+                              <td>{{ $user->roles }}</td>
                               <td>{{ $user->email_verified_at }}</td>
                               <td>
                                 <a href="{{ url('/users/' . $user->id) }}" class="btn btn-block btn-primary">View</a>
