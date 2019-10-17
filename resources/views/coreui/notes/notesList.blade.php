@@ -32,8 +32,8 @@
                         <tbody>
                           @foreach($notes as $note)
                             <tr>
-                              <td>{{ $note->user->name }}</td>
-                              <td>{{ $note->title }}</td>
+                              <td><strong>{{ $note->user->name }}</strong></td>
+                              <td><strong>{{ $note->title }}</strong></td>
                               <td>{{ $note->content }}</td>
                               <td>{{ $note->applies_to_date }}</td>
                               <td>
@@ -41,7 +41,7 @@
                                       {{ $note->status->name }}
                                   </span>
                               </td>
-                              <td>{{ $note->note_type }}</td>
+                              <td><strong>{{ $note->note_type }}</strong></td>
                               <td>
                                 <a href="{{ url('/notes/' . $note->id) }}" class="btn btn-block btn-primary">View</a>
                               </td>

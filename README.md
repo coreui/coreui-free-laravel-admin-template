@@ -73,7 +73,7 @@ Copy file ".env.example", and change its name to ".env".
 Then in file ".env" change database configuration:
 
 * DB_CONNECTION=sqlite
-* DB_DATABASE=/<path to your project>/database/database.sqlite
+* DB_DATABASE=/path_to_your_project/database/database.sqlite
 
 
 ``` bash
