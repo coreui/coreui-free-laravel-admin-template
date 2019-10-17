@@ -66,24 +66,15 @@ $ composer install
 # install app's dependencies
 $ npm install
 
-# open mysql
-$ mysql -u root -p
-# and type root password
-
 # create database
-CREATE DATABASE laravel
-
-# create user
-GRANT ALL PRIVILEGES ON laravel TO 'admin'@'localhost' IDENTIFIED BY 'password';
+$ touch database/database.sqlite
 ```
 Copy file ".env.example", and change its name to ".env".
-In file ".env" change database configuration in to:
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=admin
-DB_PASSWORD=password
+Then in file ".env" change database configuration:
+
+* DB_CONNECTION=sqlite
+* DB_DATABASE=/<path to your project>/database/database.sqlite
+
 
 ``` bash
 # in your app directory
@@ -105,6 +96,9 @@ $ npm run dev
 ``` bash
 # start local server
 $ php artisan serve
+
+# test
+$ php vendor/bin/phpunit
 ```
 Open your browser and open adress: "localhost:8000"
 Choice "Notes" from top bar menu. Then login with credentials:
