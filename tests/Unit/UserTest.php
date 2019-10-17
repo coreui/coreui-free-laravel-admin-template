@@ -111,6 +111,6 @@ class UserTest extends TestCase
         $user = factory('App\User')->states('admin')->create();
         $this->actingAs( $user );
         $this->delete('/users/'.$user->id);
-        $this->assertDatabaseMissing('users',['id'=> $user->id]);
+        $this->assertSoftDeleted('users',['id'=> $user->id]);
     }
 }
