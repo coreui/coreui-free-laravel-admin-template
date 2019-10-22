@@ -70,8 +70,14 @@ $ npm install
 $ touch database/database.sqlite
 ```
 Copy file ".env.example", and change its name to ".env".
-Then in file ".env" change database configuration:
-
+Then in file ".env" replace database configuration this:
+* DB_CONNECTION=mysql
+* DB_HOST=127.0.0.1
+* DB_PORT=3306
+* DB_DATABASE=laravel
+* DB_USERNAME=root
+* DB_PASSWORD=
+To this:
 * DB_CONNECTION=sqlite
 * DB_DATABASE=/path_to_your_project/database/database.sqlite
 
@@ -102,11 +108,13 @@ $ php vendor/bin/phpunit
 ```
 Open your browser and open adress: "localhost:8000"
 Choice "Notes" from top bar menu. Then login with credentials:
-E-mail: admin@admin.com
-Password: password
+
+* E-mail: admin@admin.com
+* Password: password
+
 This user has roles: 'user' and 'admin'
-Role 'user' is required for notes management.
-Role 'admin' is required for users management.
+* Role 'user' is required for notes management.
+* Role 'admin' is required for users management.
 
 
 ## Creators
