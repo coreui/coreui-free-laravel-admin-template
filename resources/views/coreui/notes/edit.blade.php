@@ -34,8 +34,8 @@
                                 <label>Status</label>
                                 <select class="form-control" name="status_id">
                                     @foreach($statuses as $status)
-                                        @if( $status->id === $note->status_id )
-                                            <option value="{{ $status->id }}" selected>{{ $status->name }}</option>
+                                        @if( $status->id == $note->status_id )
+                                            <option value="{{ $status->id }}" selected="true">{{ $status->name }}</option>
                                         @else
                                             <option value="{{ $status->id }}">{{ $status->name }}</option>
                                         @endif
