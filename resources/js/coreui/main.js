@@ -1,47 +1,54 @@
-"use strict";
-
 /* eslint-disable object-shorthand */
-
-/* global Chart, CustomTooltips, getStyle, hexToRgba */
+/* global Chart, coreui, getStyle, hexToRgba */
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI Free Boostrap Admin Template (v2.1.15): main.js
+ * CoreUI Free Boostrap Admin Template (v3.0.0-alpha.1): main.js
  * Licensed under MIT (https://coreui.io/license)
  * --------------------------------------------------------------------------
  */
 
-
-
-$(document).ready(function(){
-
-
 /* eslint-disable no-magic-numbers */
 // Disable the on-canvas tooltip
-Chart.defaults.global.pointHitDetectionRadius = 1;
-Chart.defaults.global.tooltips.enabled = false;
-Chart.defaults.global.tooltips.mode = 'index';
-Chart.defaults.global.tooltips.position = 'nearest';
-Chart.defaults.global.tooltips.custom = CustomTooltips;
-Chart.defaults.global.tooltips.intersect = true;
+Chart.defaults.global.pointHitDetectionRadius = 1
+Chart.defaults.global.tooltips.enabled = false
+Chart.defaults.global.tooltips.mode = 'index'
+Chart.defaults.global.tooltips.position = 'nearest'
+Chart.defaults.global.tooltips.custom = coreui.ChartJS.CustomTooltips
+Chart.defaults.global.defaultFontColor = '#646470'
 
-Chart.defaults.global.tooltips.callbacks.labelColor = function (tooltipItem, chart) {
-  return {
-    backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor
-  };
-}; // eslint-disable-next-line no-unused-vars
+document.body.addEventListener('classtoggle', event => {
+  if (event.detail.className === 'c-dark-theme') {
+    if (document.body.classList.contains('c-dark-theme')) {
+      cardChart1.data.datasets[0].pointBackgroundColor = getStyle('--primary-dark-theme')
+      cardChart2.data.datasets[0].pointBackgroundColor = getStyle('--info-dark-theme')
+      Chart.defaults.global.defaultFontColor = '#fff'
+    } else {
+      cardChart1.data.datasets[0].pointBackgroundColor = getStyle('--primary')
+      cardChart2.data.datasets[0].pointBackgroundColor = getStyle('--info')
+      Chart.defaults.global.defaultFontColor = '#646470'
+    }
 
+    cardChart1.update()
+    cardChart2.update()
+    mainChart.update()
+  }
+})
 
-var cardChart1 = new Chart($('#card-chart1'), {
+// eslint-disable-next-line no-unused-vars
+const cardChart1 = new Chart(document.getElementById('card-chart1'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: getStyle('--primary'),
-      borderColor: 'rgba(255,255,255,.55)',
-      data: [65, 59, 84, 84, 51, 55, 40]
-    }]
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'transparent',
+        borderColor: 'rgba(255,255,255,.55)',
+        pointBackgroundColor: getStyle('--primary'),
+        data: [65, 59, 84, 84, 51, 55, 40]
+      }
+    ]
   },
   options: {
     maintainAspectRatio: false,
@@ -79,18 +86,22 @@ var cardChart1 = new Chart($('#card-chart1'), {
       }
     }
   }
-}); // eslint-disable-next-line no-unused-vars
+})
 
-var cardChart2 = new Chart($('#card-chart2'), {
+// eslint-disable-next-line no-unused-vars
+const cardChart2 = new Chart(document.getElementById('card-chart2'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: getStyle('--info'),
-      borderColor: 'rgba(255,255,255,.55)',
-      data: [1, 18, 9, 17, 34, 22, 11]
-    }]
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'transparent',
+        borderColor: 'rgba(255,255,255,.55)',
+        pointBackgroundColor: getStyle('--info'),
+        data: [1, 18, 9, 17, 34, 22, 11]
+      }
+    ]
   },
   options: {
     maintainAspectRatio: false,
@@ -129,18 +140,21 @@ var cardChart2 = new Chart($('#card-chart2'), {
       }
     }
   }
-}); // eslint-disable-next-line no-unused-vars
+})
 
-var cardChart3 = new Chart($('#card-chart3'), {
+// eslint-disable-next-line no-unused-vars
+const cardChart3 = new Chart(document.getElementById('card-chart3'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgba(255,255,255,.2)',
-      borderColor: 'rgba(255,255,255,.55)',
-      data: [78, 81, 80, 45, 34, 12, 40]
-    }]
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,255,255,.2)',
+        borderColor: 'rgba(255,255,255,.55)',
+        data: [78, 81, 80, 45, 34, 12, 40]
+      }
+    ]
   },
   options: {
     maintainAspectRatio: false,
@@ -166,18 +180,21 @@ var cardChart3 = new Chart($('#card-chart3'), {
       }
     }
   }
-}); // eslint-disable-next-line no-unused-vars
+})
 
-var cardChart4 = new Chart($('#card-chart4'), {
+// eslint-disable-next-line no-unused-vars
+const cardChart4 = new Chart(document.getElementById('card-chart4'), {
   type: 'bar',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgba(255,255,255,.2)',
-      borderColor: 'rgba(255,255,255,.55)',
-      data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82]
-    }]
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,255,255,.2)',
+        borderColor: 'rgba(255,255,255,.55)',
+        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82]
+      }
+    ]
   },
   options: {
     maintainAspectRatio: false,
@@ -194,35 +211,40 @@ var cardChart4 = new Chart($('#card-chart4'), {
       }]
     }
   }
-}); // eslint-disable-next-line no-unused-vars
+})
 
-var mainChart = new Chart($('#main-chart'), {
+// eslint-disable-next-line no-unused-vars
+const mainChart = new Chart(document.getElementById('main-chart'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
-      borderColor: getStyle('--info'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      data: [165, 180, 70, 69, 77, 57, 125, 165, 172, 91, 173, 138, 155, 89, 50, 161, 65, 163, 160, 103, 114, 185, 125, 196, 183, 64, 137, 95, 112, 175]
-    }, {
-      label: 'My Second dataset',
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--success'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      data: [92, 97, 80, 100, 86, 97, 83, 98, 87, 98, 93, 83, 87, 98, 96, 84, 91, 97, 88, 86, 94, 86, 95, 91, 98, 91, 92, 80, 83, 82]
-    }, {
-      label: 'My Third dataset',
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--danger'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 1,
-      borderDash: [8, 5],
-      data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65]
-    }]
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: hexToRgba(getStyle('--info'), 10),
+        borderColor: getStyle('--info'),
+        pointHoverBackgroundColor: '#fff',
+        borderWidth: 2,
+        data: [165, 180, 70, 69, 77, 57, 125, 165, 172, 91, 173, 138, 155, 89, 50, 161, 65, 163, 160, 103, 114, 185, 125, 196, 183, 64, 137, 95, 112, 175]
+      },
+      {
+        label: 'My Second dataset',
+        backgroundColor: 'transparent',
+        borderColor: getStyle('--success'),
+        pointHoverBackgroundColor: '#fff',
+        borderWidth: 2,
+        data: [92, 97, 80, 100, 86, 97, 83, 98, 87, 98, 93, 83, 87, 98, 96, 84, 91, 97, 88, 86, 94, 86, 95, 91, 98, 91, 92, 80, 83, 82]
+      },
+      {
+        label: 'My Third dataset',
+        backgroundColor: 'transparent',
+        borderColor: getStyle('--danger'),
+        pointHoverBackgroundColor: '#fff',
+        borderWidth: 1,
+        borderDash: [8, 5],
+        data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65]
+      }
+    ]
   },
   options: {
     maintainAspectRatio: false,
@@ -253,9 +275,11 @@ var mainChart = new Chart($('#main-chart'), {
       }
     }
   }
-});
-var brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-var brandBoxChartOptions = {
+})
+
+const brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
+
+const brandBoxChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   legend: {
@@ -263,10 +287,10 @@ var brandBoxChartOptions = {
   },
   scales: {
     xAxes: [{
-      display: false
+      display:false
     }],
     yAxes: [{
-      display: false
+      display:false
     }]
   },
   elements: {
@@ -277,9 +301,10 @@ var brandBoxChartOptions = {
       hoverBorderWidth: 3
     }
   }
-}; // eslint-disable-next-line no-unused-vars
+}
 
-var brandBoxChart1 = new Chart($('#social-box-chart-1'), {
+// eslint-disable-next-line no-unused-vars
+const brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -293,9 +318,10 @@ var brandBoxChart1 = new Chart($('#social-box-chart-1'), {
     }]
   },
   options: brandBoxChartOptions
-}); // eslint-disable-next-line no-unused-vars
+})
 
-var brandBoxChart2 = new Chart($('#social-box-chart-2'), {
+// eslint-disable-next-line no-unused-vars
+const brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -309,9 +335,10 @@ var brandBoxChart2 = new Chart($('#social-box-chart-2'), {
     }]
   },
   options: brandBoxChartOptions
-}); // eslint-disable-next-line no-unused-vars
+})
 
-var brandBoxChart3 = new Chart($('#social-box-chart-3'), {
+// eslint-disable-next-line no-unused-vars
+const brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -325,24 +352,4 @@ var brandBoxChart3 = new Chart($('#social-box-chart-3'), {
     }]
   },
   options: brandBoxChartOptions
-}); // eslint-disable-next-line no-unused-vars
-
-var brandBoxChart4 = new Chart($('#social-box-chart-4'), {
-  type: 'line',
-  data: {
-    labels: brandBoxChartLabels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgba(255,255,255,.1)',
-      borderColor: 'rgba(255,255,255,.55)',
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      data: [35, 23, 56, 22, 97, 23, 64]
-    }]
-  },
-  options: brandBoxChartOptions
-});
-//# sourceMappingURL=main.js.map
-
-
-});
+})
