@@ -8,7 +8,9 @@
 /public/img
 /public/flags
 /public/fonts
+/public/webfonts
 /public/scss
+/public/assets
 /storage/*.key
 /vendor
 .env

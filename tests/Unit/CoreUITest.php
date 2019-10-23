@@ -148,15 +148,11 @@ class HomepageControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testIconsFontAwesome(){
-        $response = $this->get( '/icon/font-awesome' );
+    public function testIconsBrands(){
+        $response = $this->get( '/icon/brands' );
         $response->assertStatus(200);
     }
-
-    public function testIconsSimpleLineIcons(){
-        $response = $this->get( '/icon/simple-line-icons' );
-        $response->assertStatus(200);
-    }
+    
 /*  ###############    NOTIFICATIONS    ################# */
     public function testNotificationsAlerts(){
         $response = $this->get( '/notifications/alerts' );

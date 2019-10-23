@@ -45,11 +45,10 @@ Route::prefix('buttons')->group(function () {
     Route::get('/dropdowns', function(){        return view('coreui.buttons.dropdowns'); });
     Route::get('/brand-buttons', function(){    return view('coreui.buttons.brand-buttons'); });
 });
-Route::prefix('icon')->group(function () {  // word: "icons" - not working
+Route::prefix('icon')->group(function () {  // word: "icons" - not working as part of adress
     Route::get('/coreui-icons', function(){         return view('coreui.icons.coreui-icons'); });
     Route::get('/flags', function(){                return view('coreui.icons.flags'); });
-    Route::get('/font-awesome', function(){         return view('coreui.icons.font-awesome'); });
-    Route::get('/simple-line-icons', function(){    return view('coreui.icons.simple-line-icons'); });
+    Route::get('/brands', function(){               return view('coreui.icons.brands'); });
 });
 Route::prefix('notifications')->group(function () {  
     Route::get('/alerts', function(){   return view('coreui.notifications.alerts'); });
@@ -62,8 +61,3 @@ Route::resource('users', 'UsersController')->except( ['create', 'store'] );
 
 Route::resource('notes', 'NotesController');
 
-/*
-Route::get('/test', function(){
-    return view('coreui.500');
-});
-*/
