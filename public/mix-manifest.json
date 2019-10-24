@@ -6,13 +6,12 @@
     "/js/popovers.js": "/js/popovers.js",
     "/js/tooltips.js": "/js/tooltips.js",
     "/js/widgets.js": "/js/widgets.js",
-    "/css/all.css": "/css/all.css",
-    "/css/free.min.css": "/css/free.min.css",
-    "/css/flag-icon.min.css": "/css/flag-icon.min.css",
     "/css/pace.min.css": "/css/pace.min.css",
     "/css/coreui-chartjs.css": "/css/coreui-chartjs.css",
     "/js/pace.min.js": "/js/pace.min.js",
     "/js/coreui.bundle.min.js": "/js/coreui.bundle.min.js",
     "/js/Chart.min.js": "/js/Chart.min.js",
-    "/js/coreui-chartjs.js": "/js/coreui-chartjs.js"
+    "/js/coreui-chartjs.js": "/js/coreui-chartjs.js",
+    "/css/free.min.css": "/css/free.min.css",
+    "/css/flag-icon.min.css": "/css/flag-icon.min.css"
 }
