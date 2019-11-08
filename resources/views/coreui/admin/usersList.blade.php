@@ -10,8 +10,6 @@
                     <div class="card-header">
                       <i class="fa fa-align-justify"></i>{{ __('Users') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-block btn-primary">{{ __('Logout') }}</button></form> 
-                        <br>
                         <table class="table table-responsive-sm table-striped">
                         <thead>
                           <tr>

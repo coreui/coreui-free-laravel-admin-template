@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Menus\Menus;
+use App\Http\Menus\GetSidebarMenu;
 
 class GetMenu
 {
@@ -27,7 +27,7 @@ class GetMenu
         }
         //var_dump($roles);
         //die();
-        $menus = new Menus();
+        $menus = new GetSidebarMenu();
         view()->share('menu', $menus->get( $roles ) );
 
         return $next($request);
