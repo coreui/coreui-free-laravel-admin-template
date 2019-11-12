@@ -36,8 +36,13 @@
             "App\\": "app/"
         },
         "classmap": [
+            "database",
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "database/seeds/UsersAndNotesSeeder.php",
+            "database/seeds/MenusTableSeeder.php"
         ]
     },
     "autoload-dev": {
