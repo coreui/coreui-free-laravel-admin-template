@@ -10,10 +10,32 @@ class MenuBuilder{
 
     private $menu;
     private $dropdown;
+    private $dropdownDeep;
 
     public function __construct(){
        $this->menu = array();
        $this->dropdown = false; 
+       $this->dropdownDeep = 0;
+    }
+
+    private function innerAddElementToMenuLastPosition(&$menu, $element, $offset){
+        $z = 1;
+        $result = false;
+        $menu = &$menu[count($menu)-1];
+        while(is_array($menu)){
+            if($z == $this->dropdownDeep - $offset){
+                array_push($menu['elements'], $element);
+                $result = true;
+                break;
+            }
+            $menu = &$menu['elements'][count($menu['elements'])-1];
+            $z++;
+        }
+        return $result;
+    }
+
+    private function addElementToMenuLastPosition($element, $offset = 0){
+        return $this->innerAddElementToMenuLastPosition($this->menu, $element, $offset);
     }
 
     private function addRegularLink($name, $href, $icon, $iconType){
@@ -41,7 +63,7 @@ class MenuBuilder{
         $num = count($this->menu);
         $hasIcon = $icon === false ? false : true;
         if($hasIcon){
-            array_push($this->menu[$num-1]['elements'], array(
+            $this->addElementToMenuLastPosition(array(
                 'slug' => 'link',
                 'name' => $name,
                 'href' => $href,
@@ -49,8 +71,8 @@ class MenuBuilder{
                 'icon' => $icon,
                 'iconType' => $iconType
             ));
-        }else{
-            array_push($this->menu[$num-1]['elements'], array(
+         }else{
+            $this->addElementToMenuLastPosition(array(
                 'slug' => 'link',
                 'name' => $name,
                 'href' => $href,
@@ -87,32 +109,58 @@ class MenuBuilder{
     }
 
     public function beginDropdown($name, $icon = false, $iconType = 'coreui'){
-        if($this->dropdown === true){
-            throw new Exception('Starting dropdown inside dropdown');
-        }
+        //if($this->dropdown === true){
+        //    throw new Exception('Starting dropdown inside dropdown');
+        //}
         $this->dropdown = true;
+        $this->dropdownDeep++;
         $hasIcon = $icon === false ? false : true;
-        if($hasIcon){
-            array_push($this->menu, array(
-                'slug' => 'dropdown',
-                'name' => $name,
-                'hasIcon' => $hasIcon,
-                'icon' => $icon,
-                'iconType' => $iconType,
-                'elements' => array()
-            ));
+        if($this->dropdownDeep === 1){
+            if($hasIcon){
+                array_push($this->menu, array(
+                    'slug' => 'dropdown',
+                    'name' => $name,
+                    'hasIcon' => $hasIcon,
+                    'icon' => $icon,
+                    'iconType' => $iconType,
+                    'elements' => array()
+                ));
+            }else{
+                array_push($this->menu, array(
+                    'slug' => 'dropdown',
+                    'name' => $name,
+                    'hasIcon' => $hasIcon,
+                    'elements' => array()
+                ));
+            }
         }else{
-            array_push($this->menu, array(
-                'slug' => 'dropdown',
-                'name' => $name,
-                'hasIcon' => $hasIcon,
-                'elements' => array()
-            ));
+            if($hasIcon){
+                $this->addElementToMenuLastPosition(array(
+                    'slug' => 'dropdown',
+                    'name' => $name,
+                    'hasIcon' => $hasIcon,
+                    'icon' => $icon,
+                    'iconType' => $iconType,
+                    'elements' => array()
+                ), 1);
+            }else{
+                $this->addElementToMenuLastPosition(array(
+                    'slug' => 'dropdown',
+                    'name' => $name,
+                    'hasIcon' => $hasIcon,
+                    'elements' => array()
+                ), 1);
+            }
         }
+
     }
 
     public function endDropdown(){
         $this->dropdown = false;
+        $this->dropdownDeep--;
+        if($this->dropdownDeep < 0){
+            $this->dropdownDeep = 0;
+        }
     }
 
     public function getResult(){

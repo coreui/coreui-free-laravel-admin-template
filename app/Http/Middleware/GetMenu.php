@@ -20,13 +20,9 @@ class GetMenu
     {
         if (Auth::check()){
             $roles =  Auth::user()->roles;
-            //var_dump('AAAAAAAAAAAAAA');
         }else{
             $roles = '';
-            //var_dump('BBBBBBBBBBBBBB');
         }
-        //var_dump($roles);
-        //die();
         $menus = new GetSidebarMenu();
         view()->share('menu', $menus->get( $roles ) );
 

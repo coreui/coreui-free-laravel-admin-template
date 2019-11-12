@@ -26,14 +26,22 @@ class RenderFromDatabaseData{
         }
     }
 
+
+    
     private function dropdownLoop($id){
         for($i = 0; $i<count($this->data); $i++){
             if($this->data[$i]['parent_id'] == $id){
-                $this->mb->addLink($this->data[$i]['name'], $this->data[$i]['href']);
+                if($this->data[$i]['slug'] === 'dropdown'){
+                    $this->addDropdown($this->data[$i]);
+                }elseif($this->data[$i]['slug'] === 'link'){
+                    $this->mb->addLink($this->data[$i]['name'], $this->data[$i]['href']);
+                }else{
+                    $this->addTitle($this->data[$i]);
+                }
             }
         }
     }
-
+    
     private function addDropdown($data){
         $this->mb->beginDropdown($data['name'], $data['icon']);
         $this->dropdownLoop($data['id']);
@@ -50,7 +58,9 @@ class RenderFromDatabaseData{
                     $this->addLink($this->data[$i]);
                 break;
                 case 'dropdown':
-                    $this->addDropdown($this->data[$i]);
+                    if($this->data[$i]['parent_id'] == null){
+                        $this->addDropdown($this->data[$i]);
+                    }
                 break;
             }
         }

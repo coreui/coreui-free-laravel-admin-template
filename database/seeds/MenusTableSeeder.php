@@ -6,7 +6,7 @@ class MenusTableSeeder extends Seeder
 {
     private $menuName = null;
     private $menuId = null;
-    private $dropdownId = null;
+    private $dropdownId = array();
     private $dropdown = false;
     private $sequence = 1;
 
@@ -29,7 +29,7 @@ class MenusTableSeeder extends Seeder
                 'href' => $href,
                 'menu_name' => $this->menuName,
                 'menu_id' => $this->menuId,
-                'parent_id' => $this->dropdownId,
+                'parent_id' => $this->dropdownId[count($this->dropdownId) - 1],
                 'sequence' => $this->sequence
             ]);
         }
@@ -48,21 +48,28 @@ class MenusTableSeeder extends Seeder
     }
 
     public function beginDropdown($name, $icon){
+        if(count($this->dropdownId)){
+            $parentId = $this->dropdownId[count($this->dropdownId) - 1];
+        }else{
+            $parentId = null;
+        }
         DB::table('menus')->insert([
             'slug' => 'dropdown',
             'name' => $name,
             'icon' => $icon,
             'menu_name' => $this->menuName,
             'menu_id' => $this->menuId,
-            'sequence' => $this->sequence
+            'sequence' => $this->sequence,
+            'parent_id' => $parentId
         ]);
-        $this->dropdownId = DB::getPdo()->lastInsertId();
+        array_push($this->dropdownId, DB::getPdo()->lastInsertId());
         $this->dropdown = true;
         $this->sequence++;
     }
 
     public function endDropdown(){
         $this->dropdown = false;
+        array_pop( $this->dropdownId );
     }
 
     /**
@@ -72,7 +79,7 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     {
-        $dropdownId = null;
+        $dropdownId = array();
         /* sidebar menu */
         $this->menuId = 1;
         /* guest menu */
@@ -133,5 +140,11 @@ class MenusTableSeeder extends Seeder
         $this->endDropdown();
         $this->insertLink('Download CoreUI', 'https://coreui.io', 'cui-cloud-download');
         $this->insertLink('Try CoreUI PRO', 'https://coreui.io/pro/', 'cui-layers');
+
+        $this->endDropdown();
+        $this->endDropdown();
+        $this->endDropdown();
+        $this->endDropdown();
+        $this->endDropdown();
     }
 }
