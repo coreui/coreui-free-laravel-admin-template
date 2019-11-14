@@ -4,20 +4,41 @@ use Illuminate\Database\Seeder;
 
 class MenusTableSeeder extends Seeder
 {
-    private $menuName = null;
     private $menuId = null;
     private $dropdownId = array();
     private $dropdown = false;
     private $sequence = 1;
+    private $joinData = array();
 
-    public function insertLink($name, $href, $icon = null){
+    public function join($roles, $menusId){
+        $roles = explode(',', $roles);
+        foreach($roles as $role){
+            array_push($this->joinData, array('role_name' => $role, 'menus_id' => $menusId));
+        }
+    }
+
+    /*
+        Function assigns menu elements to roles
+        Must by use on end of this seeder
+    */
+    public function joinAllByTransaction(){
+        DB::beginTransaction();
+        foreach($this->joinData as $data){
+            DB::table('menu_role')->insert([
+                'role_name' => $data['role_name'],
+                'menus_id' => $data['menus_id'],
+            ]);
+        }
+        DB::commit();
+    }
+
+    public function insertLink($roles, $name, $href, $icon = null){
         if($this->dropdown === false){
             DB::table('menus')->insert([
                 'slug' => 'link',
                 'name' => $name,
                 'icon' => $icon,
                 'href' => $href,
-                'menu_name' => $this->menuName,
                 'menu_id' => $this->menuId,
                 'sequence' => $this->sequence
             ]);
@@ -27,27 +48,27 @@ class MenusTableSeeder extends Seeder
                 'name' => $name,
                 'icon' => $icon,
                 'href' => $href,
-                'menu_name' => $this->menuName,
                 'menu_id' => $this->menuId,
                 'parent_id' => $this->dropdownId[count($this->dropdownId) - 1],
                 'sequence' => $this->sequence
             ]);
         }
         $this->sequence++;
+        $this->join($roles, DB::getPdo()->lastInsertId());
     }
 
-    public function insertTitle($name){
+    public function insertTitle($roles, $name){
         DB::table('menus')->insert([
             'slug' => 'title',
             'name' => $name,
-            'menu_name' => $this->menuName,
             'menu_id' => $this->menuId,
             'sequence' => $this->sequence
         ]);
         $this->sequence++;
+        $this->join($roles, DB::getPdo()->lastInsertId());
     }
 
-    public function beginDropdown($name, $icon){
+    public function beginDropdown($roles, $name, $icon){
         if(count($this->dropdownId)){
             $parentId = $this->dropdownId[count($this->dropdownId) - 1];
         }else{
@@ -57,14 +78,15 @@ class MenusTableSeeder extends Seeder
             'slug' => 'dropdown',
             'name' => $name,
             'icon' => $icon,
-            'menu_name' => $this->menuName,
             'menu_id' => $this->menuId,
             'sequence' => $this->sequence,
             'parent_id' => $parentId
         ]);
-        array_push($this->dropdownId, DB::getPdo()->lastInsertId());
+        $lastId = DB::getPdo()->lastInsertId();
+        array_push($this->dropdownId, $lastId);
         $this->dropdown = true;
         $this->sequence++;
+        $this->join($roles, $lastId);
     }
 
     public function endDropdown(){
@@ -82,69 +104,58 @@ class MenusTableSeeder extends Seeder
         $dropdownId = array();
         /* sidebar menu */
         $this->menuId = 1;
-        /* guest menu */
-        $this->menuName = 'guest';
-        $this->insertLink('Dashboard', '/', 'cui-speedometer');
-        $this->insertLink('Login', '/login', 'cui-account-logout');
-        $this->insertLink('Register', '/register', 'cui-account-logout');
-        $this->insertLink('Download CoreUI', 'https://coreui.io', 'cui-cloud-download');
-        $this->insertLink('Try CoreUI PRO', 'https://coreui.io/pro/', 'cui-layers');
-        /* user menu */
-        $this->menuName = 'user';
-        $this->insertLink('Dashboard', '/', 'cui-speedometer');
-        $this->insertTitle('Theme');
-        $this->insertLink('Colors', '/colors', 'cui-drop1');
-        $this->insertLink('Typography', '/typography', 'cui-pencil');
-        $this->beginDropdown('Base', 'cui-puzzle');
-            $this->insertLink('Breadcrumb',    '/base/breadcrumb');
-            $this->insertLink('Cards',         '/base/cards');
-            $this->insertLink('Carousel',      '/base/carousel');
-            $this->insertLink('Collapse',      '/base/collapse');
-            $this->insertLink('Forms',         '/base/forms');
-            $this->insertLink('Jumbotron',     '/base/jumbotron');
-            $this->insertLink('List group',    '/base/list-group');
-            $this->insertLink('Navs',          '/base/navs');
-            $this->insertLink('Pagination',    '/base/pagination');
-            $this->insertLink('Popovers',      '/base/popovers');
-            $this->insertLink('Progress',      '/base/progress');
-            $this->insertLink('Scrollspy',     '/base/scrollspy');
-            $this->insertLink('Switches',      '/base/switches');
-            $this->insertLink('Tables',        '/base/tables');
-            $this->insertLink('Tabs',          '/base/tabs');
-            $this->insertLink('Tooltips',      '/base/tooltips');
+        $this->insertLink('guest,user,admin', 'Dashboard', '/', 'cui-speedometer');
+        $this->insertLink('guest', 'Login', '/login', 'cui-account-logout');
+        $this->insertLink('guest', 'Register', '/register', 'cui-account-logout');
+        $this->insertTitle('user,admin', 'Theme');
+        $this->insertLink('user,admin', 'Colors', '/colors', 'cui-drop1');
+        $this->insertLink('user,admin', 'Typography', '/typography', 'cui-pencil');
+        $this->beginDropdown('user,admin', 'Base', 'cui-puzzle');
+            $this->insertLink('user,admin', 'Breadcrumb',    '/base/breadcrumb');
+            $this->insertLink('user,admin', 'Cards',         '/base/cards');
+            $this->insertLink('user,admin', 'Carousel',      '/base/carousel');
+            $this->insertLink('user,admin', 'Collapse',      '/base/collapse');
+            $this->insertLink('user,admin', 'Forms',         '/base/forms');
+            $this->insertLink('user,admin', 'Jumbotron',     '/base/jumbotron');
+            $this->insertLink('user,admin', 'List group',    '/base/list-group');
+            $this->insertLink('user,admin', 'Navs',          '/base/navs');
+            $this->insertLink('user,admin', 'Pagination',    '/base/pagination');
+            $this->insertLink('user,admin', 'Popovers',      '/base/popovers');
+            $this->insertLink('user,admin', 'Progress',      '/base/progress');
+            $this->insertLink('user,admin', 'Scrollspy',     '/base/scrollspy');
+            $this->insertLink('user,admin', 'Switches',      '/base/switches');
+            $this->insertLink('user,admin', 'Tables',        '/base/tables');
+            $this->insertLink('user,admin', 'Tabs',          '/base/tabs');
+            $this->insertLink('user,admin', 'Tooltips',      '/base/tooltips');
         $this->endDropdown();
-            $this->beginDropdown('Buttons', 'cui-cursor');
-            $this->insertLink('Buttons',           '/buttons/buttons');
-            $this->insertLink('Buttons Group',     '/buttons/button-group');
-            $this->insertLink('Dropdowns',         '/buttons/dropdowns');
-            $this->insertLink('Brand Buttons',     '/buttons/brand-buttons');
+            $this->beginDropdown('user,admin', 'Buttons', 'cui-cursor');
+            $this->insertLink('user,admin', 'Buttons',           '/buttons/buttons');
+            $this->insertLink('user,admin', 'Buttons Group',     '/buttons/button-group');
+            $this->insertLink('user,admin', 'Dropdowns',         '/buttons/dropdowns');
+            $this->insertLink('user,admin', 'Brand Buttons',     '/buttons/brand-buttons');
         $this->endDropdown();
-        $this->insertLink('Charts', '/charts', 'cui-chart-pie');
-        $this->beginDropdown('Icons', 'cui-star');
-            $this->insertLink('CoreUI Icons',      '/icon/coreui-icons');
-            $this->insertLink('Flags',             '/icon/flags');
-            $this->insertLink('Brands',            '/icon/brands');
+        $this->insertLink('user,admin', 'Charts', '/charts', 'cui-chart-pie');
+        $this->beginDropdown('user,admin', 'Icons', 'cui-star');
+            $this->insertLink('user,admin', 'CoreUI Icons',      '/icon/coreui-icons');
+            $this->insertLink('user,admin', 'Flags',             '/icon/flags');
+            $this->insertLink('user,admin', 'Brands',            '/icon/brands');
         $this->endDropdown();
-        $this->beginDropdown('Notifications', 'cui-bell');
-            $this->insertLink('Alerts',     '/notifications/alerts');
-            $this->insertLink('Badge',      '/notifications/badge');
-            $this->insertLink('Modals',     '/notifications/modals');
+        $this->beginDropdown('user,admin', 'Notifications', 'cui-bell');
+            $this->insertLink('user,admin', 'Alerts',     '/notifications/alerts');
+            $this->insertLink('user,admin', 'Badge',      '/notifications/badge');
+            $this->insertLink('user,admin', 'Modals',     '/notifications/modals');
         $this->endDropdown();
-        $this->insertLink('Widgets', '/widgets', 'cui-calculator');
-        $this->insertTitle('Extras');
-        $this->beginDropdown('Pages', 'cui-star');
-            $this->insertLink('Login',         '/login');
-            $this->insertLink('Register',      '/register');
-            $this->insertLink('Error 404',     '/404');
-            $this->insertLink('Error 500',     '/500');
+        $this->insertLink('user,admin', 'Widgets', '/widgets', 'cui-calculator');
+        $this->insertTitle('user,admin', 'Extras');
+        $this->beginDropdown('user,admin', 'Pages', 'cui-star');
+            $this->insertLink('user,admin', 'Login',         '/login');
+            $this->insertLink('user,admin', 'Register',      '/register');
+            $this->insertLink('user,admin', 'Error 404',     '/404');
+            $this->insertLink('user,admin', 'Error 500',     '/500');
         $this->endDropdown();
-        $this->insertLink('Download CoreUI', 'https://coreui.io', 'cui-cloud-download');
-        $this->insertLink('Try CoreUI PRO', 'https://coreui.io/pro/', 'cui-layers');
+        $this->insertLink('guest,user,admin', 'Download CoreUI', 'https://coreui.io', 'cui-cloud-download');
+        $this->insertLink('guest,user,admin', 'Try CoreUI PRO', 'https://coreui.io/pro/', 'cui-layers');
 
-        $this->endDropdown();
-        $this->endDropdown();
-        $this->endDropdown();
-        $this->endDropdown();
-        $this->endDropdown();
+        $this->joinAllByTransaction(); ///   <===== Must by use on end of this seeder
     }
 }

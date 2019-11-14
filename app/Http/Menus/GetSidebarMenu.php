@@ -20,7 +20,11 @@ class GetSidebarMenu implements MenuInterface{
     }
 
     private function getMenuFromDB($menuId, $menuName){
-        $this->menu = Menus::where('menu_id', '=', $menuId)->where('menu_name', '=', $menuName)->orderBy('sequence', 'asc')->get();
+        $this->menu = Menus::join('menu_role', 'menus.id', '=', 'menu_role.menus_id')
+            ->select('menus.*')
+            ->where('menus.menu_id', '=', $menuId)
+            ->where('menu_role.role_name', '=', $menuName)
+            ->orderBy('menus.sequence', 'asc')->get();       
     }
 
     private function getGuestMenu(){
@@ -31,10 +35,16 @@ class GetSidebarMenu implements MenuInterface{
         $this->getMenuFromDB(1, 'user');
     }
 
+    private function getAdminMenu(){
+        $this->getMenuFromDB(1, 'admin');
+    }
+
     public function get($roles){
         $roles = explode(',', $roles);
         if(empty($roles)){
             $this->getGuestMenu();
+        }elseif(in_array('admin', $roles)){
+            $this->getAdminMenu();
         }elseif(in_array('user', $roles)){
             $this->getUserMenu();
         }else{
@@ -44,4 +54,11 @@ class GetSidebarMenu implements MenuInterface{
         return $rfd->render($this->menu);
     }
 
+    public function getAll(){
+        $this->menu = Menus::select('menus.*')
+            ->where('menus.menu_id', '=', 1)
+            ->orderBy('menus.sequence', 'asc')->get();  
+        $rfd = new RenderFromDatabaseData;
+        return $rfd->render($this->menu);
+    }
 }

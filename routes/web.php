@@ -61,4 +61,8 @@ Route::group(['middleware' => ['get.menu']], function () {
     Route::resource('users', 'UsersController')->except( ['create', 'store'] );
 
     Route::resource('notes', 'NotesController');
+
+    Route::get('menu', 'MenuController@index');
+    Route::get('menu/selected', 'MenuController@menuSelected')->name('menu.selected');
+    Route::get('menu/selected/switch', 'MenuController@switch');
 });

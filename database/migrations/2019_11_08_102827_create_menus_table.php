@@ -20,7 +20,6 @@ class CreateMenusTable extends Migration
             $table->string('icon')->nullable();
             $table->string('slug');
             $table->integer('parent_id')->unsigned()->nullable();
-            $table->string('menu_name');
             $table->integer('menu_id')->unsigned();
             $table->integer('sequence');
         });

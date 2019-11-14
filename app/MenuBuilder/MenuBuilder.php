@@ -38,10 +38,11 @@ class MenuBuilder{
         return $this->innerAddElementToMenuLastPosition($this->menu, $element, $offset);
     }
 
-    private function addRegularLink($name, $href, $icon, $iconType){
+    private function addRegularLink($id, $name, $href, $icon, $iconType){
         $hasIcon = $icon === false ? false : true;
         if($hasIcon){
             array_push($this->menu, array(
+                'id' => $id,
                 'slug' => 'link',
                 'name' => $name,
                 'href' => $href,
@@ -51,6 +52,7 @@ class MenuBuilder{
             ));
         }else{
             array_push($this->menu, array(
+                'id' => $id,
                 'slug' => 'link',
                 'name' => $name,
                 'href' => $href,
@@ -59,11 +61,12 @@ class MenuBuilder{
         }
     }
 
-    private function addDropdownLink($name, $href, $icon, $iconType){
+    private function addDropdownLink($id, $name, $href, $icon, $iconType){
         $num = count($this->menu);
         $hasIcon = $icon === false ? false : true;
         if($hasIcon){
             $this->addElementToMenuLastPosition(array(
+                'id' => $id,
                 'slug' => 'link',
                 'name' => $name,
                 'href' => $href,
@@ -73,6 +76,7 @@ class MenuBuilder{
             ));
          }else{
             $this->addElementToMenuLastPosition(array(
+                'id' => $id,
                 'slug' => 'link',
                 'name' => $name,
                 'href' => $href,
@@ -81,18 +85,19 @@ class MenuBuilder{
         }
     }
 
-    public function addLink($name, $href, $icon = false, $iconType = 'coreui'){
+    public function addLink($id, $name, $href, $icon = false, $iconType = 'coreui'){
         if($this->dropdown === true){
-            $this->addDropdownLink($name, $href, $icon, $iconType);
+            $this->addDropdownLink($id, $name, $href, $icon, $iconType);
         }else{
-            $this->addRegularLink($name, $href, $icon, $iconType);
+            $this->addRegularLink($id, $name, $href, $icon, $iconType);
         }
     }
 
-    public function addTitle($name, $icon = false, $iconType = 'coreui'){
+    public function addTitle($id, $name, $icon = false, $iconType = 'coreui'){
         $hasIcon = $icon === false ? false : true;
         if($hasIcon){
             array_push($this->menu, array(
+                'id' => $id,
                 'slug' => 'title',
                 'name' => $name,
                 'hasIcon' => $hasIcon,
@@ -101,6 +106,7 @@ class MenuBuilder{
             ));
         }else{
             array_push($this->menu, array(
+                'id' => $id,
                 'slug' => 'title',
                 'name' => $name,
                 'hasIcon' => $hasIcon
@@ -108,16 +114,14 @@ class MenuBuilder{
         }
     }
 
-    public function beginDropdown($name, $icon = false, $iconType = 'coreui'){
-        //if($this->dropdown === true){
-        //    throw new Exception('Starting dropdown inside dropdown');
-        //}
+    public function beginDropdown($id, $name, $icon = false, $iconType = 'coreui'){
         $this->dropdown = true;
         $this->dropdownDeep++;
         $hasIcon = $icon === false ? false : true;
         if($this->dropdownDeep === 1){
             if($hasIcon){
                 array_push($this->menu, array(
+                    'id' => $id,
                     'slug' => 'dropdown',
                     'name' => $name,
                     'hasIcon' => $hasIcon,
@@ -127,6 +131,7 @@ class MenuBuilder{
                 ));
             }else{
                 array_push($this->menu, array(
+                    'id' => $id,
                     'slug' => 'dropdown',
                     'name' => $name,
                     'hasIcon' => $hasIcon,
@@ -136,6 +141,7 @@ class MenuBuilder{
         }else{
             if($hasIcon){
                 $this->addElementToMenuLastPosition(array(
+                    'id' => $id,
                     'slug' => 'dropdown',
                     'name' => $name,
                     'hasIcon' => $hasIcon,
@@ -145,6 +151,7 @@ class MenuBuilder{
                 ), 1);
             }else{
                 $this->addElementToMenuLastPosition(array(
+                    'id' => $id,
                     'slug' => 'dropdown',
                     'name' => $name,
                     'hasIcon' => $hasIcon,
