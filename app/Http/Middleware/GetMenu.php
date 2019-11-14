@@ -25,7 +25,6 @@ class GetMenu
         }
         $menus = new GetSidebarMenu();
         view()->share('menu', $menus->get( $roles ) );
-
         return $next($request);
     }
 }

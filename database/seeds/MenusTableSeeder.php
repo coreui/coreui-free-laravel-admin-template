@@ -54,7 +54,9 @@ class MenusTableSeeder extends Seeder
             ]);
         }
         $this->sequence++;
-        $this->join($roles, DB::getPdo()->lastInsertId());
+        $lastId = DB::getPdo()->lastInsertId();
+        $this->join($roles, $lastId);
+        return $lastId;
     }
 
     public function insertTitle($roles, $name){
@@ -65,7 +67,9 @@ class MenusTableSeeder extends Seeder
             'sequence' => $this->sequence
         ]);
         $this->sequence++;
-        $this->join($roles, DB::getPdo()->lastInsertId());
+        $lastId = DB::getPdo()->lastInsertId();
+        $this->join($roles, $lastId);
+        return $lastId;
     }
 
     public function beginDropdown($roles, $name, $icon){
@@ -87,6 +91,7 @@ class MenusTableSeeder extends Seeder
         $this->dropdown = true;
         $this->sequence++;
         $this->join($roles, $lastId);
+        return $lastId;
     }
 
     public function endDropdown(){
