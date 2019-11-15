@@ -163,10 +163,12 @@ class MenuBuilder{
     }
 
     public function endDropdown(){
-        $this->dropdown = false;
         $this->dropdownDeep--;
         if($this->dropdownDeep < 0){
             $this->dropdownDeep = 0;
+        }
+        if($this->dropdownDeep <= 0){
+            $this->dropdown = false;
         }
     }
 
