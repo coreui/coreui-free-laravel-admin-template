@@ -1,5 +1,11 @@
 @extends('coreui.base')
 
+@section('css')
+
+
+
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -10,1685 +16,1619 @@
                 </div>
                 <div class="card-body">
                   <div class="row text-center">
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-3d"></i>
-                      <div>3d</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-3d"></i>
+                      <div>cil-3d</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-4k"></i>
-                      <div>4k</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-4k"></i>
+                      <div>cil-4k</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-account-logout"></i>
-                      <div>account-logout</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-account-logout"></i>
+                      <div>cil-account-logout</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-action-redo"></i>
-                      <div>action-redo</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-action-redo"></i>
+                      <div>cil-action-redo</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-action-undo"></i>
-                      <div>action-undo</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-action-undo"></i>
+                      <div>cil-action-undo</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-address-book"></i>
-                      <div>address-book</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-address-book"></i>
+                      <div>cil-address-book</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-airplane-mode"></i>
-                      <div>airplane-mode</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-airplane-mode"></i>
+                      <div>cil-airplane-mode</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-airplane-mode-off"></i>
-                      <div>airplane-mode-off</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-airplane-mode-off"></i>
+                      <div>cil-airplane-mode-off</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-airplay"></i>
-                      <div>airplay</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-airplay"></i>
+                      <div>cil-airplay</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-alarm"></i>
-                      <div>alarm</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-alarm"></i>
+                      <div>cil-alarm</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-album"></i>
-                      <div>album</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-album"></i>
+                      <div>cil-album</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-align-center"></i>
-                      <div>align-center</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-align-center"></i>
+                      <div>cil-align-center</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-align-left"></i>
-                      <div>align-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-align-left"></i>
+                      <div>cil-align-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-align-right"></i>
-                      <div>align-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-align-right"></i>
+                      <div>cil-align-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-american-football"></i>
-                      <div>american-football</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-american-football"></i>
+                      <div>cil-american-football</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-android"></i>
-                      <div>android</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-animal"></i>
+                      <div>cil-animal</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-angular"></i>
-                      <div>angular</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-aperture"></i>
+                      <div>cil-aperture</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-animal"></i>
-                      <div>animal</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-apple"></i>
+                      <div>cil-apple</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-aperture"></i>
-                      <div>aperture</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-applications"></i>
+                      <div>cil-applications</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-apple"></i>
-                      <div>apple</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-applications-settings"></i>
+                      <div>cil-applications-settings</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-applications"></i>
-                      <div>applications</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-apps"></i>
+                      <div>cil-apps</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-applications-settings"></i>
-                      <div>applications-settings</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-apps-settings"></i>
+                      <div>cil-apps-settings</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-apps"></i>
-                      <div>apps</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-bottom"></i>
+                      <div>cil-arrow-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-apps-settings"></i>
-                      <div>apps-settings</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-circle-bottom"></i>
+                      <div>cil-arrow-circle-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-bottom"></i>
-                      <div>arrow-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-circle-left"></i>
+                      <div>cil-arrow-circle-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-circle-bottom"></i>
-                      <div>arrow-circle-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-circle-right"></i>
+                      <div>cil-arrow-circle-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-circle-left"></i>
-                      <div>arrow-circle-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-circle-top"></i>
+                      <div>cil-arrow-circle-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-circle-right"></i>
-                      <div>arrow-circle-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-left"></i>
+                      <div>cil-arrow-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-circle-top"></i>
-                      <div>arrow-circle-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-right"></i>
+                      <div>cil-arrow-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-left"></i>
-                      <div>arrow-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-bottom"></i>
+                      <div>cil-arrow-thick-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-right"></i>
-                      <div>arrow-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-from-bottom"></i>
+                      <div>cil-arrow-thick-from-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-bottom"></i>
-                      <div>arrow-thick-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-from-left"></i>
+                      <div>cil-arrow-thick-from-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-from-bottom"></i>
-                      <div>arrow-thick-from-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-from-right"></i>
+                      <div>cil-arrow-thick-from-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-from-left"></i>
-                      <div>arrow-thick-from-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-from-top"></i>
+                      <div>cil-arrow-thick-from-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-from-right"></i>
-                      <div>arrow-thick-from-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-left"></i>
+                      <div>cil-arrow-thick-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-from-top"></i>
-                      <div>arrow-thick-from-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-right"></i>
+                      <div>cil-arrow-thick-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-left"></i>
-                      <div>arrow-thick-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-to-bottom"></i>
+                      <div>cil-arrow-thick-to-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-right"></i>
-                      <div>arrow-thick-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-to-left"></i>
+                      <div>cil-arrow-thick-to-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-to-bottom"></i>
-                      <div>arrow-thick-to-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-to-right"></i>
+                      <div>cil-arrow-thick-to-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-to-left"></i>
-                      <div>arrow-thick-to-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-to-top"></i>
+                      <div>cil-arrow-thick-to-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-to-right"></i>
-                      <div>arrow-thick-to-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-thick-top"></i>
+                      <div>cil-arrow-thick-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-to-top"></i>
-                      <div>arrow-thick-to-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-arrow-top"></i>
+                      <div>cil-arrow-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-thick-top"></i>
-                      <div>arrow-thick-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-assistive-listening-system"></i>
+                      <div>cil-assistive-listening-system</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-arrow-top"></i>
-                      <div>arrow-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-asterisk"></i>
+                      <div>cil-asterisk</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-assistive-listening-system"></i>
-                      <div>assistive-listening-system</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-asterisk-circle"></i>
+                      <div>cil-asterisk-circle</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-asterisk"></i>
-                      <div>asterisk</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-at"></i>
+                      <div>cil-at</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-asterisk-circle"></i>
-                      <div>asterisk-circle</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-audio"></i>
+                      <div>cil-audio</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-at"></i>
-                      <div>at</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-audio-description"></i>
+                      <div>cil-audio-description</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-audio"></i>
-                      <div>audio</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-audio-spectrum"></i>
+                      <div>cil-audio-spectrum</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-audio-description"></i>
-                      <div>audio-description</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-av-timer"></i>
+                      <div>cil-av-timer</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-audio-spectrum"></i>
-                      <div>audio-spectrum</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-baby"></i>
+                      <div>cil-baby</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-av-timer"></i>
-                      <div>av-timer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-baby-carriage"></i>
+                      <div>cil-baby-carriage</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-baby"></i>
-                      <div>baby</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-backspace"></i>
+                      <div>cil-backspace</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-baby-carriage"></i>
-                      <div>baby-carriage</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-badge"></i>
+                      <div>cil-badge</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-backspace"></i>
-                      <div>backspace</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-balance-scale"></i>
+                      <div>cil-balance-scale</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-badge"></i>
-                      <div>badge</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-ban"></i>
+                      <div>cil-ban</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-balance-scale"></i>
-                      <div>balance-scale</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bank"></i>
+                      <div>cil-bank</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-ban"></i>
-                      <div>ban</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bar-chart"></i>
+                      <div>cil-bar-chart</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bank"></i>
-                      <div>bank</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-barcode"></i>
+                      <div>cil-barcode</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bar-chart"></i>
-                      <div>bar-chart</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-baseball"></i>
+                      <div>cil-baseball</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-barcode"></i>
-                      <div>barcode</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-basket"></i>
+                      <div>cil-basket</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-baseball"></i>
-                      <div>baseball</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-basketball"></i>
+                      <div>cil-basketball</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-basket"></i>
-                      <div>basket</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bath"></i>
+                      <div>cil-bath</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-basketball"></i>
-                      <div>basketball</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bathroom"></i>
+                      <div>cil-bathroom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bath"></i>
-                      <div>bath</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-0"></i>
+                      <div>cil-battery-0</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bathroom"></i>
-                      <div>bathroom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-3"></i>
+                      <div>cil-battery-3</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-0"></i>
-                      <div>battery-0</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-5"></i>
+                      <div>cil-battery-5</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-3"></i>
-                      <div>battery-3</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-alert"></i>
+                      <div>cil-battery-alert</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-5"></i>
-                      <div>battery-5</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-empty"></i>
+                      <div>cil-battery-empty</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-alert"></i>
-                      <div>battery-alert</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-full"></i>
+                      <div>cil-battery-full</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-empty"></i>
-                      <div>battery-empty</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-battery-slash"></i>
+                      <div>cil-battery-slash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-full"></i>
-                      <div>battery-full</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-beach-access"></i>
+                      <div>cil-beach-access</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-battery-slash"></i>
-                      <div>battery-slash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-beaker"></i>
+                      <div>cil-beaker</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-beach-access"></i>
-                      <div>beach-access</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bed"></i>
+                      <div>cil-bed</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-beaker"></i>
-                      <div>beaker</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bell"></i>
+                      <div>cil-bell</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bed"></i>
-                      <div>bed</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bike"></i>
+                      <div>cil-bike</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bell"></i>
-                      <div>bell</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-birthday-cake"></i>
+                      <div>cil-birthday-cake</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bike"></i>
-                      <div>bike</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-blind"></i>
+                      <div>cil-blind</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-birthday-cake"></i>
-                      <div>birthday-cake</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bluetooth"></i>
+                      <div>cil-bluetooth</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-blind"></i>
-                      <div>blind</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-blur"></i>
+                      <div>cil-blur</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bluetooth"></i>
-                      <div>bluetooth</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-blur-circular"></i>
+                      <div>cil-blur-circular</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-blur"></i>
-                      <div>blur</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-blur-linear"></i>
+                      <div>cil-blur-linear</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-blur-circular"></i>
-                      <div>blur-circular</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-boat-alt"></i>
+                      <div>cil-boat-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-blur-linear"></i>
-                      <div>blur-linear</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bold"></i>
+                      <div>cil-bold</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-boat-alt"></i>
-                      <div>boat-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bolt"></i>
+                      <div>cil-bolt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bold"></i>
-                      <div>bold</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-book"></i>
+                      <div>cil-book</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bolt"></i>
-                      <div>bolt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bookmark"></i>
+                      <div>cil-bookmark</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-book"></i>
-                      <div>book</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-all"></i>
+                      <div>cil-border-all</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bookmark"></i>
-                      <div>bookmark</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-bottom"></i>
+                      <div>cil-border-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bootstrap"></i>
-                      <div>bootstrap</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-clear"></i>
+                      <div>cil-border-clear</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-all"></i>
-                      <div>border-all</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-horizontal"></i>
+                      <div>cil-border-horizontal</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-bottom"></i>
-                      <div>border-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-inner"></i>
+                      <div>cil-border-inner</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-clear"></i>
-                      <div>border-clear</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-left"></i>
+                      <div>cil-border-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-horizontal"></i>
-                      <div>border-horizontal</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-outer"></i>
+                      <div>cil-border-outer</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-inner"></i>
-                      <div>border-inner</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-right"></i>
+                      <div>cil-border-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-left"></i>
-                      <div>border-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-style"></i>
+                      <div>cil-border-style</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-outer"></i>
-                      <div>border-outer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-top"></i>
+                      <div>cil-border-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-right"></i>
-                      <div>border-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-border-vertical"></i>
+                      <div>cil-border-vertical</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-style"></i>
-                      <div>border-style</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bowling"></i>
+                      <div>cil-bowling</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-top"></i>
-                      <div>border-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-braille"></i>
+                      <div>cil-braille</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-border-vertical"></i>
-                      <div>border-vertical</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-briefcase"></i>
+                      <div>cil-briefcase</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bowling"></i>
-                      <div>bowling</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-brightness"></i>
+                      <div>cil-brightness</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-braille"></i>
-                      <div>braille</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-british-pound"></i>
+                      <div>cil-british-pound</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-briefcase"></i>
-                      <div>briefcase</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-browser"></i>
+                      <div>cil-browser</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-brightness"></i>
-                      <div>brightness</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-brush"></i>
+                      <div>cil-brush</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-british-pound"></i>
-                      <div>british-pound</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-brush-alt"></i>
+                      <div>cil-brush-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-browser"></i>
-                      <div>browser</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bug"></i>
+                      <div>cil-bug</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-brush"></i>
-                      <div>brush</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-building"></i>
+                      <div>cil-building</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-brush-alt"></i>
-                      <div>brush-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bullhorn"></i>
+                      <div>cil-bullhorn</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bug"></i>
-                      <div>bug</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-burger"></i>
+                      <div>cil-burger</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-building"></i>
-                      <div>building</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-bus-alt"></i>
+                      <div>cil-bus-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bullhorn"></i>
-                      <div>bullhorn</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-calculator"></i>
+                      <div>cil-calculator</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-burger"></i>
-                      <div>burger</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-calendar"></i>
+                      <div>cil-calendar</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-bus-alt"></i>
-                      <div>bus-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-calendar-check"></i>
+                      <div>cil-calendar-check</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-calculator"></i>
-                      <div>calculator</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-camera"></i>
+                      <div>cil-camera</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-calendar"></i>
-                      <div>calendar</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-camera-control"></i>
+                      <div>cil-camera-control</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-calendar-check"></i>
-                      <div>calendar-check</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-camera-roll"></i>
+                      <div>cil-camera-roll</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-camera"></i>
-                      <div>camera</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-car-alt"></i>
+                      <div>cil-car-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-camera-control"></i>
-                      <div>camera-control</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-caret-bottom"></i>
+                      <div>cil-caret-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-camera-roll"></i>
-                      <div>camera-roll</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-caret-left"></i>
+                      <div>cil-caret-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-car-alt"></i>
-                      <div>car-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-caret-right"></i>
+                      <div>cil-caret-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-caret-bottom"></i>
-                      <div>caret-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-caret-top"></i>
+                      <div>cil-caret-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-caret-left"></i>
-                      <div>caret-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cart"></i>
+                      <div>cil-cart</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-caret-right"></i>
-                      <div>caret-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cash"></i>
+                      <div>cil-cash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-caret-top"></i>
-                      <div>caret-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-casino"></i>
+                      <div>cil-casino</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cart"></i>
-                      <div>cart</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cast"></i>
+                      <div>cil-cast</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cash"></i>
-                      <div>cash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cat"></i>
+                      <div>cil-cat</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-casino"></i>
-                      <div>casino</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cc"></i>
+                      <div>cil-cc</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cast"></i>
-                      <div>cast</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-center-focus"></i>
+                      <div>cil-center-focus</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cat"></i>
-                      <div>cat</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chart"></i>
+                      <div>cil-chart</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cc"></i>
-                      <div>cc</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chart-line"></i>
+                      <div>cil-chart-line</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-center-focus"></i>
-                      <div>center-focus</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chart-pie"></i>
+                      <div>cil-chart-pie</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chart"></i>
-                      <div>chart</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chat-bubble"></i>
+                      <div>cil-chat-bubble</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chart-line"></i>
-                      <div>chart-line</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-check"></i>
+                      <div>cil-check</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chart-pie"></i>
-                      <div>chart-pie</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-check-alt"></i>
+                      <div>cil-check-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chat-bubble"></i>
-                      <div>chat-bubble</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-bottom"></i>
+                      <div>cil-chevron-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-check"></i>
-                      <div>check</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-circle-down-alt"></i>
+                      <div>cil-chevron-circle-down-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-bottom"></i>
-                      <div>chevron-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-circle-left-alt"></i>
+                      <div>cil-chevron-circle-left-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-circle-down-alt"></i>
-                      <div>chevron-circle-down-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-circle-right-alt"></i>
+                      <div>cil-chevron-circle-right-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-circle-left-alt"></i>
-                      <div>chevron-circle-left-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-circle-up-alt"></i>
+                      <div>cil-chevron-circle-up-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-circle-right-alt"></i>
-                      <div>chevron-circle-right-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-double-down"></i>
+                      <div>cil-chevron-double-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-circle-up-alt"></i>
-                      <div>chevron-circle-up-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-double-left"></i>
+                      <div>cil-chevron-double-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-double-down"></i>
-                      <div>chevron-double-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-double-right"></i>
+                      <div>cil-chevron-double-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-double-left"></i>
-                      <div>chevron-double-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-double-up"></i>
+                      <div>cil-chevron-double-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-double-right"></i>
-                      <div>chevron-double-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-double-up-alt"></i>
+                      <div>cil-chevron-double-up-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-double-up"></i>
-                      <div>chevron-double-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-left"></i>
+                      <div>cil-chevron-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-double-up-alt"></i>
-                      <div>chevron-double-up-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-right"></i>
+                      <div>cil-chevron-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-left"></i>
-                      <div>chevron-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-chevron-top"></i>
+                      <div>cil-chevron-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-right"></i>
-                      <div>chevron-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-child"></i>
+                      <div>cil-child</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-chevron-top"></i>
-                      <div>chevron-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-child-friendly"></i>
+                      <div>cil-child-friendly</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-child"></i>
-                      <div>child</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-circle"></i>
+                      <div>cil-circle</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-child-friendly"></i>
-                      <div>child-friendly</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-clear-all"></i>
+                      <div>cil-clear-all</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-circle"></i>
-                      <div>circle</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-clipboard"></i>
+                      <div>cil-clipboard</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-clear-all"></i>
-                      <div>clear-all</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-clock"></i>
+                      <div>cil-clock</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-clipboard"></i>
-                      <div>clipboard</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-clone"></i>
+                      <div>cil-clone</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-clock"></i>
-                      <div>clock</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-closed-captioning"></i>
+                      <div>cil-closed-captioning</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-clone"></i>
-                      <div>clone</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cloud"></i>
+                      <div>cil-cloud</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-closed-captioning"></i>
-                      <div>closed-captioning</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cloud-download"></i>
+                      <div>cil-cloud-download</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cloud"></i>
-                      <div>cloud</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cloud-upload"></i>
+                      <div>cil-cloud-upload</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cloud-download"></i>
-                      <div>cloud-download</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cloudy"></i>
+                      <div>cil-cloudy</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cloud-upload"></i>
-                      <div>cloud-upload</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-code"></i>
+                      <div>cil-code</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cloudy"></i>
-                      <div>cloudy</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-coffee"></i>
+                      <div>cil-coffee</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-code"></i>
-                      <div>code</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cog"></i>
+                      <div>cil-cog</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-codepen"></i>
-                      <div>codepen</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-color-border"></i>
+                      <div>cil-color-border</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-coffee"></i>
-                      <div>coffee</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-color-fill"></i>
+                      <div>cil-color-fill</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cog"></i>
-                      <div>cog</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-color-palette"></i>
+                      <div>cil-color-palette</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-color-border"></i>
-                      <div>color-border</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-columns"></i>
+                      <div>cil-columns</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-color-fill"></i>
-                      <div>color-fill</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-comment-bubble"></i>
+                      <div>cil-comment-bubble</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-color-palette"></i>
-                      <div>color-palette</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-comment-square"></i>
+                      <div>cil-comment-square</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-columns"></i>
-                      <div>columns</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-compass"></i>
+                      <div>cil-compass</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-comment-bubble"></i>
-                      <div>comment-bubble</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-compress"></i>
+                      <div>cil-compress</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-comment-square"></i>
-                      <div>comment-square</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-contact"></i>
+                      <div>cil-contact</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-compass"></i>
-                      <div>compass</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-contrast"></i>
+                      <div>cil-contrast</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-compress"></i>
-                      <div>compress</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-control"></i>
+                      <div>cil-control</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-contact"></i>
-                      <div>contact</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-copy"></i>
+                      <div>cil-copy</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-contrast"></i>
-                      <div>contrast</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-couch"></i>
+                      <div>cil-couch</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-control"></i>
-                      <div>control</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-credit-card"></i>
+                      <div>cil-credit-card</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-copy"></i>
-                      <div>copy</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-crop"></i>
+                      <div>cil-crop</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-copyright"></i>
-                      <div>copyright</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-crop-rotate"></i>
+                      <div>cil-crop-rotate</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-couch"></i>
-                      <div>couch</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cursor"></i>
+                      <div>cil-cursor</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-credit-card"></i>
-                      <div>credit-card</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cursor-move"></i>
+                      <div>cil-cursor-move</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-crop"></i>
-                      <div>crop</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-cut"></i>
+                      <div>cil-cut</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-crop-rotate"></i>
-                      <div>crop-rotate</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-data-transfer-down"></i>
+                      <div>cil-data-transfer-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cursor"></i>
-                      <div>cursor</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-data-transfer-up"></i>
+                      <div>cil-data-transfer-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cursor-move"></i>
-                      <div>cursor-move</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-deaf"></i>
+                      <div>cil-deaf</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-cut"></i>
-                      <div>cut</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-delete"></i>
+                      <div>cil-delete</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-data-transfer-down"></i>
-                      <div>data-transfer-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-description"></i>
+                      <div>cil-description</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-data-transfer-up"></i>
-                      <div>data-transfer-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-devices"></i>
+                      <div>cil-devices</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-deaf"></i>
-                      <div>deaf</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-dialpad"></i>
+                      <div>cil-dialpad</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-delete"></i>
-                      <div>delete</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-diamond"></i>
+                      <div>cil-diamond</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-description"></i>
-                      <div>description</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-dinner"></i>
+                      <div>cil-dinner</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-devices"></i>
-                      <div>devices</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-disabled"></i>
+                      <div>cil-disabled</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-dialpad"></i>
-                      <div>dialpad</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-dog"></i>
+                      <div>cil-dog</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-diamond"></i>
-                      <div>diamond</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-dollar"></i>
+                      <div>cil-dollar</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-dinner"></i>
-                      <div>dinner</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-door"></i>
+                      <div>cil-door</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-disabled"></i>
-                      <div>disabled</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-double-quote-sans-left"></i>
+                      <div>cil-double-quote-sans-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-dog"></i>
-                      <div>dog</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-double-quote-sans-right"></i>
+                      <div>cil-double-quote-sans-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-dollar"></i>
-                      <div>dollar</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-drink"></i>
+                      <div>cil-drink</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-door"></i>
-                      <div>door</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-drink-alcohol"></i>
+                      <div>cil-drink-alcohol</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-double-quote-sans-left"></i>
-                      <div>double-quote-sans-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-drop"></i>
+                      <div>cil-drop</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-double-quote-sans-right"></i>
-                      <div>double-quote-sans-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-drop1"></i>
+                      <div>cil-drop1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-drink"></i>
-                      <div>drink</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-eco"></i>
+                      <div>cil-eco</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-drink-alcohol"></i>
-                      <div>drink-alcohol</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-education"></i>
+                      <div>cil-education</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-drop"></i>
-                      <div>drop</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-elevator"></i>
+                      <div>cil-elevator</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-drop1"></i>
-                      <div>drop1</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-ellipses"></i>
+                      <div>cil-ellipses</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-eco"></i>
-                      <div>eco</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-ellipsis"></i>
+                      <div>cil-ellipsis</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-education"></i>
-                      <div>education</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-envelope-closed"></i>
+                      <div>cil-envelope-closed</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-elevator"></i>
-                      <div>elevator</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-envelope-letter"></i>
+                      <div>cil-envelope-letter</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-ellipses"></i>
-                      <div>ellipses</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-envelope-open"></i>
+                      <div>cil-envelope-open</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-ellipsis"></i>
-                      <div>ellipsis</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-equalizer"></i>
+                      <div>cil-equalizer</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-envelope-closed"></i>
-                      <div>envelope-closed</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-ethernet"></i>
+                      <div>cil-ethernet</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-envelope-letter"></i>
-                      <div>envelope-letter</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-euro"></i>
+                      <div>cil-euro</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-envelope-open"></i>
-                      <div>envelope-open</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-excerpt"></i>
+                      <div>cil-excerpt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-equalizer"></i>
-                      <div>equalizer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-exit-to-app"></i>
+                      <div>cil-exit-to-app</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-ethernet"></i>
-                      <div>ethernet</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-expand-down"></i>
+                      <div>cil-expand-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-euro"></i>
-                      <div>euro</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-expand-left"></i>
+                      <div>cil-expand-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-excerpt"></i>
-                      <div>excerpt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-expand-right"></i>
+                      <div>cil-expand-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-exit-to-app"></i>
-                      <div>exit-to-app</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-expand-up"></i>
+                      <div>cil-expand-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-expand-down"></i>
-                      <div>expand-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-exposure"></i>
+                      <div>cil-exposure</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-expand-left"></i>
-                      <div>expand-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-external-link"></i>
+                      <div>cil-external-link</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-expand-right"></i>
-                      <div>expand-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-eyedropper"></i>
+                      <div>cil-eyedropper</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-expand-up"></i>
-                      <div>expand-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-face"></i>
+                      <div>cil-face</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-exposure"></i>
-                      <div>exposure</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-face-dead"></i>
+                      <div>cil-face-dead</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-external-link"></i>
-                      <div>external-link</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-factory"></i>
+                      <div>cil-factory</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-eyedropper"></i>
-                      <div>eyedropper</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-factory-slash"></i>
+                      <div>cil-factory-slash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-face"></i>
-                      <div>face</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fastfood"></i>
+                      <div>cil-fastfood</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-face-dead"></i>
-                      <div>face-dead</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fax"></i>
+                      <div>cil-fax</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-facebook"></i>
-                      <div>facebook</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-featured-playlist"></i>
+                      <div>cil-featured-playlist</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-factory"></i>
-                      <div>factory</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-file"></i>
+                      <div>cil-file</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-factory-slash"></i>
-                      <div>factory-slash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-filter"></i>
+                      <div>cil-filter</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fastfood"></i>
-                      <div>fastfood</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-filter-frames"></i>
+                      <div>cil-filter-frames</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fax"></i>
-                      <div>fax</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-filter-photo"></i>
+                      <div>cil-filter-photo</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-featured-playlist"></i>
-                      <div>featured-playlist</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-find-in-page"></i>
+                      <div>cil-find-in-page</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-file"></i>
-                      <div>file</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fingerprint"></i>
+                      <div>cil-fingerprint</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-filter"></i>
-                      <div>filter</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fire"></i>
+                      <div>cil-fire</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-filter-frames"></i>
-                      <div>filter-frames</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-flag-alt"></i>
+                      <div>cil-flag-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-filter-photo"></i>
-                      <div>filter-photo</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-flight-takeoff"></i>
+                      <div>cil-flight-takeoff</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-find-in-page"></i>
-                      <div>find-in-page</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-flip"></i>
+                      <div>cil-flip</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fingerprint"></i>
-                      <div>fingerprint</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-flip-to-back"></i>
+                      <div>cil-flip-to-back</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fire"></i>
-                      <div>fire</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-flip-to-front"></i>
+                      <div>cil-flip-to-front</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-flag-alt"></i>
-                      <div>flag-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-flower"></i>
+                      <div>cil-flower</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-flight-takeoff"></i>
-                      <div>flight-takeoff</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-folder"></i>
+                      <div>cil-folder</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-flip"></i>
-                      <div>flip</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-folder-open"></i>
+                      <div>cil-folder-open</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-flip-to-back"></i>
-                      <div>flip-to-back</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-font"></i>
+                      <div>cil-font</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-flip-to-front"></i>
-                      <div>flip-to-front</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-football"></i>
+                      <div>cil-football</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-flower"></i>
-                      <div>flower</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fork"></i>
+                      <div>cil-fork</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-folder"></i>
-                      <div>folder</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fridge"></i>
+                      <div>cil-fridge</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-folder-open"></i>
-                      <div>folder-open</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-frown"></i>
+                      <div>cil-frown</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-font"></i>
-                      <div>font</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fullscreen"></i>
+                      <div>cil-fullscreen</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-football"></i>
-                      <div>football</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-fullscreen-exit"></i>
+                      <div>cil-fullscreen-exit</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fork"></i>
-                      <div>fork</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-functions"></i>
+                      <div>cil-functions</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fridge"></i>
-                      <div>fridge</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-functions-alt"></i>
+                      <div>cil-functions-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-frown"></i>
-                      <div>frown</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-gamepad"></i>
+                      <div>cil-gamepad</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fullscreen"></i>
-                      <div>fullscreen</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-garage"></i>
+                      <div>cil-garage</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-fullscreen-exit"></i>
-                      <div>fullscreen-exit</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-gauge"></i>
+                      <div>cil-gauge</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-functions"></i>
-                      <div>functions</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-gem"></i>
+                      <div>cil-gem</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-functions-alt"></i>
-                      <div>functions-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-gif"></i>
+                      <div>cil-gif</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gamepad"></i>
-                      <div>gamepad</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-gift"></i>
+                      <div>cil-gift</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-garage"></i>
-                      <div>garage</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-globe-alt"></i>
+                      <div>cil-globe-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gauge"></i>
-                      <div>gauge</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-golf"></i>
+                      <div>cil-golf</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gem"></i>
-                      <div>gem</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-golf-alt"></i>
+                      <div>cil-golf-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gif"></i>
-                      <div>gif</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-gradient"></i>
+                      <div>cil-gradient</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gift"></i>
-                      <div>gift</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-grain"></i>
+                      <div>cil-grain</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-git"></i>
-                      <div>git</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-graph"></i>
+                      <div>cil-graph</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-github"></i>
-                      <div>github</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-grid"></i>
+                      <div>cil-grid</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-github-circle"></i>
-                      <div>github-circle</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-grid-slash"></i>
+                      <div>cil-grid-slash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gitlab"></i>
-                      <div>gitlab</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hamburger-menu"></i>
+                      <div>cil-hamburger-menu</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-globe-alt"></i>
-                      <div>globe-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hand-point-down"></i>
+                      <div>cil-hand-point-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-golf"></i>
-                      <div>golf</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hand-point-left"></i>
+                      <div>cil-hand-point-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-golf-alt"></i>
-                      <div>golf-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hand-point-right"></i>
+                      <div>cil-hand-point-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-gradient"></i>
-                      <div>gradient</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hand-point-up"></i>
+                      <div>cil-hand-point-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-grain"></i>
-                      <div>grain</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-happy"></i>
+                      <div>cil-happy</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-graph"></i>
-                      <div>graph</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hd"></i>
+                      <div>cil-hd</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-grid"></i>
-                      <div>grid</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hdr"></i>
+                      <div>cil-hdr</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-grid-slash"></i>
-                      <div>grid-slash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-header"></i>
+                      <div>cil-header</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hamburger-menu"></i>
-                      <div>hamburger-menu</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-headphones"></i>
+                      <div>cil-headphones</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hand-point-down"></i>
-                      <div>hand-point-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-healing"></i>
+                      <div>cil-healing</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hand-point-left"></i>
-                      <div>hand-point-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-heart"></i>
+                      <div>cil-heart</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hand-point-right"></i>
-                      <div>hand-point-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-highlighter"></i>
+                      <div>cil-highlighter</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hand-point-up"></i>
-                      <div>hand-point-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-highligt"></i>
+                      <div>cil-highligt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-happy"></i>
-                      <div>happy</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-history"></i>
+                      <div>cil-history</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hd"></i>
-                      <div>hd</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-home"></i>
+                      <div>cil-home</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hdr"></i>
-                      <div>hdr</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hospital"></i>
+                      <div>cil-hospital</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-header"></i>
-                      <div>header</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-hot-tub"></i>
+                      <div>cil-hot-tub</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-headphones"></i>
-                      <div>headphones</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-house"></i>
+                      <div>cil-house</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-healing"></i>
-                      <div>healing</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-https"></i>
+                      <div>cil-https</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-heart"></i>
-                      <div>heart</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-image-broken"></i>
+                      <div>cil-image-broken</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-highlighter"></i>
-                      <div>highlighter</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-image-plus"></i>
+                      <div>cil-image-plus</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-highligt"></i>
-                      <div>highligt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-image1"></i>
+                      <div>cil-image1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-history"></i>
-                      <div>history</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-inbox"></i>
+                      <div>cil-inbox</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-home"></i>
-                      <div>home</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-indent-decrease"></i>
+                      <div>cil-indent-decrease</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hospital"></i>
-                      <div>hospital</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-indent-increase"></i>
+                      <div>cil-indent-increase</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-hot-tub"></i>
-                      <div>hot-tub</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-industry"></i>
+                      <div>cil-industry</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-house"></i>
-                      <div>house</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-industry-slash"></i>
+                      <div>cil-industry-slash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-https"></i>
-                      <div>https</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-infinity"></i>
+                      <div>cil-infinity</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-image-broken"></i>
-                      <div>image-broken</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-info"></i>
+                      <div>cil-info</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-image-plus"></i>
-                      <div>image-plus</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-input"></i>
+                      <div>cil-input</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-image1"></i>
-                      <div>image1</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-input-hdmi"></i>
+                      <div>cil-input-hdmi</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-inbox"></i>
-                      <div>inbox</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-input-power"></i>
+                      <div>cil-input-power</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-indent-decrease"></i>
-                      <div>indent-decrease</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-institution"></i>
+                      <div>cil-institution</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-indent-increase"></i>
-                      <div>indent-increase</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-italic"></i>
+                      <div>cil-italic</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-industry"></i>
-                      <div>industry</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-justify-center"></i>
+                      <div>cil-justify-center</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-industry-slash"></i>
-                      <div>industry-slash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-justify-left"></i>
+                      <div>cil-justify-left</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-infinity"></i>
-                      <div>infinity</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-justify-right"></i>
+                      <div>cil-justify-right</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-info"></i>
-                      <div>info</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-keyboard"></i>
+                      <div>cil-keyboard</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-input"></i>
-                      <div>input</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-lan"></i>
+                      <div>cil-lan</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-input-hdmi"></i>
-                      <div>input-hdmi</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-language"></i>
+                      <div>cil-language</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-input-power"></i>
-                      <div>input-power</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-laptop"></i>
+                      <div>cil-laptop</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-instagram"></i>
-                      <div>instagram</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-layers"></i>
+                      <div>cil-layers</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-institution"></i>
-                      <div>institution</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-leaf"></i>
+                      <div>cil-leaf</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-italic"></i>
-                      <div>italic</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-lemon"></i>
+                      <div>cil-lemon</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-justify-center"></i>
-                      <div>justify-center</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-level-down"></i>
+                      <div>cil-level-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-justify-left"></i>
-                      <div>justify-left</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-level-up"></i>
+                      <div>cil-level-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-justify-right"></i>
-                      <div>justify-right</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-library"></i>
+                      <div>cil-library</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-keyboard"></i>
-                      <div>keyboard</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-library-add"></i>
+                      <div>cil-library-add</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-lan"></i>
-                      <div>lan</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-library-building"></i>
+                      <div>cil-library-building</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-language"></i>
-                      <div>language</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-life-ring"></i>
+                      <div>cil-life-ring</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-laptop"></i>
-                      <div>laptop</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-lightbulb"></i>
+                      <div>cil-lightbulb</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-layers"></i>
-                      <div>layers</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-line-spacing"></i>
+                      <div>cil-line-spacing</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-leaf"></i>
-                      <div>leaf</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-line-style"></i>
+                      <div>cil-line-style</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-lemon"></i>
-                      <div>lemon</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-line-weight"></i>
+                      <div>cil-line-weight</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-level-down"></i>
-                      <div>level-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-link"></i>
+                      <div>cil-link</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-level-up"></i>
-                      <div>level-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-link-alt"></i>
+                      <div>cil-link-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-library"></i>
-                      <div>library</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-link-broken"></i>
+                      <div>cil-link-broken</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-library-add"></i>
-                      <div>library-add</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-list"></i>
+                      <div>cil-list</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-library-building"></i>
-                      <div>library-building</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-list-filter"></i>
+                      <div>cil-list-filter</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-life-ring"></i>
-                      <div>life-ring</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-list-high-priority"></i>
+                      <div>cil-list-high-priority</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-lightbulb"></i>
-                      <div>lightbulb</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-list-low-priority"></i>
+                      <div>cil-list-low-priority</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-line-spacing"></i>
-                      <div>line-spacing</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-list-numbered"></i>
+                      <div>cil-list-numbered</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-line-style"></i>
-                      <div>line-style</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-list-rich"></i>
+                      <div>cil-list-rich</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-line-weight"></i>
-                      <div>line-weight</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-location-pin"></i>
+                      <div>cil-location-pin</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-link"></i>
-                      <div>link</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-lock-locked"></i>
+                      <div>cil-lock-locked</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-link-alt"></i>
-                      <div>link-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-lock-unlocked"></i>
+                      <div>cil-lock-unlocked</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-link-broken"></i>
-                      <div>link-broken</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-locomotive"></i>
+                      <div>cil-locomotive</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-linkedin"></i>
-                      <div>linkedin</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-loop"></i>
+                      <div>cil-loop</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-list"></i>
-                      <div>list</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-loop-1"></i>
+                      <div>cil-loop-1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-list-filter"></i>
-                      <div>list-filter</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-loop-circular"></i>
+                      <div>cil-loop-circular</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-list-high-priority"></i>
-                      <div>list-high-priority</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-low-vision"></i>
+                      <div>cil-low-vision</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-list-low-priority"></i>
-                      <div>list-low-priority</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-magnifying-glass"></i>
+                      <div>cil-magnifying-glass</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-list-numbered"></i>
-                      <div>list-numbered</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-map"></i>
+                      <div>cil-map</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-list-rich"></i>
-                      <div>list-rich</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-eject"></i>
+                      <div>cil-media-eject</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-location-pin"></i>
-                      <div>location-pin</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-pause"></i>
+                      <div>cil-media-pause</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-lock-locked"></i>
-                      <div>lock-locked</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-play"></i>
+                      <div>cil-media-play</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-lock-unlocked"></i>
-                      <div>lock-unlocked</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-record"></i>
+                      <div>cil-media-record</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-locomotive"></i>
-                      <div>locomotive</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-skip-backward"></i>
+                      <div>cil-media-skip-backward</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-loop"></i>
-                      <div>loop</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-skip-forward"></i>
+                      <div>cil-media-skip-forward</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-loop-1"></i>
-                      <div>loop-1</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-step-backward"></i>
+                      <div>cil-media-step-backward</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-loop-circular"></i>
-                      <div>loop-circular</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-step-forward"></i>
+                      <div>cil-media-step-forward</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-low-vision"></i>
-                      <div>low-vision</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-media-stop"></i>
+                      <div>cil-media-stop</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-magnifying-glass"></i>
-                      <div>magnifying-glass</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-medical-cross"></i>
+                      <div>cil-medical-cross</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-map"></i>
-                      <div>map</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-meh"></i>
+                      <div>cil-meh</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-eject"></i>
-                      <div>media-eject</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-memory"></i>
+                      <div>cil-memory</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-pause"></i>
-                      <div>media-pause</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-menu"></i>
+                      <div>cil-menu</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-play"></i>
-                      <div>media-play</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mic"></i>
+                      <div>cil-mic</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-record"></i>
-                      <div>media-record</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-microphone"></i>
+                      <div>cil-microphone</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-skip-backward"></i>
-                      <div>media-skip-backward</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-minus"></i>
+                      <div>cil-minus</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-skip-forward"></i>
-                      <div>media-skip-forward</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mobile"></i>
+                      <div>cil-mobile</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-step-backward"></i>
-                      <div>media-step-backward</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mobile-landscape"></i>
+                      <div>cil-mobile-landscape</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-step-forward"></i>
-                      <div>media-step-forward</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-money"></i>
+                      <div>cil-money</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-media-stop"></i>
-                      <div>media-stop</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-monitor"></i>
+                      <div>cil-monitor</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-medical-cross"></i>
-                      <div>medical-cross</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mood-bad"></i>
+                      <div>cil-mood-bad</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-meh"></i>
-                      <div>meh</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mood-good"></i>
+                      <div>cil-mood-good</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-memory"></i>
-                      <div>memory</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mood-very-bad"></i>
+                      <div>cil-mood-very-bad</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-menu"></i>
-                      <div>menu</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mood-very-good"></i>
+                      <div>cil-mood-very-good</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mic"></i>
-                      <div>mic</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-moon"></i>
+                      <div>cil-moon</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-microphone"></i>
-                      <div>microphone</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mouse"></i>
+                      <div>cil-mouse</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-minus"></i>
-                      <div>minus</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mouth-slash"></i>
+                      <div>cil-mouth-slash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mobile"></i>
-                      <div>mobile</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-move"></i>
+                      <div>cil-move</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mobile-landscape"></i>
-                      <div>mobile-landscape</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-movie"></i>
+                      <div>cil-movie</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-money"></i>
-                      <div>money</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mug"></i>
+                      <div>cil-mug</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-monitor"></i>
-                      <div>monitor</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-mug-tea"></i>
+                      <div>cil-mug-tea</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mood-bad"></i>
-                      <div>mood-bad</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-music-note"></i>
+                      <div>cil-music-note</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mood-good"></i>
-                      <div>mood-good</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-newspaper"></i>
+                      <div>cil-newspaper</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mood-very-bad"></i>
-                      <div>mood-very-bad</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-notes"></i>
+                      <div>cil-notes</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mood-very-good"></i>
-                      <div>mood-very-good</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-object-group"></i>
+                      <div>cil-object-group</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-moon"></i>
-                      <div>moon</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-object-ungroup"></i>
+                      <div>cil-object-ungroup</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mouse"></i>
-                      <div>mouse</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-opacity"></i>
+                      <div>cil-opacity</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mouth-slash"></i>
-                      <div>mouth-slash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-options"></i>
+                      <div>cil-options</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-move"></i>
-                      <div>move</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-options-horizontal"></i>
+                      <div>cil-options-horizontal</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-movie"></i>
-                      <div>movie</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-paint"></i>
+                      <div>cil-paint</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mug"></i>
-                      <div>mug</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-paint-bucket"></i>
+                      <div>cil-paint-bucket</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-mug-tea"></i>
-                      <div>mug-tea</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-paper-plane"></i>
+                      <div>cil-paper-plane</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-music-note"></i>
-                      <div>music-note</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-paperclip"></i>
+                      <div>cil-paperclip</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-newspaper"></i>
-                      <div>newspaper</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-paragraph"></i>
+                      <div>cil-paragraph</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-notes"></i>
-                      <div>notes</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-paw"></i>
+                      <div>cil-paw</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-object-group"></i>
-                      <div>object-group</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pen-alt"></i>
+                      <div>cil-pen-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-object-ungroup"></i>
-                      <div>object-ungroup</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pen-nib"></i>
+                      <div>cil-pen-nib</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-opacity"></i>
-                      <div>opacity</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pencil"></i>
+                      <div>cil-pencil</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-options"></i>
-                      <div>options</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-people"></i>
+                      <div>cil-people</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-options-horizontal"></i>
-                      <div>options-horizontal</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-phone"></i>
+                      <div>cil-phone</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-paint"></i>
-                      <div>paint</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pin"></i>
+                      <div>cil-pin</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-paint-bucket"></i>
-                      <div>paint-bucket</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pizza"></i>
+                      <div>cil-pizza</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-paper-plane"></i>
-                      <div>paper-plane</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-plant"></i>
+                      <div>cil-plant</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-paperclip"></i>
-                      <div>paperclip</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-playlist-add"></i>
+                      <div>cil-playlist-add</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-paragraph"></i>
-                      <div>paragraph</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-plus"></i>
+                      <div>cil-plus</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-paw"></i>
-                      <div>paw</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pool"></i>
+                      <div>cil-pool</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pen-alt"></i>
-                      <div>pen-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-power-standby"></i>
+                      <div>cil-power-standby</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pen-nib"></i>
-                      <div>pen-nib</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pregnant"></i>
+                      <div>cil-pregnant</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pencil"></i>
-                      <div>pencil</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-print"></i>
+                      <div>cil-print</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-people"></i>
-                      <div>people</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-pushchair"></i>
+                      <div>cil-pushchair</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-phone"></i>
-                      <div>phone</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-puzzle"></i>
+                      <div>cil-puzzle</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pin"></i>
-                      <div>pin</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-qr-code"></i>
+                      <div>cil-qr-code</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pizza"></i>
-                      <div>pizza</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-rain"></i>
+                      <div>cil-rain</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-plant"></i>
-                      <div>plant</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-rectangle"></i>
+                      <div>cil-rectangle</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-playlist-add"></i>
-                      <div>playlist-add</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-reload"></i>
+                      <div>cil-reload</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-plus"></i>
-                      <div>plus</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-resize-both"></i>
+                      <div>cil-resize-both</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-polymer"></i>
-                      <div>polymer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-resize-height"></i>
+                      <div>cil-resize-height</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pool"></i>
-                      <div>pool</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-resize-width"></i>
+                      <div>cil-resize-width</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-power-standby"></i>
-                      <div>power-standby</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-restaurant"></i>
+                      <div>cil-restaurant</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pregnant"></i>
-                      <div>pregnant</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-room"></i>
+                      <div>cil-room</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-print"></i>
-                      <div>print</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-rowing"></i>
+                      <div>cil-rowing</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-pushchair"></i>
-                      <div>pushchair</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-rss"></i>
+                      <div>cil-rss</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-puzzle"></i>
-                      <div>puzzle</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-running"></i>
+                      <div>cil-running</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-qr-code"></i>
-                      <div>qr-code</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sad"></i>
+                      <div>cil-sad</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-rain"></i>
-                      <div>rain</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-satelite"></i>
+                      <div>cil-satelite</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-react"></i>
-                      <div>react</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-save"></i>
+                      <div>cil-save</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-rectangle"></i>
-                      <div>rectangle</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-school"></i>
+                      <div>cil-school</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-reddit"></i>
-                      <div>reddit</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-screen-desktop"></i>
+                      <div>cil-screen-desktop</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-registered"></i>
-                      <div>registered</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-screen-smartphone"></i>
+                      <div>cil-screen-smartphone</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-reload"></i>
-                      <div>reload</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-scrubber"></i>
+                      <div>cil-scrubber</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-resize-both"></i>
-                      <div>resize-both</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-search"></i>
+                      <div>cil-search</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-resize-height"></i>
-                      <div>resize-height</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-send"></i>
+                      <div>cil-send</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-resize-width"></i>
-                      <div>resize-width</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-settings"></i>
+                      <div>cil-settings</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-restaurant"></i>
-                      <div>restaurant</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-share"></i>
+                      <div>cil-share</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-rights"></i>
-                      <div>rights</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-share-all"></i>
+                      <div>cil-share-all</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-room"></i>
-                      <div>room</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-share-alt"></i>
+                      <div>cil-share-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-rowing"></i>
-                      <div>rowing</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-share-boxed"></i>
+                      <div>cil-share-boxed</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-rss"></i>
-                      <div>rss</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-shield-alt"></i>
+                      <div>cil-shield-alt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-running"></i>
-                      <div>running</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-short-text"></i>
+                      <div>cil-short-text</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sad"></i>
-                      <div>sad</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-shower"></i>
+                      <div>cil-shower</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-satelite"></i>
-                      <div>satelite</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sign-language"></i>
+                      <div>cil-sign-language</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-save"></i>
-                      <div>save</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-signal-cellular-0"></i>
+                      <div>cil-signal-cellular-0</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-school"></i>
-                      <div>school</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-signal-cellular-3"></i>
+                      <div>cil-signal-cellular-3</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-screen-desktop"></i>
-                      <div>screen-desktop</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-signal-cellular-4"></i>
+                      <div>cil-signal-cellular-4</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-screen-smartphone"></i>
-                      <div>screen-smartphone</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sim"></i>
+                      <div>cil-sim</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-scrubber"></i>
-                      <div>scrubber</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sitemap"></i>
+                      <div>cil-sitemap</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-search"></i>
-                      <div>search</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-smile"></i>
+                      <div>cil-smile</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-send"></i>
-                      <div>send</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-smile-plus"></i>
+                      <div>cil-smile-plus</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-settings"></i>
-                      <div>settings</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-smoke"></i>
+                      <div>cil-smoke</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-share"></i>
-                      <div>share</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-smoke-free"></i>
+                      <div>cil-smoke-free</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-share-all"></i>
-                      <div>share-all</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-smoke-slash"></i>
+                      <div>cil-smoke-slash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-share-alt"></i>
-                      <div>share-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-smoking-room"></i>
+                      <div>cil-smoking-room</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-share-boxed"></i>
-                      <div>share-boxed</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-snowflake"></i>
+                      <div>cil-snowflake</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-shield-alt"></i>
-                      <div>shield-alt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-soccer"></i>
+                      <div>cil-soccer</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-short-text"></i>
-                      <div>short-text</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sofa"></i>
+                      <div>cil-sofa</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-shower"></i>
-                      <div>shower</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sort-alpha-down"></i>
+                      <div>cil-sort-alpha-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sign-language"></i>
-                      <div>sign-language</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sort-alpha-up"></i>
+                      <div>cil-sort-alpha-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-signal-cellular-0"></i>
-                      <div>signal-cellular-0</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sort-ascending"></i>
+                      <div>cil-sort-ascending</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-signal-cellular-3"></i>
-                      <div>signal-cellular-3</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sort-descending"></i>
+                      <div>cil-sort-descending</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-signal-cellular-4"></i>
-                      <div>signal-cellular-4</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sort-numeric-down"></i>
+                      <div>cil-sort-numeric-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sim"></i>
-                      <div>sim</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sort-numeric-up"></i>
+                      <div>cil-sort-numeric-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sitemap"></i>
-                      <div>sitemap</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-spa"></i>
+                      <div>cil-spa</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-skype"></i>
-                      <div>skype</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-space-bar"></i>
+                      <div>cil-space-bar</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-smile"></i>
-                      <div>smile</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-speaker"></i>
+                      <div>cil-speaker</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-smile-plus"></i>
-                      <div>smile-plus</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-speech"></i>
+                      <div>cil-speech</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-smoke"></i>
-                      <div>smoke</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-speedometer"></i>
+                      <div>cil-speedometer</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-smoke-free"></i>
-                      <div>smoke-free</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-spreadsheet"></i>
+                      <div>cil-spreadsheet</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-smoke-slash"></i>
-                      <div>smoke-slash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-square"></i>
+                      <div>cil-square</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-smoking-room"></i>
-                      <div>smoking-room</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-star"></i>
+                      <div>cil-star</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-snowflake"></i>
-                      <div>snowflake</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-star-half"></i>
+                      <div>cil-star-half</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-soccer"></i>
-                      <div>soccer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-storage"></i>
+                      <div>cil-storage</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sofa"></i>
-                      <div>sofa</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-stream"></i>
+                      <div>cil-stream</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sort-alpha-down"></i>
-                      <div>sort-alpha-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-strikethrough"></i>
+                      <div>cil-strikethrough</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sort-alpha-up"></i>
-                      <div>sort-alpha-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sun"></i>
+                      <div>cil-sun</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sort-ascending"></i>
-                      <div>sort-ascending</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-swap-horizontal"></i>
+                      <div>cil-swap-horizontal</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sort-descending"></i>
-                      <div>sort-descending</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-swap-vertical"></i>
+                      <div>cil-swap-vertical</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sort-numeric-down"></i>
-                      <div>sort-numeric-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-swimming"></i>
+                      <div>cil-swimming</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sort-numeric-up"></i>
-                      <div>sort-numeric-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-sync"></i>
+                      <div>cil-sync</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-spa"></i>
-                      <div>spa</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-tablet"></i>
+                      <div>cil-tablet</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-space-bar"></i>
-                      <div>space-bar</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-tag"></i>
+                      <div>cil-tag</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-speaker"></i>
-                      <div>speaker</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-tags"></i>
+                      <div>cil-tags</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-speech"></i>
-                      <div>speech</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-task"></i>
+                      <div>cil-task</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-speedometer"></i>
-                      <div>speedometer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-taxi"></i>
+                      <div>cil-taxi</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-spotify"></i>
-                      <div>spotify</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-tennis"></i>
+                      <div>cil-tennis</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-spreadsheet"></i>
-                      <div>spreadsheet</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-tennis-ball"></i>
+                      <div>cil-tennis-ball</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-square"></i>
-                      <div>square</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-terminal"></i>
+                      <div>cil-terminal</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-stackoverflow"></i>
-                      <div>stackoverflow</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-terrain"></i>
+                      <div>cil-terrain</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-star"></i>
-                      <div>star</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-text"></i>
+                      <div>cil-text</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-star-half"></i>
-                      <div>star-half</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-text-shapes"></i>
+                      <div>cil-text-shapes</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-storage"></i>
-                      <div>storage</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-text-size"></i>
+                      <div>cil-text-size</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-stream"></i>
-                      <div>stream</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-text-square"></i>
+                      <div>cil-text-square</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-strikethrough"></i>
-                      <div>strikethrough</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-text-strike"></i>
+                      <div>cil-text-strike</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sun"></i>
-                      <div>sun</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-thumb-down"></i>
+                      <div>cil-thumb-down</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-swap-horizontal"></i>
-                      <div>swap-horizontal</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-thumb-up"></i>
+                      <div>cil-thumb-up</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-swap-vertical"></i>
-                      <div>swap-vertical</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-toggle-off"></i>
+                      <div>cil-toggle-off</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-swimming"></i>
-                      <div>swimming</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-toilet"></i>
+                      <div>cil-toilet</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-sync"></i>
-                      <div>sync</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-touch-app"></i>
+                      <div>cil-touch-app</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-tablet"></i>
-                      <div>tablet</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-transfer"></i>
+                      <div>cil-transfer</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-tag"></i>
-                      <div>tag</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-translate"></i>
+                      <div>cil-translate</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-tags"></i>
-                      <div>tags</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-trash"></i>
+                      <div>cil-trash</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-task"></i>
-                      <div>task</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-triangle"></i>
+                      <div>cil-triangle</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-taxi"></i>
-                      <div>taxi</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-truck"></i>
+                      <div>cil-truck</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-tennis"></i>
-                      <div>tennis</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-tv"></i>
+                      <div>cil-tv</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-tennis-ball"></i>
-                      <div>tennis-ball</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-underline"></i>
+                      <div>cil-underline</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-terminal"></i>
-                      <div>terminal</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-user"></i>
+                      <div>cil-user</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-terrain"></i>
-                      <div>terrain</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-user-female"></i>
+                      <div>cil-user-female</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-text"></i>
-                      <div>text</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-user-follow"></i>
+                      <div>cil-user-follow</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-text-shapes"></i>
-                      <div>text-shapes</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-user-unfollow"></i>
+                      <div>cil-user-unfollow</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-text-size"></i>
-                      <div>text-size</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vector"></i>
+                      <div>cil-vector</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-text-square"></i>
-                      <div>text-square</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vertical-align-bottom"></i>
+                      <div>cil-vertical-align-bottom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-text-strike"></i>
-                      <div>text-strike</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vertical-align-bottom1"></i>
+                      <div>cil-vertical-align-bottom1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-thumb-down"></i>
-                      <div>thumb-down</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vertical-align-center"></i>
+                      <div>cil-vertical-align-center</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-thumb-up"></i>
-                      <div>thumb-up</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vertical-align-center1"></i>
+                      <div>cil-vertical-align-center1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-toggle-off"></i>
-                      <div>toggle-off</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vertical-align-top"></i>
+                      <div>cil-vertical-align-top</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-toilet"></i>
-                      <div>toilet</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-vertical-align-top1"></i>
+                      <div>cil-vertical-align-top1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-touch-app"></i>
-                      <div>touch-app</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-video"></i>
+                      <div>cil-video</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-trademark"></i>
-                      <div>trademark</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-view-column"></i>
+                      <div>cil-view-column</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-transfer"></i>
-                      <div>transfer</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-view-module"></i>
+                      <div>cil-view-module</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-translate"></i>
-                      <div>translate</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-view-quilt"></i>
+                      <div>cil-view-quilt</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-trash"></i>
-                      <div>trash</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-view-stream"></i>
+                      <div>cil-view-stream</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-triangle"></i>
-                      <div>triangle</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-voice-over-record"></i>
+                      <div>cil-voice-over-record</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-truck"></i>
-                      <div>truck</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-volume-high"></i>
+                      <div>cil-volume-high</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-tv"></i>
-                      <div>tv</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-volume-low"></i>
+                      <div>cil-volume-low</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-twitter"></i>
-                      <div>twitter</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-volume-off"></i>
+                      <div>cil-volume-off</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-underline"></i>
-                      <div>underline</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-walk"></i>
+                      <div>cil-walk</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-user"></i>
-                      <div>user</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wallet"></i>
+                      <div>cil-wallet</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-user-female"></i>
-                      <div>user-female</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wallpaper"></i>
+                      <div>cil-wallpaper</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-user-follow"></i>
-                      <div>user-follow</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-warning"></i>
+                      <div>cil-warning</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-user-unfollow"></i>
-                      <div>user-unfollow</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-watch"></i>
+                      <div>cil-watch</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vector"></i>
-                      <div>vector</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wc"></i>
+                      <div>cil-wc</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vertical-align-bottom"></i>
-                      <div>vertical-align-bottom</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-weightlifitng"></i>
+                      <div>cil-weightlifitng</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vertical-align-bottom1"></i>
-                      <div>vertical-align-bottom1</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wheelchair"></i>
+                      <div>cil-wheelchair</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vertical-align-center"></i>
-                      <div>vertical-align-center</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wifi-signal-0"></i>
+                      <div>cil-wifi-signal-0</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vertical-align-center1"></i>
-                      <div>vertical-align-center1</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wifi-signal-1"></i>
+                      <div>cil-wifi-signal-1</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vertical-align-top"></i>
-                      <div>vertical-align-top</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wifi-signal-2"></i>
+                      <div>cil-wifi-signal-2</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vertical-align-top1"></i>
-                      <div>vertical-align-top1</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wifi-signal-4"></i>
+                      <div>cil-wifi-signal-4</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-video"></i>
-                      <div>video</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wifi-signal-off"></i>
+                      <div>cil-wifi-signal-off</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-view-column"></i>
-                      <div>view-column</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-window"></i>
+                      <div>cil-window</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-view-module"></i>
-                      <div>view-module</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-window-maximize"></i>
+                      <div>cil-window-maximize</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-view-quilt"></i>
-                      <div>view-quilt</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-window-minimize"></i>
+                      <div>cil-window-minimize</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-view-stream"></i>
-                      <div>view-stream</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-window-restore"></i>
+                      <div>cil-window-restore</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-voice-over-record"></i>
-                      <div>voice-over-record</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-wrap-text"></i>
+                      <div>cil-wrap-text</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-volume-high"></i>
-                      <div>volume-high</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-x"></i>
+                      <div>cil-x</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-volume-low"></i>
-                      <div>volume-low</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-x-circle"></i>
+                      <div>cil-x-circle</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-volume-off"></i>
-                      <div>volume-off</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-yen"></i>
+                      <div>cil-yen</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-vue"></i>
-                      <div>vue</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-zoom"></i>
+                      <div>cil-zoom</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-walk"></i>
-                      <div>walk</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-zoom-in"></i>
+                      <div>cil-zoom-in</div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wallet"></i>
-                      <div>wallet</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wallpaper"></i>
-                      <div>wallpaper</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-warning"></i>
-                      <div>warning</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-watch"></i>
-                      <div>watch</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wc"></i>
-                      <div>wc</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-weightlifitng"></i>
-                      <div>weightlifitng</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wheelchair"></i>
-                      <div>wheelchair</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wifi-signal-0"></i>
-                      <div>wifi-signal-0</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wifi-signal-1"></i>
-                      <div>wifi-signal-1</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wifi-signal-2"></i>
-                      <div>wifi-signal-2</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wifi-signal-4"></i>
-                      <div>wifi-signal-4</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wifi-signal-off"></i>
-                      <div>wifi-signal-off</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-window"></i>
-                      <div>window</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-window-maximize"></i>
-                      <div>window-maximize</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-window-minimize"></i>
-                      <div>window-minimize</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-window-restore"></i>
-                      <div>window-restore</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-wrap-text"></i>
-                      <div>wrap-text</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-x"></i>
-                      <div>x</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-x-circle"></i>
-                      <div>x-circle</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-yen"></i>
-                      <div>yen</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-zoom"></i>
-                      <div>zoom</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-zoom-in"></i>
-                      <div>zoom-in</div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 col-lg-1"><i class="c-icon c-icon-2xl mt-5 cui-zoom-out"></i>
-                      <div>zoom-out</div>
+                    <div class="col-6 col-sm-4 col-md-2"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-zoom-out"></i>
+                      <div>cil-zoom-out</div>
                     </div>
                   </div>
                   <!-- /.row-->

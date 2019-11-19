@@ -11,6 +11,7 @@
 /public/webfonts
 /public/scss
 /public/assets
+/public/svg
 /storage/*.key
 /vendor
 .env

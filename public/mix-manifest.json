@@ -13,5 +13,6 @@
     "/js/Chart.min.js": "/js/Chart.min.js",
     "/js/coreui-chartjs.js": "/js/coreui-chartjs.js",
     "/css/free.min.css": "/css/free.min.css",
-    "/css/flag-icon.min.css": "/css/flag-icon.min.css"
+    "/css/brand.min.css": "/css/brand.min.css",
+    "/css/flag.min.css": "/css/flag.min.css"
 }

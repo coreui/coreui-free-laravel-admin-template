@@ -37,13 +37,11 @@ mix.js('resources/js/coreui/popovers.js', 'public/js');
 mix.js('resources/js/coreui/tooltips.js', 'public/js');
 //*************** OTHER ****************** 
 //fonts
-mix.copy('node_modules/@fortawesome/fontawesome-free/css/', 'public/css');
 mix.copy('node_modules/@coreui/icons/fonts', 'public/fonts');
-mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts');
 //icons
 mix.copy('node_modules/@coreui/icons/css/free.min.css', 'public/css');
-mix.copy('node_modules/flag-icon-css/css/flag-icon.min.css', 'public/css');
-//flags
-mix.copy('node_modules/flag-icon-css/flags', 'public/flags');
+mix.copy('node_modules/@coreui/icons/css/brand.min.css', 'public/css');
+mix.copy('node_modules/@coreui/icons/css/flag.min.css', 'public/css');
+mix.copy('node_modules/@coreui/icons/svg/flag', 'public/svg/flag');
 //images
 mix.copy('resources/assets', 'public/assets');
