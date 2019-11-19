@@ -417,7 +417,6 @@ class MenuBuilderTest extends TestCase
         $mb->endDropdown();
         $mb->addLink(8, 'nameTwo', '/href');
         $result = $mb->getResult();
-        var_dump($result);
         $this->assertSame($provided, $result);
     }
 }
