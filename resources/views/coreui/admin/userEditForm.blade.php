@@ -10,7 +10,6 @@
                     <div class="card-header">
                       <i class="fa fa-align-justify"></i> {{ __('Edit') }} {{ $user->name }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('logout') }}"> @csrf<button class="btn btn-block btn-primary">{{ __('Logout') }}</button></form> 
                         <br>
                         <form method="POST" action="/users/{{ $user->id }}">
                             @csrf
@@ -29,7 +28,7 @@
                                 </div>
                                 <input class="form-control" type="text" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ $user->email }}" required>
                             </div>
-                            <button class="btn btn-block btn-success" type="submit">{{ __('Edit') }}</button>
+                            <button class="btn btn-block btn-success" type="submit">{{ __('Save') }}</button>
                             <a href="{{ route('users.index') }}" class="btn btn-block btn-primary">{{ __('Return') }}</a> 
                         </form>
                     </div>
