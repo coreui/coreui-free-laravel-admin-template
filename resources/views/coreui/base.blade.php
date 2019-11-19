@@ -64,18 +64,9 @@
   <body class="c-app">
     <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
 
-<?php /*
-    @if(in_array('user', $roles))  
-      @include('coreui.shared.nav-admin')
-    @else
-      @include('coreui.shared.nav')
-    @endif
-    */
-?>
+      @include('coreui.shared.nav-builder')
 
-    @include('coreui.shared.nav-builder')
-
-    @include('coreui.shared.header')
+      @include('coreui.shared.header')
 
       <div class="c-body">
 
