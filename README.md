@@ -118,6 +118,43 @@ This user has roles: 'user' and 'admin'
 * Role 'user' is required for notes management.
 * Role 'admin' is required for users management.
 
+### Instruction for CoreUI Free Laravel admin template only. Versions Pro and witch VUE.js has there owns instructions.
+
+How to add link to sidebar:
+
+To add link to sidebar open seeds file: my-project/database/seeds/MenuTableSeeder.php
+In function named "run" call one more function "insertLink". The syntax of "insertLink" function is:
+* $this->insertLink( $rolseString, $visibleName, $href, $iconString);
+* $rolesString - there is a string contains roles list of users for who menu element will be visible. Example: "guest,user,admin"
+* $visibleName - there is a string which will be visible in sidebar
+* $href - there is a href - For example: "/homepage" or "http://example.com"
+* $iconString - there is a string which contains valid CoreUI icon name (kebab-case). For example: "cui-speedometer" or "cui-star"
+
+If you want to add title to sidebar use function "insertTitle". The syntax of "insertTitle" function is:
+* $this->insertTitle( $roleString, $title );
+* $rolesString - there is a string contains roles list of users for who menu element will be visible. Example: "guest,user,admin"
+* $title - there is a string which will be visible in sidebar
+
+If you want to add dropdwon menu to sidebar use function "beginDropdown". The syntax of "beginDropdown" function is:
+* $this->beginDropdown( $rolseString, $visibleName, $iconString);
+* $rolesString - there is a string contains roles list of users for who menu element will be visible. Example: "guest,user,admin"
+* $visibleName - there is a string which will be visible in sidebar
+* $iconString - there is a string which contains valid CoreUI icon name (kebab-case). For example: "cui-speedometer" or "cui-star"
+To end dropdown use function "endDropdown".
+To add link to dropdown call function "insertLink" between calls functions "beginDropdown" and "endDropdown". 
+Example:
+* $this->beginDropdown('guest,user,admin', 'Some dropdown', 'cui-puzzle');
+* $this->insertLink('guest,user,admin', 'Dropdown name',    'http://example.com');
+* $this->endDropdown();
+
+WARNING - On end of function "run", call as the last, must by "joinAllByTransaction" function. Example: 
+* $this->joinAllByTransaction();
+
+When you end editing seeds file. You should run it. For example by command:
+``` bash 
+$ php artisan migrate:refresh --seed
+#(This command also rollback database and migrate it one more time.)
+```
 
 ## Creators
 
