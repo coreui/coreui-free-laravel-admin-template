@@ -118,9 +118,10 @@ This user has roles: 'user' and 'admin'
 * Role 'user' is required for notes management.
 * Role 'admin' is required for users management.
 
-### Instruction for CoreUI Free Laravel admin template only. Versions Pro and witch VUE.js has there owns instructions.
 
-How to add link to sidebar:
+### How to add link to sidebar:
+
+* Instruction for CoreUI Free Laravel admin template only. Versions Pro and witch VUE.js has there owns instructions.
 
 To add link to sidebar open seeds file: my-project/database/seeds/MenuTableSeeder.php
 In function named "run" call one more function "insertLink". The syntax of "insertLink" function is:
