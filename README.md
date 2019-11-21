@@ -33,7 +33,7 @@ CoreUI is built on top of Bootstrap 4 and supports popular frameworks.
 * [CoreUI Free Bootstrap Admin Template](https://github.com/coreui/coreui-free-bootstrap-admin-template)
 * [CoreUI Free Bootstrap Admin Template (Ajax)](https://github.com/coreui/coreui-free-bootstrap-admin-template-ajax)
 * [CoreUI Free Angular 2+ Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
-* 🚧 CoreUI Free .NET Core 2 Admin Template (Available Soon)
+* 🚧 CoreUI Free .NET Core 3 Admin Template (Available Soon)
 * [CoreUI Free React.js Admin Template](https://github.com/coreui/coreui-free-react-admin-template)
 * [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
 
@@ -108,53 +108,69 @@ $ php artisan serve
 # test
 $ php vendor/bin/phpunit
 ```
-Open your browser and open adress: "localhost:8000"
-Choice "Notes" from top bar menu. Then login with credentials:
 
-* E-mail: admin@admin.com
-* Password: password
+Open your browser with address: [localhost:8000](localhost:8000)  
+Click "Notes" on topbar menu and log in with credentials:
 
-This user has roles: 'user' and 'admin'
-* Role 'user' is required for notes management.
-* Role 'admin' is required for users management.
+* E-mail: _admin@admin.com_
+* Password: _password_
 
+This user has roles: _user_ and _admin_
+* Role _user_ is required for **notes** management.
+* Role _admin_ is required for **users** management.
 
-### How to add link to sidebar:
+--- 
 
-* Instruction for CoreUI Free Laravel admin template only. Versions Pro and witch VUE.js has there owns instructions.
+### How to add a link to the sidebar:
 
-To add link to sidebar open seeds file: my-project/database/seeds/MenuTableSeeder.php
-In function named "run" call one more function "insertLink". The syntax of "insertLink" function is:
-* $this->insertLink( $rolseString, $visibleName, $href, $iconString);
-* $rolesString - there is a string contains roles list of users for who menu element will be visible. Example: "guest,user,admin"
-* $visibleName - there is a string which will be visible in sidebar
-* $href - there is a href - For example: "/homepage" or "http://example.com"
-* $iconString - there is a string which contains valid CoreUI icon name (kebab-case). For example: "cui-speedometer" or "cui-star"
+> Instructions for CoreUI Free Laravel admin template only. _Pro and Vue.js versions have separate instructions._
 
-If you want to add title to sidebar use function "insertTitle". The syntax of "insertTitle" function is:
-* $this->insertTitle( $roleString, $title );
-* $rolesString - there is a string contains roles list of users for who menu element will be visible. Example: "guest,user,admin"
-* $title - there is a string which will be visible in sidebar
+#### To add a __link__ to the sidebar - modify seeds file:  
+`my-project/database/seeds/MenusTableSeeder.php`
 
-If you want to add dropdwon menu to sidebar use function "beginDropdown". The syntax of "beginDropdown" function is:
-* $this->beginDropdown( $rolseString, $visibleName, $iconString);
-* $rolesString - there is a string contains roles list of users for who menu element will be visible. Example: "guest,user,admin"
-* $visibleName - there is a string which will be visible in sidebar
-* $iconString - there is a string which contains valid CoreUI icon name (kebab-case). For example: "cui-speedometer" or "cui-star"
-To end dropdown use function "endDropdown".
-To add link to dropdown call function "insertLink" between calls functions "beginDropdown" and "endDropdown". 
+In `run()` function - add `insertLink()`:
+```php
+$id = $this->insertLink( $rolesString, $visibleName, $href, $iconString);
+```
+* `$rolesString` - a string with list of user roles this menu element will be available, ex. `"guest,user,admin"`
+* `$visibleName` - a string caption visible in sidebar
+* `$href` - a href, ex. `/homepage` or `http://example.com`
+* `$iconString` - a string containing valid CoreUI Icon name (kebab-case), ex. `cui-speedometer` or `cui-star`
+
+To add a __title__ to the sidebar - use function `insertTitle()`:
+```php
+$id = $this->insertTitle( $rolesString, $title );
+```
+* `$rolesString` - a string with list of user roles this menu element will be available, ex. `"guest,user,admin"`
+* `$title` - a string caption visible in sidebar
+
+To add a __dropdown__ menu to the sidebar - use function `beginDropdown()`:
+```php
+$id = $this->beginDropdown( $rolesString, $visibleName, $iconString);
+```
+* `$rolesString` - a string with list of user roles this menu element will be available, ex. `"guest,user,admin"`
+* `$visibleName` - a string caption visible in sidebar
+* `$iconString` - a string containing valid CoreUI icon name (kebab-case). For example: `cui-speedometer` or `cui-star`
+
+To end dropdown section - use function `endDropdown()`. 
+
+To add __link__ to __dropdown__ call function `insertLink()` between function calls `beginDropdown()` and `endDropdown()`. 
 Example:
-* $this->beginDropdown('guest,user,admin', 'Some dropdown', 'cui-puzzle');
-* $this->insertLink('guest,user,admin', 'Dropdown name',    'http://example.com');
-* $this->endDropdown();
+```php
+$id = $this->beginDropdown('guest,user,admin', 'Some dropdown', 'cui-puzzle');
+$id = $this->insertLink('guest,user,admin', 'Dropdown name', 'http://example.com');
+$this->endDropdown();
+```
 
-WARNING - On end of function "run", call as the last, must by "joinAllByTransaction" function. Example: 
-* $this->joinAllByTransaction();
+__IMPORTANT__ - At the end of `run()` function, call `joinAllByTransaction()` function:
+```php
+$this->joinAllByTransaction();
+```
 
-When you end editing seeds file. You should run it. For example by command:
+Once done with seeds file edit, __run__:
 ``` bash 
 $ php artisan migrate:refresh --seed
-#(This command also rollback database and migrate it one more time.)
+# This command also rollbacks database and migrates it again.
 ```
 
 ## Creators
@@ -168,6 +184,11 @@ $ php artisan migrate:refresh --seed
 
 * <https://github.com/xidedix>
 
+**Marcin Michałek**
+
+* <https://github.com/rakieta2015>
+
+
 ## Community
 
 Get updates on CoreUI's development and chat with the project maintainers and community members.
@@ -175,14 +196,8 @@ Get updates on CoreUI's development and chat with the project maintainers and co
 - Follow [@core_ui on Twitter](https://twitter.com/core_ui).
 - Read and subscribe to [CoreUI Blog](https://coreui.io/blog/).
 
-### Community Projects
 
-Some of projects created by community but not maintained by CoreUI team.
-
-* [NuxtJS + Vue CoreUI](https://github.com/muhibbudins/nuxt-coreui)
-* [Colmena](https://github.com/colmena/colmena)
-
-## CoreUI Icons (522 Free icons) - Premium designed free icon set with marks in SVG, Webfont and raster formats.
+## CoreUI Icons (500+ Free icons) - Premium designed free icon set with marks in SVG, Webfont and raster formats.
 
 CoreUI Icons are beautifully crafted symbols for common actions and items. You can use them in your digital products for web or mobile app. Ready-to-use fonts and stylesheets that work with your favorite frameworks.
 
@@ -195,7 +210,7 @@ CoreUI Icons are beautifully crafted symbols for common actions and items. You c
 
 ## Copyright and license
 
-copyright 2018 creativeLabs Łukasz Holeczek. Code released under [the MIT license](https://github.com/coreui/coreui-free-laravel-admin-template/blob/master/LICENSE).
+copyright 2019 creativeLabs Łukasz Holeczek. Code released under [the MIT license](https://github.com/coreui/coreui-free-laravel-admin-template/blob/master/LICENSE).
 There is only one limitation you can't can’t re-distribute the CoreUI as stock. You can’t do this if you modify the CoreUI. In past we faced some problems with persons who tried to sell CoreUI based templates.
 
 ## Support CoreUI Development
