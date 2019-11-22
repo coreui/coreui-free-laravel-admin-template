@@ -17,7 +17,9 @@
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="icon-user"></i>
+                                      <svg class="c-icon c-icon-sm">
+                                          <use xlink:href="/assets/icons/coreui/free-symbol-defs.svg#cui-user"></use>
+                                      </svg>
                                     </span>
                                 </div>
                                 <input class="form-control" type="text" placeholder="{{ __('Name') }}" name="name" value="{{ $user->name }}" required autofocus>
