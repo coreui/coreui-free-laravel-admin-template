@@ -27,14 +27,15 @@ mix.copy('node_modules/pace-progress/pace.min.js', 'public/js');  //V
 mix.copy('node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js', 'public/js');  //V
 // views scripts
 mix.copy('node_modules/chart.js/dist/Chart.min.js', 'public/js');  //V
-mix.copy('node_modules/@coreui/coreui-chartjs/dist/js/coreui-chartjs.js', 'public/js'); //V
+
+mix.copy('node_modules/@coreui/coreui-chartjs/dist/js/coreui-chartjs.bundle.js', 'public/js'); //V
 // details scripts
-mix.js('resources/js/coreui/main.js', 'public/js');
-mix.js('resources/js/coreui/colors.js', 'public/js');
-mix.js('resources/js/coreui/charts.js', 'public/js');
-mix.js('resources/js/coreui/widgets.js', 'public/js');
-mix.js('resources/js/coreui/popovers.js', 'public/js');
-mix.js('resources/js/coreui/tooltips.js', 'public/js');
+mix.copy('resources/js/coreui/main.js', 'public/js');
+mix.copy('resources/js/coreui/colors.js', 'public/js');
+mix.copy('resources/js/coreui/charts.js', 'public/js');
+mix.copy('resources/js/coreui/widgets.js', 'public/js');
+mix.copy('resources/js/coreui/popovers.js', 'public/js');
+mix.copy('resources/js/coreui/tooltips.js', 'public/js');
 //*************** OTHER ****************** 
 //fonts
 mix.copy('node_modules/@coreui/icons/fonts', 'public/fonts');
@@ -43,5 +44,7 @@ mix.copy('node_modules/@coreui/icons/css/free.min.css', 'public/css');
 mix.copy('node_modules/@coreui/icons/css/brand.min.css', 'public/css');
 mix.copy('node_modules/@coreui/icons/css/flag.min.css', 'public/css');
 mix.copy('node_modules/@coreui/icons/svg/flag', 'public/svg/flag');
+
+mix.copy('node_modules/@coreui/icons/sprites/', 'public/icons/sprites');
 //images
 mix.copy('resources/assets', 'public/assets');

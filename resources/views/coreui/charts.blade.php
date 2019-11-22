@@ -73,7 +73,7 @@
 
 @section('javascript')
     <script src="{{ asset('js/Chart.min.js') }}"></script>
-    <script src="{{ asset('js/coreui-chartjs.js') }}"></script>
+    <script src="{{ asset('js/coreui-chartjs.bundle.js') }}"></script>
     <script src="{{ asset('js/charts.js') }}"></script>
 
 @endsection
