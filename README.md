@@ -68,7 +68,7 @@ $ npm install
 
 ```
 
-### SQLite instalation
+### If you choice to use SQLite
 
 ``` bash
 
@@ -89,7 +89,7 @@ To this:
 * DB_CONNECTION=sqlite
 * DB_DATABASE=/path_to_your_project/database/database.sqlite
 
-### PostgreSQL instalation
+### If you choice to use PostgreSQL
 
 1. Install PostgreSQL
 
