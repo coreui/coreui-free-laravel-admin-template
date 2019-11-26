@@ -123,12 +123,12 @@ Then in file ".env" replace this database configuration:
 
 To this:
 
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=laravel
-DB_USERNAME=laravel
-DB_PASSWORD=password
+* DB_CONNECTION=pgsql
+* DB_HOST=127.0.0.1
+* DB_PORT=5432
+* DB_DATABASE=laravel
+* DB_USERNAME=laravel
+* DB_PASSWORD=password
 
 ### Next step
 
