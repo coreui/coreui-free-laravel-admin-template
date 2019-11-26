@@ -66,6 +66,12 @@ $ composer install
 # install app's dependencies
 $ npm install
 
+```
+
+### SQLite instalation
+
+``` bash
+
 # create database
 $ touch database/database.sqlite
 ```
@@ -83,6 +89,48 @@ To this:
 * DB_CONNECTION=sqlite
 * DB_DATABASE=/path_to_your_project/database/database.sqlite
 
+### PostgreSQL instalation
+
+1. Install PostgreSQL
+
+2. Create user
+``` bash
+$ sudo -u postgres createuser --interactive
+enter name of role to add: laravel
+shall the new role be a superuser (y/n) n
+shall the new role be allowed to create database (y/n) n
+shall the new role be allowed to create more new roles (y/n) n
+```
+3. Set user password
+``` bash
+$ sudo -u postgres psql
+postgres= ALTER USER laravel WITH ENCRYPTED PASSWORD 'password';
+postgres= \q
+```
+4. Create database
+``` bash
+$ sudo -u postgres createdb laravel
+```
+5. Copy file ".env.example", and change its name to ".env".
+Then in file ".env" replace this database configuration:
+
+* DB_CONNECTION=mysql
+* DB_HOST=127.0.0.1
+* DB_PORT=3306
+* DB_DATABASE=laravel
+* DB_USERNAME=root
+* DB_PASSWORD=
+
+To this:
+
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=password
+
+### Next step
 
 ``` bash
 # in your app directory
