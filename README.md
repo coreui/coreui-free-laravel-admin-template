@@ -130,6 +130,17 @@ To this:
 * DB_USERNAME=laravel
 * DB_PASSWORD=password
 
+### If you choice to use MySQL
+
+Copy file ".env.example", and change its name to ".env".
+Then in file ".env" complete this database configuration:
+* DB_CONNECTION=mysql
+* DB_HOST=127.0.0.1
+* DB_PORT=3306
+* DB_DATABASE=laravel
+* DB_USERNAME=root
+* DB_PASSWORD=
+
 ### Next step
 
 ``` bash
