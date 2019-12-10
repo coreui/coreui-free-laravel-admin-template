@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class MenusTableSeeder extends Seeder
 {
@@ -9,6 +11,8 @@ class MenusTableSeeder extends Seeder
     private $dropdown = false;
     private $sequence = 1;
     private $joinData = array();
+    private $adminRole = null;
+    private $userRole = null;
 
     public function join($roles, $menusId){
         $roles = explode(',', $roles);
@@ -56,6 +60,17 @@ class MenusTableSeeder extends Seeder
         $this->sequence++;
         $lastId = DB::getPdo()->lastInsertId();
         $this->join($roles, $lastId);
+        $permission = Permission::where('name', '=', $name)->get();
+        if(empty($permission)){
+            $permission = Permission::create(['name' => 'visit ' . $name]);
+        }
+        $roles = explode(',', $roles);
+        if(in_array('user', $roles)){
+            $this->userRole->givePermissionTo($permission);
+        }
+        if(in_array('admin', $roles)){
+            $this->adminRole->givePermissionTo($permission);
+        }
         return $lastId;
     }
 
@@ -105,8 +120,10 @@ class MenusTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        $dropdownId = array();
+    { 
+        /* Get roles */
+        $this->adminRole = Role::where('name' , '=' , 'admin' )->first();
+        $this->userRole = Role::where('name', '=', 'user' )->first();
         /* sidebar menu */
         $this->menuId = 1;
         $this->insertLink('guest,user,admin', 'Dashboard', '/', 'cui-speedometer');

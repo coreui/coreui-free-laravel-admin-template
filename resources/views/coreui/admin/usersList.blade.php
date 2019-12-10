@@ -27,7 +27,7 @@
                             <tr>
                               <td>{{ $user->name }}</td>
                               <td>{{ $user->email }}</td>
-                              <td>{{ $user->roles }}</td>
+                              <td>{{ $user->menuroles }}</td>
                               <td>{{ $user->email_verified_at }}</td>
                               <td>
                                 <a href="{{ url('/users/' . $user->id) }}" class="btn btn-block btn-primary">View</a>

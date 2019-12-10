@@ -19,7 +19,7 @@ class GetMenu
     public function handle($request, Closure $next)
     {
         if (Auth::check()){
-            $roles =  Auth::user()->roles;
+            $roles =  Auth::user()->menuroles;
         }else{
             $roles = '';
         }
