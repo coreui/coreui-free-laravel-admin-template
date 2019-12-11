@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 
 class MenuTest extends TestCase
@@ -16,6 +17,8 @@ class MenuTest extends TestCase
     */
     public function testEditMenu(){
         $user = factory('App\User')->states('admin')->create();
+        Role::create(['name' => 'admin']);
+        $user->assignRole('admin');
         $response = $this->actingAs($user)->get('/menu');
         $response->assertSee('<option>guest</option>');
         $response->assertSee('<option>user</option>');
@@ -28,6 +31,8 @@ class MenuTest extends TestCase
     public function testMenuSelected(){
         $menuElement = factory('App\Menurole')->create();
         $user = factory('App\User')->states('admin')->create();
+        Role::create(['name' => 'admin']);
+        $user->assignRole('admin');
         $response = $this->actingAs($user)->get('menu/selected?role=guest');
         $response->assertSee('<a class="btn btn-primary" href="/menu/selected/switch?id=' . $menuElement->menus_id);
     }
@@ -38,6 +43,8 @@ class MenuTest extends TestCase
     public function testMenuSwitch(){
         $menuElement = factory('App\Menurole')->create();
         $user = factory('App\User')->states('admin')->create();
+        Role::create(['name' => 'admin']);
+        $user->assignRole('admin');
         $response = $this->actingAs($user)->get('menu/selected/switch?role=guest&id=' . $menuElement->menus_id);
         $this->assertDatabaseMissing('menu_role',['menus_id' => $menuElement->menus_id, 'role_name' => 'guest']);
         $response = $this->actingAs($user)->get('menu/selected/switch?role=guest&id=' . $menuElement->menus_id);
