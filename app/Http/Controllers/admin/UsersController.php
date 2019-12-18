@@ -27,7 +27,7 @@ class UsersController extends Controller
     {
         $you = auth()->user();
         $users = User::all();
-        return view('coreui.admin.usersList', compact('users', 'you'));
+        return view('dashboard.admin.usersList', compact('users', 'you'));
     }
 
     /**
@@ -54,7 +54,7 @@ class UsersController extends Controller
     public function editForm( $id )
     {
         $user = User::find($id);
-        return view('coreui.admin.userEditForm', compact('user'));
+        return view('dashboard.admin.userEditForm', compact('user'));
     }
 
     public function edit(){

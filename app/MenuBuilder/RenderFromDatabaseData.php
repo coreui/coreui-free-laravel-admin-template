@@ -17,24 +17,22 @@ class RenderFromDatabaseData{
     }
 
     private function addTitle($data){
-        $this->mb->addTitle($data['id'], $data['name']);
+        $this->mb->addTitle($data['id'], $data['name'], false, 'coreui', $data['sequence']);
     }
 
     private function addLink($data){
         if($data['parent_id'] === NULL){
-            $this->mb->addLink($data['id'], $data['name'], $data['href'], $data['icon']);
+            $this->mb->addLink($data['id'], $data['name'], $data['href'], $data['icon'], 'coreui', $data['sequence']);
         }
     }
 
-
-    
     private function dropdownLoop($id){
         for($i = 0; $i<count($this->data); $i++){
             if($this->data[$i]['parent_id'] == $id){
                 if($this->data[$i]['slug'] === 'dropdown'){
                     $this->addDropdown($this->data[$i]);
                 }elseif($this->data[$i]['slug'] === 'link'){
-                    $this->mb->addLink($this->data[$i]['id'], $this->data[$i]['name'], $this->data[$i]['href']);
+                    $this->mb->addLink($this->data[$i]['id'], $this->data[$i]['name'], $this->data[$i]['href'], $this->data[$i]['icon'], 'coreui', $this->data[$i]['sequence']);
                 }else{
                     $this->addTitle($this->data[$i]);
                 }
@@ -43,7 +41,7 @@ class RenderFromDatabaseData{
     }
     
     private function addDropdown($data){
-        $this->mb->beginDropdown($data['id'], $data['name'], $data['icon']);
+        $this->mb->beginDropdown($data['id'], $data['name'], $data['icon'], 'coreui', $data['sequence']);
         $this->dropdownLoop($data['id']);
         $this->mb->endDropdown();
     }

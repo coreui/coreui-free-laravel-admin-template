@@ -6,6 +6,7 @@ use Faker\Factory as Faker;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 use App\User;
+use App\Models\RoleHierarchy;
 
 class UsersAndNotesSeeder extends Seeder
 {
@@ -23,7 +24,15 @@ class UsersAndNotesSeeder extends Seeder
         $faker = Faker::create();
         /* Create roles */
         $adminRole = Role::create(['name' => 'admin']); 
-        $userRole = Role::create(['name' => 'user']);  
+        RoleHierarchy::create([
+            'role_id' => $adminRole->id,
+            'hierarchy' => 1,
+        ]);
+        $userRole = Role::create(['name' => 'user']);
+        RoleHierarchy::create([
+            'role_id' => $userRole->id,
+            'hierarchy' => 2,
+        ]); 
         /*  insert status  */
         DB::table('status')->insert([
             'name' => 'ongoing',

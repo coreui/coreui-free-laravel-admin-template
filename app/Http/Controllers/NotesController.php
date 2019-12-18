@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Notes;
-use App\Status;
+use App\Models\Notes;
+use App\Models\Status;
 
 class NotesController extends Controller
 {
@@ -28,7 +28,7 @@ class NotesController extends Controller
     public function index()
     {
         $notes = Notes::with('user')->with('status')->paginate( 20 );
-        return view('coreui.notes.notesList', ['notes' => $notes]);
+        return view('dashboard.notes.notesList', ['notes' => $notes]);
     }
 
     /**
@@ -39,7 +39,7 @@ class NotesController extends Controller
     public function create()
     {
         $statuses = Status::all();
-        return view('coreui.notes.create', [ 'statuses' => $statuses ]);
+        return view('dashboard.notes.create', [ 'statuses' => $statuses ]);
     }
 
     /**
@@ -79,7 +79,7 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Notes::with('user')->with('status')->find($id);
-        return view('coreui.notes.noteShow', [ 'note' => $note ]);
+        return view('dashboard.notes.noteShow', [ 'note' => $note ]);
     }
 
     /**
@@ -92,7 +92,7 @@ class NotesController extends Controller
     {
         $note = Notes::find($id);
         $statuses = Status::all();
-        return view('coreui.notes.edit', [ 'statuses' => $statuses, 'note' => $note ]);
+        return view('dashboard.notes.edit', [ 'statuses' => $statuses, 'note' => $note ]);
     }
 
     /**

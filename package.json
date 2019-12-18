@@ -77,7 +77,8 @@
     "chart.js": "^2.8.0",
     "pace-progress": "1.0.2",
     "perfect-scrollbar": "1.4.0",
-    "laravel-mix": "^5.0.0"
+    "laravel-mix": "^5.0.0",
+    "axios": "^0.19.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.0",

@@ -7,7 +7,7 @@ namespace App\Http\Menus;
 
 use App\MenuBuilder\MenuBuilder;
 use Illuminate\Support\Facades\DB;
-use App\Menus;
+use App\Models\Menus;
 use App\MenuBuilder\RenderFromDatabaseData;
 
 class GetSidebarMenu implements MenuInterface{
@@ -27,36 +27,41 @@ class GetSidebarMenu implements MenuInterface{
             ->orderBy('menus.sequence', 'asc')->get();       
     }
 
-    private function getGuestMenu(){
-        $this->getMenuFromDB(1, 'guest');
+    private function getGuestMenu( $menuId ){
+        $this->getMenuFromDB($menuId, 'guest');
     }
 
-    private function getUserMenu(){
-        $this->getMenuFromDB(1, 'user');
+    private function getUserMenu( $menuId ){
+        $this->getMenuFromDB($menuId, 'user');
     }
 
-    private function getAdminMenu(){
-        $this->getMenuFromDB(1, 'admin');
+    private function getAdminMenu( $menuId ){
+        $this->getMenuFromDB($menuId, 'admin');
     }
 
-    public function get($roles){
+    public function get($role, $menuId=2){
+        $this->getMenuFromDB($menuId, $role);
+        $rfd = new RenderFromDatabaseData;
+        return $rfd->render($this->menu);
+        /*
         $roles = explode(',', $roles);
         if(empty($roles)){
-            $this->getGuestMenu();
+            $this->getGuestMenu( $menuId );
         }elseif(in_array('admin', $roles)){
-            $this->getAdminMenu();
+            $this->getAdminMenu( $menuId );
         }elseif(in_array('user', $roles)){
-            $this->getUserMenu();
+            $this->getUserMenu( $menuId );
         }else{
-            $this->getGuestMenu();
+            $this->getGuestMenu( $menuId );
         }
         $rfd = new RenderFromDatabaseData;
         return $rfd->render($this->menu);
+        */
     }
 
-    public function getAll(){
+    public function getAll( $menuId=2 ){
         $this->menu = Menus::select('menus.*')
-            ->where('menus.menu_id', '=', 1)
+            ->where('menus.menu_id', '=', $menuId)
             ->orderBy('menus.sequence', 'asc')->get();  
         $rfd = new RenderFromDatabaseData;
         return $rfd->render($this->menu);

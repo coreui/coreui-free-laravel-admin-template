@@ -28,7 +28,7 @@ class UsersController extends Controller
     {
         $you = auth()->user();
         $users = User::all();
-        return view('coreui.admin.usersList', compact('users', 'you'));
+        return view('dashboard.admin.usersList', compact('users', 'you'));
     }
 
     /**
@@ -40,7 +40,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('coreui.admin.userShow', compact( 'user' ));
+        return view('dashboard.admin.userShow', compact( 'user' ));
     }
 
     /**
@@ -52,7 +52,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('coreui.admin.userEditForm', compact('user'));
+        return view('dashboard.admin.userEditForm', compact('user'));
     }
 
     /**

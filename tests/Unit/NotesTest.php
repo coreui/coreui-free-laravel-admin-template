@@ -20,8 +20,8 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $noteOne = factory('App\Notes')->create();
-        $noteTwo = factory('App\Notes')->create();
+        $noteOne = factory('App\Models\Notes')->create();
+        $noteTwo = factory('App\Models\Notes')->create();
         $response = $this->actingAs($user)->get('/notes');
         $response->assertSee($noteOne->title)
         ->assertSee($noteOne->content)
@@ -37,7 +37,7 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $note = factory('App\Notes')->create();
+        $note = factory('App\Models\Notes')->create();
         $response = $this->actingAs($user)->get('/notes/' . $note->id );
         $response->assertSee($note->title)->assertSee($note->content);
     }
@@ -50,7 +50,7 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $note = factory('App\Notes')->create();
+        $note = factory('App\Models\Notes')->create();
         $response = $this->actingAs($user)->get('/notes/create');
         $response->assertSee('Create Note');
     }
@@ -63,7 +63,7 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $note = factory('App\Notes')->create();
+        $note = factory('App\Models\Notes')->create();
         $response = $this->actingAs($user)->post('/notes',  $note->toArray());
         $this->assertDatabaseHas('notes',['title' => $note->title, 'content' => $note->content]);
     }
@@ -76,7 +76,7 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $note = factory('App\Notes')->create();
+        $note = factory('App\Models\Notes')->create();
         $response = $this->actingAs($user)->get('/notes/'.$note->id . '/edit');
         $response->assertSee($note->title)->assertSee($note->content);
     }
@@ -89,7 +89,7 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $note = factory('App\Notes')->create();
+        $note = factory('App\Models\Notes')->create();
         $note->title = 'Updated title';
         $note->content = 'Updated content';
         $this->actingAs($user)->put('/notes/'.$user->id, $note->toArray());
@@ -104,7 +104,7 @@ class NotesTest extends TestCase
         $user = factory('App\User')->create();
         Role::create(['name' => 'user']);
         $user->assignRole('user');
-        $note = factory('App\Notes')->create();
+        $note = factory('App\Models\Notes')->create();
         $this->actingAs( $user );
         $this->delete('/notes/'.$note->id);
         $this->assertDatabaseMissing('notes',['id'=> $note->id]);

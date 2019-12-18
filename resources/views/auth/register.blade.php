@@ -1,4 +1,4 @@
-@extends('coreui.authBase')
+@extends('dashboard.authBase')
 
 @section('content')
 
