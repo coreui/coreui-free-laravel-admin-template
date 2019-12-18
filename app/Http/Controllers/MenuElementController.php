@@ -105,11 +105,16 @@ class MenuElementController extends Controller
         return $result;
     }
 
-    public function getLastSequence( $menuId ){
+    public function getNextSequence( $menuId ){
         $result = Menus::select('menus.sequence')
             ->where('menus.menu_id', '=', $menuId)
             ->orderBy('menus.sequence', 'desc')->first();
-        return (integer)$result['sequence'];
+        if(empty($result)){
+            $result = 1;
+        }else{
+            $result = (integer)$result['sequence'] + 1;
+        }
+        return $result;
     }
 
     public function store(Request $request){
@@ -127,7 +132,7 @@ class MenuElementController extends Controller
         if($request->input('type') !== 'title' && $request->input('parent') !== 'none'){
             $menus->parent_id = $request->input('parent');
         }
-        $menus->sequence = $this->getLastSequence( $request->input('menu') ) + 1;
+        $menus->sequence = $this->getNextSequence( $request->input('menu') );
         $menus->save();
         foreach($request->input('role') as $role){
             $menuRole = new Menurole();
@@ -140,6 +145,8 @@ class MenuElementController extends Controller
     }
 
     public function edit(Request $request){
+
+
         return view('dashboard.editmenu.edit',[
             'roles'    => RolesService::get(),
             'menulist' => Menulist::all(),

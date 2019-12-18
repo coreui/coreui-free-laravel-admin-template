@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="card">
-          <div class="card-header"><h4>Create menu element</h4></div>
+          <div class="card-header"><h4>Edit menu element</h4></div>
             <div class="card-body">
                 @if(Session::has('message'))
                     <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
