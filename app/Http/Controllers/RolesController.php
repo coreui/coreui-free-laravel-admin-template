@@ -74,7 +74,12 @@ class RolesController extends Controller
         $role->save();
         $hierarchy = RoleHierarchy::select('hierarchy')
         ->orderBy('hierarchy', 'desc')->first();
-        $hierarchy = ((integer)$hierarchy['hierarchy']) + 1;
+        if(empty($hierarchy)){
+            $hierarchy = 0;
+        }else{
+            $hierarchy = $hierarchy['hierarchy'];
+        }
+        $hierarchy = ((integer)$hierarchy) + 1;
         $roleHierarchy = new RoleHierarchy();
         $roleHierarchy->role_id = $role->id;
         $roleHierarchy->hierarchy = $hierarchy;
@@ -134,6 +139,7 @@ class RolesController extends Controller
     public function destroy($id, Request $request)
     {
         $role = Role::where('id', '=', $id)->first();
+        $roleHierarchy = RoleHierarchy::where('role_id', '=', $id)->first();
         $menuRole = Menurole::where('role_name', '=', $role->name)->first();
         if(!empty($menuRole)){
             $request->session()->flash('message', "Can't delete. Role has assigned one or more menu elements.");
@@ -141,6 +147,7 @@ class RolesController extends Controller
             return view('dashboard.shared.universal-info');
         }else{
             $role->delete();
+            $roleHierarchy->delete();
             $request->session()->flash('message', "Successfully deleted role");
             $request->session()->flash('back', 'roles.index');
             return view('dashboard.shared.universal-info');

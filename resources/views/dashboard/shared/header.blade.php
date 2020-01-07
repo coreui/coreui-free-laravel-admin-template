@@ -7,7 +7,7 @@
         <?php
             use App\MenuBuilder\FreelyPositionedMenus;
             if(isset($appMenus['top menu'])){
-                FreelyPositionedMenus::render( $appMenus['top menu'] , 'c-header-');
+                FreelyPositionedMenus::render( $appMenus['top menu'] , 'c-header-', 'd-md-down-none');
             }
         ?>  
         <ul class="c-header-nav ml-auto mr-4">
