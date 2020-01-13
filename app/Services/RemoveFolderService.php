@@ -8,9 +8,13 @@ namespace App\Services;
 
 use App\Models\Folder;
 
-class REmoveFolderService{
+class RemoveFolderService{
 
     public $foldersArray;
+
+    public function __construct(){
+        $this->foldersArray = array();
+    }
 
     public function findFolderChildAnd($thisFolderId, $thisFolder){
         array_push($this->foldersArray, $thisFolderId);
