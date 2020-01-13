@@ -14,6 +14,7 @@
 /public/svg
 /public/icons
 /public/vendors
+/public/public
 /storage/*.key
 /vendor
 .env
