@@ -41,7 +41,7 @@ class MediaController extends Controller
 
     public function folderAdd(Request $request){
         $validatedData = $request->validate([
-            'thisFolder' => 'numeric'
+            'thisFolder' => 'required|numeric'
         ]);   
         $mediaFolder = new Folder();
         $mediaFolder->name = 'New Folder';
@@ -55,7 +55,7 @@ class MediaController extends Controller
     public function folderUpdate(Request $request){
         $validatedData = $request->validate([
             'name' => 'required|min:1|max:256',
-            'id' => 'numeric'
+            'id' => 'required|numeric'
         ]);
         $thisFolder = Folder::where('id', '=', $request->input('id'))->first();
         $thisFolder->name = $request->input('name');
@@ -65,7 +65,7 @@ class MediaController extends Controller
 
     public function folder(Request $request){
         $validatedData = $request->validate([
-            'id' => 'numeric',
+            'id' => 'required|numeric',
         ]);
         $thisFolder = Folder::where('id', '=', $request->input('id'))->first();
         return response()->json(array(
@@ -76,8 +76,9 @@ class MediaController extends Controller
 
     public function folderMove(Request $request){
         $validatedData = $request->validate([
-            'id' => 'numeric',
-            'thisFolder' => 'numeric'
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric',
+            'folder'        => 'required'
         ]);
         if($request->input('id') != $request->input('folder')){
             $thisFolder = Folder::where('id', '=', $request->input('id'))->first();
@@ -95,7 +96,8 @@ class MediaController extends Controller
 
     public function folderDelete(Request $request){
         $validatedData = $request->validate([
-            'id' => 'numeric',
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric'
         ]);
         $removeFolderService = new RemoveFolderService();
         $removeFolderService->folderDelete($request->input('id'), $request->input('thisFolder'));
@@ -104,8 +106,8 @@ class MediaController extends Controller
 
     public function fileAdd(Request $request){
         request()->validate([
-            'file' => "required",
-            'thisFolder' => 'numeric'
+            'file'          => "required",
+            'thisFolder'    => 'required|numeric'
         ]);
         $mediaFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         if($request->hasFile('file')){
@@ -121,8 +123,8 @@ class MediaController extends Controller
 
     public function file(Request $request){
         $validatedData = $request->validate([
-            'id' => 'numeric',
-            'thisFolder' => 'numeric'
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric'
         ]);
         $mediaFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $mediaFolder->getMedia()->where('id', $request->input('id'))->first();
@@ -140,8 +142,8 @@ class MediaController extends Controller
 
     public function fileDelete(Request $request){
         $validatedData = $request->validate([
-            'id' => 'numeric',
-            'thisFolder' => 'numeric'
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric'
         ]);
         $mediaFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $mediaFolder->getMedia()->where('id', $request->input('id'))->first();
@@ -151,9 +153,9 @@ class MediaController extends Controller
 
     public function fileUpdate(Request $request){
         $validatedData = $request->validate([
-            'name' => 'required|min:1|max:256',
-            'id' => 'numeric',
-            'thisFolder' => 'numeric'
+            'name'          => 'required|min:1|max:256',
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric',
         ]);
         $mediaFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $mediaFolder->getMedia()->where('id', $request->input('id'))->first();
@@ -164,8 +166,9 @@ class MediaController extends Controller
 
     public function fileMove(Request $request){
         $validatedData = $request->validate([
-            'id'            => 'numeric',
-            'thisFolder'    => 'numeric',
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric',
+            'folder'        => 'required'
         ]);
         $oldFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $oldFolder->getMedia()->where('id', $request->input('id'))->first();
@@ -182,8 +185,8 @@ class MediaController extends Controller
     public function cropp(Request $request){
         request()->validate([
             'file'          => "required",
-            'thisFolder'    => 'numeric',
-            'id'            => 'numeric'
+            'thisFolder'    => 'required|numeric',
+            'id'            => 'required|numeric'
         ]);
         $mediaFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $mediaFolder->getMedia()->where('id', $request->input('id'))->first();
@@ -201,8 +204,8 @@ class MediaController extends Controller
 
     public function fileCopy(Request $request){
         $validatedData = $request->validate([
-            'id'            => 'numeric',
-            'thisFolder'    => 'numeric',
+            'id'            => 'required|numeric',
+            'thisFolder'    => 'required|numeric',
         ]);
         $oldFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $oldFolder->getMedia()->where('id', $request->input('id'))->first();
