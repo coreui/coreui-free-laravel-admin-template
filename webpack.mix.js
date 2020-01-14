@@ -26,6 +26,7 @@ mix.sass('resources/sass/style.scss', 'public/css');
 mix.copy('node_modules/axios/dist/axios.min.js', 'public/js'); 
 mix.copy('node_modules/pace-progress/pace.min.js', 'public/js');  //V 
 mix.copy('node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js', 'public/js');  //V
+mix.copy('node_modules/@coreui/coreui-chartjs/dist/js/coreui-chartjs.js', 'public/js');
 // views scripts
 mix.copy('node_modules/chart.js/dist/Chart.min.js', 'public/js');  //V
 
