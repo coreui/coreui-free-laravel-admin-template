@@ -187,7 +187,7 @@ class MediaTest extends TestCase
         ]);
         $media = $folder->getMedia()->first();
         $this->assertDatabaseHas('media',[ 'id' => $media->id ]);
-        $response = $this->actingAs($user)->get('/media/file/delete?id=' . $media['id'] . '&thisFolder=' . $folder->id);
+        $response = $this->actingAs($user)->post('/media/file/delete?id=' . $media['id'] . '&thisFolder=' . $folder->id);
         $this->assertDatabaseMissing('media',['id' => $media->id ]);
     }
 
