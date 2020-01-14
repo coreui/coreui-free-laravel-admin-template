@@ -113,7 +113,7 @@ class MediaController extends Controller
             $path = $file->path();
             $oryginalName = $file->getClientOriginalName();
             if(!empty($mediaFolder)){
-                $mediaFolder->addMedia($path)->usingName($oryginalName)->toMediaCollection();
+                $mediaFolder->addMedia($path)->usingFileName( date('YmdHis') . $oryginalName )->usingName($oryginalName)->toMediaCollection();
             }
         }
         return redirect()->route('media.folder.index', ['id' => $request->input('thisFolder')]); 
@@ -176,6 +176,37 @@ class MediaController extends Controller
         }
         $newFolder->addMedia($media->getPath())->usingName($media->name)->toMediaCollection();
         $media->delete();
+        return redirect()->route('media.folder.index', ['id' => $request->input('thisFolder')]); 
+    }
+
+    public function cropp(Request $request){
+        request()->validate([
+            'file'          => "required",
+            'thisFolder'    => 'numeric',
+            'id'            => 'numeric'
+        ]);
+        $mediaFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
+        $media = $mediaFolder->getMedia()->where('id', $request->input('id'))->first();
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+            $path = $file->path();
+            $oryginalName = $file->getClientOriginalName();
+            if(!empty($mediaFolder)){
+                $mediaFolder->addMedia($path)->usingName($media->name)->toMediaCollection();
+            }
+            $media->delete();
+        }
+        return response()->json('success');
+    }
+
+    public function fileCopy(Request $request){
+        $validatedData = $request->validate([
+            'id'            => 'numeric',
+            'thisFolder'    => 'numeric',
+        ]);
+        $oldFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
+        $media = $oldFolder->getMedia()->where('id', $request->input('id'))->first();
+        $oldFolder->addMedia($media->getPath())->usingName($media->name)->toMediaCollection();
         return redirect()->route('media.folder.index', ['id' => $request->input('thisFolder')]); 
     }
 

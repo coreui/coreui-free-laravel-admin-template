@@ -93,13 +93,15 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::post('/folder/update',   'MediaController@folderUpdate')->name('media.folder.update');
             Route::get('/folder',           'MediaController@folder')->name('media.folder');
             Route::post('/folder/move',     'MediaController@folderMove')->name('media.folder.move');
-            Route::post('/folder/delete',    'MediaController@folderDelete')->name('media.folder.delete');;
+            Route::post('/folder/delete',   'MediaController@folderDelete')->name('media.folder.delete');;
 
             Route::post('/file/store',      'MediaController@fileAdd')->name('media.file.add');
             Route::get('/file',             'MediaController@file');
-            Route::get('/file/delete',      'MediaController@fileDelete')->name('media.file.delete');
+            Route::post('/file/delete',      'MediaController@fileDelete')->name('media.file.delete');
             Route::post('/file/update',     'MediaController@fileUpdate')->name('media.file.update');
             Route::post('/file/move',       'MediaController@fileMove')->name('media.file.move');
+            Route::post('/file/cropp',      'MediaController@cropp');
+            Route::get('/file/copy',        'MediaController@fileCopy')->name('media.file.copy');
         });
     });
 });

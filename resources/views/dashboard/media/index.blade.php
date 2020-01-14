@@ -1,5 +1,9 @@
 @extends('dashboard.base')
 
+@section('css')
+    <link href="{{ asset('css/cropper.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 
 
@@ -52,12 +56,18 @@
                                             </a>
                                         </td>
                                         <td>
+
+                                        </td>
+                                        <td>
                                             <button
                                                 class="btn btn-primary file-change-folder-name"
                                                 atr="{{ $mediaFolder->id }}"
                                             >
                                                 Rename
                                             </button>
+                                        </td>
+                                        <td>
+
                                         </td>
                                         <td>
                                             <button 
@@ -68,14 +78,9 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <!--
-                                            <a 
-                                                class="btn btn-danger" 
-                                                href="{{ route('media.folder.delete', ['id' => $mediaFolder->id, 'thisFolder' => $thisFolder]) }}"
-                                            >
-                                                Delete
-                                            </a>
-                                            -->
+
+                                        </td>
+                                        <td>
                                             <button 
                                                 class="btn btn-danger file-delete-folder"
                                                 atr="{{ $mediaFolder->id }}"
@@ -92,12 +97,28 @@
                                             {{ $media->name }}
                                         </td>
                                         <td>
+                                            <a 
+                                                href="<?php echo $media->getUrl(); ?>"
+                                                class="btn btn-primary"
+                                            >
+                                                Open
+                                            </a>
+                                        </td>
+                                        <td>
                                             <button
                                                 class="btn btn-primary file-change-file-name"
                                                 atr="{{ $media->id }}"
                                             >
                                                 Rename
                                             </button>
+                                        </td>
+                                        <td>
+                                            <a 
+                                                href="{{ route('media.file.copy', ['id' => $media->id, 'thisFolder' => $thisFolder]) }}"
+                                                class="btn btn-primary"
+                                            >   
+                                                Copy
+                                            </a>
                                         </td>
                                         <td>
                                             <button 
@@ -108,12 +129,36 @@
                                             </button>
                                         </td>
                                         <td>
+                                            <?php 
+                                                $mime = explode('/', $media->mime_type);
+                                                if($mime[0] === 'image'){
+                                            ?>
+                                                <button 
+                                                    class="btn btn-success file-cropp-file"
+                                                    atr="{{ $media->id }}"
+                                                >
+                                                    Cropp
+                                                </button>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <button 
+                                                class="btn btn-danger file-delete-file"
+                                                atr="{{ $media->id }}"
+                                            >
+                                                Delete
+                                            </button>
+
+                                            <!--
                                             <a 
                                                 class="btn btn-danger" 
                                                 href="{{ route('media.file.delete', ['id' => $media->id, 'thisFolder' => $thisFolder]) }}"
                                             >
                                                 Delete
                                             </a>
+                                            -->
                                         </td>
                                     </tr>
                                 @endforeach
@@ -309,6 +354,31 @@
                         </div>
                     </div>
 
+                    <div class="modal fade" id="remove-file-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Delete file</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="{{ route('media.file.delete') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="thisFolder" value="{{ $thisFolder }}">
+                                        <input type="hidden" name="id" value="" id="file-delete-file-id">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                        <button class="btn btn-primary" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- /.modal-content-->
+                        </div>
+                        <!-- /.modal-dialog-->
+                    </div>
+
                     <div class="modal fade" id="remove-folder-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -334,6 +404,29 @@
                         <!-- /.modal-dialog-->
                     </div>
 
+                    <div class="modal fade" id="cropp-img-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Cropp image</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <img src="" id="cropp-img-img" />
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary" type="button" id="cropp-img-save-button">Save</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content-->
+                        </div>
+                        <!-- /.modal-dialog-->
+                    </div>
+
 
                 </div>
             </div>
@@ -344,160 +437,21 @@
   </div>
 </div>
 
+
+<style>
+    #cropp-img-img{
+        max-width:500px;
+        max-height:500px;
+    }
+
+</style>
+
 @endsection
 
 @section('javascript')
 <script src="{{ asset('js/axios.min.js') }}"></script> 
-<script>
-
-    var self = this;
-
-    this.removeFolderModal = new coreui.Modal(document.getElementById('remove-folder-modal'))
-
-
-
-    this.showCard = function( showThisCard ){
-        document.getElementById('file-rename-file-card').classList.add('d-none')
-        document.getElementById('file-info-card').classList.add('d-none')
-        document.getElementById('file-rename-folder-card').classList.add('d-none')
-        document.getElementById('file-move-file').classList.add('d-none')
-        document.getElementById('file-move-folder').classList.add('d-none')
-        document.getElementById( showThisCard ).classList.remove('d-none')
-    }
-
-    this.buildFileInfoCard = function(data){
-        document.getElementById("file-div-name").innerText = data['name']
-        document.getElementById("file-div-real-name").innerText = data['realName']
-        document.getElementById("file-div-url").innerText = data['url']
-        document.getElementById("file-div-mime-type").innerText = data['mimeType']
-        document.getElementById("file-div-size").innerText = data['size']
-        document.getElementById("file-div-created-at").innerText = data['createdAt']
-        document.getElementById("file-div-updated-at").innerText = data['updatedAt']
-    }
-
-    this.buildFileRenameFileCard = function(data){
-        document.getElementById("file-rename-file-id").value = data['id']
-        document.getElementById("file-rename-file-name").value = data['name']
-    }
-
-    this.buildFileRenameFolderCard = function(data){
-        document.getElementById("file-rename-folder-id").value = data['id']
-        document.getElementById("file-rename-folder-name").value = data['name']
-    }
-
-    this.clickFile = function(e){
-        axios.get( '/media/file?id=' + e.target.getAttribute("atr") + '&thisFolder=' + document.getElementById('this-folder-id').value )
-        .then(function (response) {
-            self.buildFileInfoCard(response.data)
-            self.showCard('file-info-card')
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-    }
-
-    this.fileChangeName = function(e){
-        axios.get( '/media/file?id=' + e.target.getAttribute("atr") + '&thisFolder=' + document.getElementById('this-folder-id').value )
-        .then(function (response) {
-            self.buildFileInfoCard(response.data) //must be
-            self.buildFileRenameFileCard(response.data)
-            self.showCard('file-rename-file-card')
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-    }
-
-    this.folderChangeName = function(e){
-        axios.get( '/media/folder?id=' + e.target.getAttribute("atr") )
-        .then(function (response) {
-            self.buildFileRenameFolderCard(response.data)
-            self.showCard('file-rename-folder-card')
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-    }
-
-    this.moveFile = function(e){
-        document.getElementById('file-move-file-id').value = e.target.getAttribute('atr')
-        self.showCard('file-move-file')
-    }
-
-    this.moveFolder = function(e){
-        document.getElementById('file-move-folder-id').value = e.target.getAttribute('atr')
-        let radios = document.getElementsByClassName('file-move-folder-radio');
-        for(let i =0; i<radios.length; i++){
-            if(radios[i].value === e.target.getAttribute('atr')){
-                radios[i].disabled = true;
-            }else{
-                radios[i].disabled = false;
-            }
-        }
-        self.showCard('file-move-folder')
-    }
-
-    this.deleteFolder = function(e){
-        document.getElementById('file-delete-folder-id').value = e.target.getAttribute('atr')
-        self.removeFolderModal.show();
-    }
-
-    this.renameFileCancel = function(){
-        self.showCard('file-info-card')
-    }
-
-    this.renameFolderCancel = function(){
-        self.showCard('file-info-card')
-    }
-
-    this.moveFileCancel = function(){
-        self.showCard('file-info-card')
-    }
-
-    this.moveFolderCancel = function(){
-        self.showCard('file-info-card')
-    }
-
-    let files = document.getElementsByClassName("click-file")
-    for(let i = 0; i < files.length; i++){
-        files[i].addEventListener('click',  this.clickFile )
-    }
-    let renameButtons = document.getElementsByClassName('file-change-file-name')
-    for(let i = 0; i< renameButtons.length; i++){
-        renameButtons[i].addEventListener('click', this.fileChangeName )
-    }
-    renameButtons = document.getElementsByClassName('file-change-folder-name')
-    for(let i=0; i<renameButtons.length; i++){
-        renameButtons[i].addEventListener('click', this.folderChangeName )
-    }
-    let moveButtons = document.getElementsByClassName('file-move-file')
-    for(let i=0; i<moveButtons.length; i++){
-        moveButtons[i].addEventListener('click', this.moveFile )
-    }
-    moveButtons = document.getElementsByClassName('file-move-folder')
-    for(let i=0; i<moveButtons.length; i++){
-        moveButtons[i].addEventListener('click', this.moveFolder )
-    }
-    let deleteButtons = document.getElementsByClassName('file-delete-folder')
-    for(let i=0; i<deleteButtons.length; i++){
-        deleteButtons[i].addEventListener('click', this.deleteFolder )
-    }   
-
-    document.getElementById('file-rename-file-cancel').addEventListener('click', this.renameFileCancel)
-    document.getElementById('file-rename-folder-cancel').addEventListener('click', this.renameFolderCancel)
-    document.getElementById('file-move-file-cancel').addEventListener('click', this.moveFileCancel)
-    document.getElementById('file-move-folder-cancel').addEventListener('click', this.moveFolderCancel)
-
-    document.getElementById('file-file-input').onchange = function() {
-        document.getElementById('file-file-form').submit();
-    };
-
-    self.showCard('file-info-card')
-
-
-
-
-</script>
-
+<script src="{{ asset('js/cropper.js') }}"></script>
+<script src="{{ asset('js/media.js') }}"></script> 
+<script src="{{ asset('js/media-cropp.js') }}"></script>
 
 @endsection
