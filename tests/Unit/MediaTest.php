@@ -269,4 +269,30 @@ class MediaTest extends TestCase
         $this->assertDatabaseHas('media',['id' => $media->id, 'model_id' => $folder2->id]);
     }
 
+    public function testFileCropp(){
+        /* No idea how to test it */
+        $this->assertSame(true, true);
+    }
+
+    public function testFileCopy(){
+        $user = factory('App\User')->states('admin')->create();
+        Role::create(['name' => 'admin']);
+        $user->assignRole('admin');
+        $file = UploadedFile::fake()->image('file.jpg');
+        $folder = new Folder();
+        $folder->name = 'test1';
+        $folder->save();
+        $response = $this->actingAs($user)->post('/media/file/store', [
+            'file' => $file,
+            'thisFolder' => $folder->id
+        ]);
+        $media = $folder->getMedia()->first();
+        $this->assertDatabaseHas('media',[ 'id' => $media->id, 'model_id' => $folder->id ]);
+        $response = $this->actingAs($user)->get('/media/file/copy?id=' . $media->id . '&thisFolder=' . $folder->id );
+        $folder = Folder::first();
+        $media = $folder->getMedia();
+        $this->assertSame( 2, count($media));
+        $this->assertSame( $media[0]->name, 'file.jpg');
+        $this->assertSame( $media[1]->name, 'file.jpg');
+    }
 }
