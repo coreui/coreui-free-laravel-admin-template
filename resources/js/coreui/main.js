@@ -14,8 +14,9 @@ Chart.defaults.global.pointHitDetectionRadius = 1
 Chart.defaults.global.tooltips.enabled = false
 Chart.defaults.global.tooltips.mode = 'index'
 Chart.defaults.global.tooltips.position = 'nearest'
-Chart.defaults.global.tooltips.custom = coreui.ChartJS.CustomTooltips
+Chart.defaults.global.tooltips.custom = coreui.ChartJS.customTooltips
 Chart.defaults.global.defaultFontColor = '#646470'
+Chart.defaults.global.responsiveAnimationDuration = 1
 
 document.body.addEventListener('classtoggle', event => {
   if (event.detail.className === 'c-dark-theme') {
@@ -272,6 +273,14 @@ const mainChart = new Chart(document.getElementById('main-chart'), {
         hitRadius: 10,
         hoverRadius: 4,
         hoverBorderWidth: 3
+      }
+    },
+    tooltips: {
+      intersect: true,
+      callbacks: {
+        labelColor: function(tooltipItem, chart) {
+          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
+        }
       }
     }
   }
