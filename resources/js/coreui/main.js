@@ -14,8 +14,9 @@ Chart.defaults.global.pointHitDetectionRadius = 1
 Chart.defaults.global.tooltips.enabled = false
 Chart.defaults.global.tooltips.mode = 'index'
 Chart.defaults.global.tooltips.position = 'nearest'
-Chart.defaults.global.tooltips.custom = coreui.ChartJS.CustomTooltips
+Chart.defaults.global.tooltips.custom = coreui.ChartJS.customTooltips
 Chart.defaults.global.defaultFontColor = '#646470'
+Chart.defaults.global.responsiveAnimationDuration = 1
 
 document.body.addEventListener('classtoggle', event => {
   if (event.detail.className === 'c-dark-theme') {
@@ -192,9 +193,10 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
         label: 'My First dataset',
         backgroundColor: 'rgba(255,255,255,.2)',
         borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82]
+        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82],
+        barPercentage: 0.7
       }
-    ]
+    ],
   },
   options: {
     maintainAspectRatio: false,
@@ -203,8 +205,7 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
     },
     scales: {
       xAxes: [{
-        display: false,
-        barPercentage: 0.6
+        display: false
       }],
       yAxes: [{
         display: false
@@ -272,6 +273,14 @@ const mainChart = new Chart(document.getElementById('main-chart'), {
         hitRadius: 10,
         hoverRadius: 4,
         hoverBorderWidth: 3
+      }
+    },
+    tooltips: {
+      intersect: true,
+      callbacks: {
+        labelColor: function(tooltipItem, chart) {
+          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
+        }
       }
     }
   }
