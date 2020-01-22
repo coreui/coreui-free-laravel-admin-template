@@ -193,9 +193,10 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
         label: 'My First dataset',
         backgroundColor: 'rgba(255,255,255,.2)',
         borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82]
+        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82],
+        barPercentage: 0.7
       }
-    ]
+    ],
   },
   options: {
     maintainAspectRatio: false,
@@ -204,8 +205,7 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
     },
     scales: {
       xAxes: [{
-        display: false,
-        barPercentage: 0.6
+        display: false
       }],
       yAxes: [{
         display: false
