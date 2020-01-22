@@ -209,7 +209,7 @@ class MediaController extends Controller
         ]);
         $oldFolder = Folder::where('id', '=', $request->input('thisFolder'))->first();
         $media = $oldFolder->getMedia()->where('id', $request->input('id'))->first();
-        $oldFolder->addMedia($media->getPath())->usingName($media->name)->toMediaCollection();
+        $oldFolder->addMedia($media->getPath())->preservingOriginal()->usingName($media->name)->toMediaCollection();
         return redirect()->route('media.folder.index', ['id' => $request->input('thisFolder')]); 
     }
 
