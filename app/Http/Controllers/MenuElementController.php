@@ -156,7 +156,15 @@ class MenuElementController extends Controller
     }
 
     public function update(Request $request){
+
+        //var_dump( $_POST );
+        //die();
+
         $validatedData = $request->validate($this->getValidateArray());
+
+        //var_dump( $_POST );
+       //die();
+
         $menus = Menus::where('id', '=', $request->input('id'))->first();
         $menus->slug = $request->input('type');
         $menus->menu_id = $request->input('menu');
@@ -174,11 +182,13 @@ class MenuElementController extends Controller
         }
         $menus->save();
         Menurole::where('menus_id', '=', $request->input('id'))->delete();
-        foreach($request->input('role') as $role){
-            $menuRole = new Menurole();
-            $menuRole->role_name = $role;
-            $menuRole->menus_id = $request->input('id');
-            $menuRole->save();
+        if($request->has('role')){
+            foreach($request->input('role') as $role){
+                $menuRole = new Menurole();
+                $menuRole->role_name = $role;
+                $menuRole->menus_id = $request->input('id');
+                $menuRole->save();
+            }
         }
         $request->session()->flash('message', 'Successfully update menu element');
         return redirect()->route('menu.edit', ['id'=>$request->input('id')]); 

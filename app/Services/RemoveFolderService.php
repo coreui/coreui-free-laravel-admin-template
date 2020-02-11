@@ -28,7 +28,7 @@ class RemoveFolderService{
 
     public function folderDelete($id, $thisFolder){
         $folder = Folder::where('id', '=', $id)->first();
-        if($folder->folder_id != NULL){
+        if($folder->resource != 1 && $folder->folder_id != NULL){
             $this->foldersArray = array();
             $this->findFolderChildAnd($id, $thisFolder);
             foreach($this->foldersArray as $folderId){

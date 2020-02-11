@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFolderTable extends Migration
+class CreateExampleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateFolderTable extends Migration
      */
     public function up()
     {
-        Schema::create('folder', function (Blueprint $table) {
+        Schema::create('example', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
-            $table->integer('folder_id')->unsigned()->nullable();
-            $table->boolean('resource')->nullable();
+            $table->string('description');
+            $table->integer('status_id')->unsigned();
         });
     }
 
@@ -29,6 +29,6 @@ class CreateFolderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('folder');
+        Schema::dropIfExists('example');
     }
 }

@@ -62,7 +62,24 @@ Route::group(['middleware' => ['get.menu']], function () {
     });
     Auth::routes();
 
+    Route::resource('resource/{table}/resource', 'ResourceController')->names([
+        'index'     => 'resource.index',
+        'create'    => 'resource.create',
+        'store'     => 'resource.store',
+        'show'      => 'resource.show',
+        'edit'      => 'resource.edit',
+        'update'    => 'resource.update',
+        'destroy'   => 'resource.destroy'
+    ]);
+
     Route::group(['middleware' => ['role:admin']], function () {
+        //Route::get('/form',             'FormController@index')->name('form.index');
+        //Route::get('/form/create',      'FormController@create')->name('form.create');
+
+        Route::resource('bread',  'BreadController');   //create BREAD (resource)
+
+
+        Route::resource('model',        'ModelController')->except( ['show'] );
         Route::resource('users',        'UsersController')->except( ['create', 'store'] );
         Route::resource('roles',        'RolesController');
         Route::get('/roles/move/move-up',      'RolesController@moveUp')->name('roles.up');
@@ -97,7 +114,7 @@ Route::group(['middleware' => ['get.menu']], function () {
 
             Route::post('/file/store',      'MediaController@fileAdd')->name('media.file.add');
             Route::get('/file',             'MediaController@file');
-            Route::post('/file/delete',      'MediaController@fileDelete')->name('media.file.delete');
+            Route::post('/file/delete',     'MediaController@fileDelete')->name('media.file.delete');
             Route::post('/file/update',     'MediaController@fileUpdate')->name('media.file.update');
             Route::post('/file/move',       'MediaController@fileMove')->name('media.file.move');
             Route::post('/file/cropp',      'MediaController@cropp');

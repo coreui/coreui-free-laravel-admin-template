@@ -18,6 +18,11 @@ class FolderTableSeeder extends Seeder
             'folder_id' => NULL,
         ]);
         $rootId = DB::getPdo()->lastInsertId();
+        DB::table('folder')->insert([   /* without this folder, nothing works - only this folder have column `resource` = 1 */
+            'name' => 'resource',
+            'folder_id' => $rootId,
+            'resource' => 1
+        ]);
         DB::table('folder')->insert([
             'name' => 'documents',
             'folder_id' => $rootId,
