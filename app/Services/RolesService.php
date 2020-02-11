@@ -18,7 +18,8 @@ class RolesService{
         foreach($roles as $role){
             array_push($result, $role->name);
         }
-        return array_merge(self::$defaultRoles, $result);
+        //return array_merge(self::$defaultRoles, $result);
+        return $result;
     }
 
 }

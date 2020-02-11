@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\DB;
 use App\Models\Menurole;
 use App\Models\RoleHierarchy;
 
@@ -17,9 +18,13 @@ class RolesController extends Controller
      */
     public function index()
     {
+        $roles = DB::table('roles')
+        ->leftJoin('role_hierarchy', 'roles.id', '=', 'role_hierarchy.role_id')
+        ->select('roles.*', 'role_hierarchy.hierarchy')
+        ->orderBy('hierarchy', 'asc')
+        ->get();
         return view('dashboard.roles.index', array(
-            'roles'      => Role::all(),
-            'hierarchy'  => RoleHierarchy::all()
+            'roles' => $roles,
         ));
     }
 

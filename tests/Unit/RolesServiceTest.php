@@ -19,7 +19,7 @@ class RolesServiceTest extends TestCase
         Role::create(['name' => 'test1']);
         Role::create(['name' => 'test2']);
         $expected = [
-            'guest', 'test1', 'test2'
+            'test1', 'test2'
         ];
         $result = RolesService::get();
         $this->assertSame($expected, $result);

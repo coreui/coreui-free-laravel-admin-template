@@ -81,12 +81,14 @@
 
                                         </td>
                                         <td>
-                                            <button 
-                                                class="btn btn-danger file-delete-folder"
-                                                atr="{{ $mediaFolder->id }}"
-                                            >
-                                                Delete
-                                            </button>
+                                            @if($mediaFolder->resource != 1)
+                                                <button 
+                                                    class="btn btn-danger file-delete-folder"
+                                                    atr="{{ $mediaFolder->id }}"
+                                                >
+                                                    Delete
+                                                </button>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

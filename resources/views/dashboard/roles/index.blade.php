@@ -29,44 +29,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                guest
-                            </td>
-                            <td>
-                                -
-                            </td>
-                            <td>
-                                -
-                            </td>
-                            <td>
-                                -
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
                         @foreach($roles as $role)
                             <tr>
                                 <td>
                                     {{ $role->name }}
                                 </td>
                                 <td>
-                                    <?php
-                                        foreach($hierarchy as $h){
-                                            if($h->role_id == $role->id ){
-                                                echo $h->hierarchy;
-                                                break;
-                                            }
-                                        }
-                                    ?>
+                                    {{ $role->hierarchy }}
                                 </td>
                                 <td>
                                     {{ $role->created_at }}

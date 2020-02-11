@@ -32,7 +32,13 @@ class UsersAndNotesSeeder extends Seeder
         RoleHierarchy::create([
             'role_id' => $userRole->id,
             'hierarchy' => 2,
-        ]); 
+        ]);
+        $guestRole = Role::create(['name' => 'guest']); 
+        RoleHierarchy::create([
+            'role_id' => $guestRole->id,
+            'hierarchy' => 3,
+        ]);
+        
         /*  insert status  */
         DB::table('status')->insert([
             'name' => 'ongoing',
