@@ -52,11 +52,11 @@ class ResourceController extends Controller
     public function create($table, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('create bread ' . $table)){
+        if(!$role->hasPermissionTo('add bread ' . $table)){
             if(empty(Auth::user())){
                 abort('401');
             }else{
-                if(!Auth::user()->can('create bread ' . $table)){
+                if(!Auth::user()->can('add bread ' . $table)){
                     abort('401');
                 }
             }
@@ -88,11 +88,11 @@ class ResourceController extends Controller
     public function store($table, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('store bread ' . $table)){
+        if(!$role->hasPermissionTo('add bread ' . $table)){
             if(empty(Auth::user())){
                 abort('401');
             }else{
-                if(!Auth::user()->can('store bread ' . $table)){
+                if(!Auth::user()->can('add bread ' . $table)){
                     abort('401');
                 }
             }
@@ -191,11 +191,11 @@ class ResourceController extends Controller
     public function update($table, $id, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('update bread ' . $table)){
+        if(!$role->hasPermissionTo('edit bread ' . $table)){
             if(empty(Auth::user())){
                 abort('401');
             }else{
-                if(!Auth::user()->can('update bread ' . $table)){
+                if(!Auth::user()->can('edit bread ' . $table)){
                     abort('401');
                 }
             }
