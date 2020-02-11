@@ -73,13 +73,7 @@ Route::group(['middleware' => ['get.menu']], function () {
     ]);
 
     Route::group(['middleware' => ['role:admin']], function () {
-        //Route::get('/form',             'FormController@index')->name('form.index');
-        //Route::get('/form/create',      'FormController@create')->name('form.create');
-
         Route::resource('bread',  'BreadController');   //create BREAD (resource)
-
-
-        Route::resource('model',        'ModelController')->except( ['show'] );
         Route::resource('users',        'UsersController')->except( ['create', 'store'] );
         Route::resource('roles',        'RolesController');
         Route::get('/roles/move/move-up',      'RolesController@moveUp')->name('roles.up');
