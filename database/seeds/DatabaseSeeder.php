@@ -19,6 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call('MenusTableSeeder');
         $this->call('FolderTableSeeder');
         $this->call('ExampleSeeder');
-        //$this->call('BREADSeeder');
+        $this->call('BREADSeeder');
     }
 }
