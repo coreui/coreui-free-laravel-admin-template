@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class BREADSeeder extends Seeder
 {
@@ -53,5 +55,16 @@ class BREADSeeder extends Seeder
             'relation_table' => 'status',
             'relation_column' => 'name'
         ]);
+        $role = Role::where('name', '=', 'guest')->first();
+        Permission::create(['name' => 'browse bread '   . $formId]); 
+        Permission::create(['name' => 'read bread '     . $formId]); 
+        Permission::create(['name' => 'edit bread '     . $formId]); 
+        Permission::create(['name' => 'add bread '      . $formId]); 
+        Permission::create(['name' => 'delete bread '   . $formId]); 
+        $role->givePermissionTo('browse bread '     . $formId);
+        $role->givePermissionTo('read bread '       . $formId);
+        $role->givePermissionTo('edit bread '       . $formId);
+        $role->givePermissionTo('add bread '        . $formId);
+        $role->givePermissionTo('delete bread '     . $formId);
     }
 }
