@@ -141,6 +141,19 @@ Then in file ".env" complete this database configuration:
 * DB_USERNAME=root
 * DB_PASSWORD=
 
+### If your project is in subfolder
+
+> If your project url looks like: example.com/sub-folder 
+Then go to `my-project/.env`
+And modify this line:
+```php
+APP_URL = '';
+```
+To make it look like this:
+```php
+APP_URL = 'http://example.com/sub-folder';
+```
+
 ### Next step
 
 ``` bash
@@ -269,7 +282,7 @@ CoreUI Icons are beautifully crafted symbols for common actions and items. You c
 
 ## Copyright and license
 
-copyright 2019 creativeLabs Łukasz Holeczek. Code released under [the MIT license](https://github.com/coreui/coreui-free-laravel-admin-template/blob/master/LICENSE).
+copyright 2020 creativeLabs Łukasz Holeczek. Code released under [the MIT license](https://github.com/coreui/coreui-free-laravel-admin-template/blob/master/LICENSE).
 There is only one limitation you can't can’t re-distribute the CoreUI as stock. You can’t do this if you modify the CoreUI. In past we faced some problems with persons who tried to sell CoreUI based templates.
 
 ## Support CoreUI Development

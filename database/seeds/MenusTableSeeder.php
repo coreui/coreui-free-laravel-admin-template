@@ -13,6 +13,7 @@ class MenusTableSeeder extends Seeder
     private $joinData = array();
     private $adminRole = null;
     private $userRole = null;
+    private $subFolder = '';
 
     public function join($roles, $menusId){
         $roles = explode(',', $roles);
@@ -37,6 +38,7 @@ class MenusTableSeeder extends Seeder
     }
 
     public function insertLink($roles, $name, $href, $icon = null){
+        $href = $this->subFolder . $href;
         if($this->dropdown === false){
             DB::table('menus')->insert([
                 'slug' => 'link',
@@ -121,6 +123,16 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     { 
+        /* Set subfolder 
+            If your url looks like: example.org/sub-folder
+            then:
+            $this->subFolder = '/sub-folder';
+        */
+        $this->subFolder = env('APP_URL', '');
+        if(substr($this->subFolder, -1) == '/'){
+            $this->subFolder = rtrim($this->subFolder, '/');
+        }
+
         /* Get roles */
         $this->adminRole = Role::where('name' , '=' , 'admin' )->first();
         $this->userRole = Role::where('name', '=', 'user' )->first();
