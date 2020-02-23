@@ -48,33 +48,6 @@
                             </tr>
                             <tr>
                                 <th>
-                                    Translations
-                                </th>
-                                <td>
-                                    <table class="table">
-                                        @foreach($langs as $lang)
-                                            <tr>
-                                                <td>
-                                                    {{ $lang->name }}   
-                                                </td>
-                                                <td>
-                                                    <?php
-                                                        $temp = false;
-                                                        $menuLangId = NULL;
-                                                        for($i=0; $i<count($menuLangs); $i++){
-                                                            if($lang->short_name == $menuLangs[$i]->lang){
-                                                                echo $menuLangs[$i]->name;
-                                                            }
-                                                        }
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
                                     Type
                                 </th>
                                 <td>
