@@ -141,18 +141,18 @@ Then in file ".env" complete this database configuration:
 * DB_USERNAME=root
 * DB_PASSWORD=
 
-### If your project is in subfolder
+### Set APP_URL
 
 > If your project url looks like: example.com/sub-folder 
 Then go to `my-project/.env`
 And modify this line:
-```php
-APP_URL = '';
-```
+
+* APP_URL = ;
+
 To make it look like this:
-```php
-APP_URL = 'http://example.com/sub-folder';
-```
+
+* APP_URL = http://example.com/sub-folder;
+
 
 ### Next step
 
