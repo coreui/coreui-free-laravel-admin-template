@@ -147,11 +147,11 @@ Then in file ".env" complete this database configuration:
 Then go to `my-project/.env`
 And modify this line:
 
-* APP_URL = ;
+* APP_URL = 
 
 To make it look like this:
 
-* APP_URL = http://example.com/sub-folder;
+* APP_URL = http://example.com/sub-folder
 
 
 ### Next step
