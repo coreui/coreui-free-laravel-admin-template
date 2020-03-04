@@ -22,7 +22,7 @@ class FreelyPositionedMenus{
         }else{
             for($i = 0; $i < count($data); $i++){
                 if( $data[$i]['slug'] === 'link' ){
-                    echo '<a class="' . $prefixClass . 'nav-link dropdown-item" href="' . $data[$i]['href'] . '">';
+                    echo '<a class="' . $prefixClass . 'nav-link dropdown-item" href="' . env('APP_URL', '') . $data[$i]['href'] . '">';
                     echo '<span class="' . $prefixClass . 'nav-icon"></span>' . $data[$i]['name'] . '</a>';
                 }elseif( $data[$i]['slug'] === 'dropdown' ){
                     self::renderDropdown( $data[$i], $prefixClass );
@@ -42,7 +42,7 @@ class FreelyPositionedMenus{
         foreach($data as $d){
             if($d['slug'] === 'link'){
                 echo '<li class="' . $prefixClass .'nav-item px-3">';
-                echo '<a class="' . $prefixClass . 'nav-link" href="' . $d['href'] . '">';
+                echo '<a class="' . $prefixClass . 'nav-link" href="' . env('APP_URL', '') . $d['href'] . '">';
                 if($d['hasIcon'] === true){
                     if($d['iconType'] === 'coreui'){
                         echo '<i class="' . $d['icon'] . ' ' . $prefixClass . 'nav-icon"></i>';
