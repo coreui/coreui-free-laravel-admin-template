@@ -151,7 +151,7 @@ And modify this line:
 
 To make it look like this:
 
-* APP_URL = http://example.com/sub-folder
+* APP_URL = http://example.com/sub-folder/
 
 
 ### Next step
