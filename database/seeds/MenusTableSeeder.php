@@ -123,16 +123,6 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     { 
-        /* Set subfolder 
-            If your url looks like: example.org/sub-folder
-            then:
-            $this->subFolder = '/sub-folder';
-        */
-        $this->subFolder = env('APP_URL', '');
-        if(substr($this->subFolder, -1) == '/'){
-            $this->subFolder = rtrim($this->subFolder, '/');
-        }
-
         /* Get roles */
         $this->adminRole = Role::where('name' , '=' , 'admin' )->first();
         $this->userRole = Role::where('name', '=', 'user' )->first();
