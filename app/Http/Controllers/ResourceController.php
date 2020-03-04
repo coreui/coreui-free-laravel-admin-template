@@ -11,6 +11,7 @@ use App\Models\Form;
 use App\Models\FormField;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class ResourceController extends Controller
 {
@@ -22,7 +23,14 @@ class ResourceController extends Controller
     public function index($table, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('browse bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('browse bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -52,7 +60,14 @@ class ResourceController extends Controller
     public function create($table, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('add bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('add bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -60,7 +75,7 @@ class ResourceController extends Controller
                     abort('401');
                 }
             }
-        }
+        }        
         $form = Form::find( $table );
         if($form->add == 1){
             $resourceService = new ResourceService();
@@ -74,8 +89,7 @@ class ResourceController extends Controller
                 'inputOptions' => $formService->getFromOptionsStandardInput(),
             ]);
         }else{
-            $request->session()->flash('message', 'Add to table is not enable');
-            return redirect()->route('resource.index', $table );
+            abort('401');
         }
     }
 
@@ -88,7 +102,14 @@ class ResourceController extends Controller
     public function store($table, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('add bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('add bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -96,7 +117,7 @@ class ResourceController extends Controller
                     abort('401');
                 }
             }
-        }
+        } 
         $toValidate = array();
         $form = Form::find( $table );
         $formFields = FormField::where('form_id', '=', $table)->where('add', '=', '1')->get();
@@ -110,8 +131,7 @@ class ResourceController extends Controller
             $request->session()->flash('message', 'Successfully added to ' . $form->name);
             return redirect()->route('resource.index', $table );
         }else{
-            $request->session()->flash('message', 'Add to table is not enable');
-            return redirect()->route('resource.index', $table );
+            abort('401');
         }
     }
 
@@ -121,10 +141,17 @@ class ResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($table, $id)
+    public function show($table, $id, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('read bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('read bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -132,7 +159,7 @@ class ResourceController extends Controller
                     abort('401');
                 }
             }
-        }
+        } 
         $form = Form::find( $table );
         if($form->read == 1){
             $resourceService = new ResourceService();
@@ -141,8 +168,7 @@ class ResourceController extends Controller
                 'columns' => $resourceService->show($form->id, $form->table_name, $id),
             ]);
         }else{
-            $request->session()->flash('message', 'Read this table is not enable');
-            return redirect()->route('resource.index', $table );
+            abort('401');
         }
     }
 
@@ -155,7 +181,14 @@ class ResourceController extends Controller
     public function edit($table, $id)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('edit bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('edit bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -176,8 +209,7 @@ class ResourceController extends Controller
                 'id' => $id,
             ]);
         }else{
-            $request->session()->flash('message', 'Edit table is not enable');
-            return redirect()->route('resource.index', $table );
+            abort('401');
         }
     }
 
@@ -191,7 +223,14 @@ class ResourceController extends Controller
     public function update($table, $id, Request $request)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('edit bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('edit bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -213,8 +252,7 @@ class ResourceController extends Controller
             $request->session()->flash('message', 'Successfully edited ' . $form->name);
             return redirect()->route('resource.index', $table );
         }else{
-            $request->session()->flash('message', 'Edit table is not enable');
-            return redirect()->route('resource.index', $table );
+            abort('401');
         }
     }
 
@@ -227,7 +265,14 @@ class ResourceController extends Controller
     public function destroy($table, Request $request, $id)
     {
         $role = Role::where('name', '=', 'guest')->first();
-        if(!$role->hasPermissionTo('delete bread ' . $table)){
+        try {
+            if($role->hasPermissionTo('delete bread ' . $table)){
+                $guestHasPermission = true;
+            }
+        } catch (\Throwable $e) {
+            $guestHasPermission = false;
+        }       
+        if(!$guestHasPermission){
             if(empty(Auth::user())){
                 abort('401');
             }else{
@@ -246,8 +291,7 @@ class ResourceController extends Controller
                 return view('dashboard.resource.delete', ['table' => $table, 'id' => $id, 'formName' => $form->name]);
             }
         }else{
-            $request->session()->flash('message', 'Delete object from table is not enable');
-            return redirect()->route('resource.index', $table );
+            abort('401');
         }
     }
 }
