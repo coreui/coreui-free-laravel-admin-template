@@ -97,7 +97,7 @@
                                     <div id="div-icon">
                                         Icon - Find icon class in: 
                                         <a 
-                                            href="https://coreui.io/docs/3.0-beta/icons/icons-list/#coreui-icons-free-502-icons"
+                                            href="https://coreui.io/docs/icons/icons-list/#coreui-icons-free-502-icons"
                                             target="_blank"
                                         >
                                             CoreUI icons documentation
