@@ -133,13 +133,14 @@ class MenusTableSeeder extends Seeder
         $this->menuId = DB::getPdo()->lastInsertId();  //set menuId
         $this->insertLink('guest,user,admin', 'Dashboard', '/', 'cil-speedometer');
         $this->beginDropdown('admin', 'Settings', 'cil-calculator');
-            $id = $this->insertLink('admin', 'Notes',                   '/notes');
-            $id = $this->insertLink('admin', 'Users',                   '/users');
-            $id = $this->insertLink('admin', 'Edit menu',               '/menu/menu');
-            $id = $this->insertLink('admin', 'Edit menu elements',      '/menu/element');
-            $id = $this->insertLink('admin', 'Edit roles',              '/roles');
-            $id = $this->insertLink('admin', 'Media',                   '/media');
-            $id = $this->insertLink('admin', 'BREAD',                   '/bread');
+            $this->insertLink('admin', 'Notes',                   '/notes');
+            $this->insertLink('admin', 'Users',                   '/users');
+            $this->insertLink('admin', 'Edit menu',               '/menu/menu');
+            $this->insertLink('admin', 'Edit menu elements',      '/menu/element');
+            $this->insertLink('admin', 'Edit roles',              '/roles');
+            $this->insertLink('admin', 'Media',                   '/media');
+            $this->insertLink('admin', 'BREAD',                   '/bread');
+            $this->insertLink('admin', 'Email',                   '/mail');
         $this->endDropdown();
         $this->insertLink('guest', 'Login', '/login', 'cil-account-logout');
         $this->insertLink('guest', 'Register', '/register', 'cil-account-logout');
