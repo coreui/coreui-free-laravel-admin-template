@@ -248,14 +248,14 @@ $ php artisan migrate:refresh --seed
 ## Features
 
 ### Table of contents:
-* Notes
-* Users
-* Management of menus
-* Manage menu items
-* Role management
-* Management of the media
-* BREAD
-* Email Templates
+* [Notes](#notes)
+* [Users](#users)
+* [Management of menus](#menu-management)
+* [Manage menu items](#Manage-menu-items)
+* [Role management](#Role-management)
+* [Management of the media](#Manage-media)
+* [BREAD](#BREAD-system)
+* [Email Templates](#E-mail-Templates)
 
 #### Notes
 It is an example of data presentation in a pagination table, and CRUD functionality.
