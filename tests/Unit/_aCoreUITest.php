@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Spatie\Permission\Models\Role;
 
-class CoreUITest extends TestCase
+class _aCoreUITest extends TestCase
 {
     public function setUp() :void {
         parent::setUp();
