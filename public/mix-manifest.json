@@ -20,6 +20,8 @@
     "/js/widgets.js": "/js/widgets.js",
     "/js/popovers.js": "/js/popovers.js",
     "/js/tooltips.js": "/js/tooltips.js",
+    "/js/notifications.js": "/js/notifications.js",
+    "/service-worker.js": "/service-worker.js",
     "/css/free.min.css": "/css/free.min.css",
     "/css/brand.min.css": "/css/brand.min.css",
     "/css/flag.min.css": "/css/flag.min.css"

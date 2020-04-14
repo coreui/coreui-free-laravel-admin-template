@@ -40,11 +40,14 @@ mix.copy('resources/js/coreui/charts.js', 'public/js');
 mix.copy('resources/js/coreui/widgets.js', 'public/js');
 mix.copy('resources/js/coreui/popovers.js', 'public/js');
 mix.copy('resources/js/coreui/tooltips.js', 'public/js');
+mix.copy('resources/js/coreui/notifications.js', 'public/js');
 // details scripts admin-panel
 mix.js('resources/js/coreui/menu-create.js', 'public/js');
 mix.js('resources/js/coreui/menu-edit.js', 'public/js');
 mix.js('resources/js/coreui/media.js', 'public/js');
 mix.js('resources/js/coreui/media-cropp.js', 'public/js');
+//service-worker
+mix.copy('resources/js/coreui/service-worker.js', 'public');
 //*************** OTHER ****************** 
 //fonts
 mix.copy('node_modules/@coreui/icons/fonts', 'public/fonts');

@@ -59,6 +59,7 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/modals', function(){   return view('dashboard.notifications.modals'); });
         });
         Route::resource('notes', 'NotesController');
+        //Route::get('/notification', function () { return view('dashboard.notification.public'); });
     });
     Auth::routes();
 
@@ -73,6 +74,17 @@ Route::group(['middleware' => ['get.menu']], function () {
     ]);
 
     Route::group(['middleware' => ['role:admin']], function () {
+
+        Route::resource('notification', 'NotificationController');
+        Route::prefix('notification/notification')->group(function () {
+            Route::get('get-notification', 'NotificationController@getNotification');
+            Route::get('get-gmc', 'NotificationController@getGmc');
+            Route::get('set-gmc', 'NotificationController@setGmc');
+            Route::get('delete-gmc', 'NotificationController@deleteGmc');
+        });
+
+
+
         Route::resource('bread',  'BreadController');   //create BREAD (resource)
         Route::resource('users',        'UsersController')->except( ['create', 'store'] );
         Route::resource('roles',        'RolesController');
