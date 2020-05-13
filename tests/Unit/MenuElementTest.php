@@ -26,8 +26,8 @@ class MenuElementTest extends TestCase
         $menulist->name = 'test3';
         $menulist->save();
         $response = $this->actingAs($user)->get('/menu/element?menu=2');
-        $response->assertSee('<option value="1">test2</option>');
-        $response->assertSee('<option value="2" selected>test3</option>');
+        $response->assertSee('<option value="1">test2</option>', false);
+        $response->assertSee('<option value="2" selected>test3</option>', false);
         $response->assertSee('Menu Elements');
     }
 
@@ -39,8 +39,8 @@ class MenuElementTest extends TestCase
         $menulist->name = 'test2';
         $menulist->save();
         $response = $this->actingAs($user)->get('/menu/element/create');
-        $response->assertSee('<option value="1">test2</option>');
-        $response->assertSee('<input type="checkbox" name="role[]" value="admin" class="form-control"/>');
+        $response->assertSee('<option value="1">test2</option>', false);
+        $response->assertSee('<input type="checkbox" name="role[]" value="admin" class="form-control"/>', false);
         $response->assertSee('Create menu element');
     }
 
@@ -95,8 +95,8 @@ class MenuElementTest extends TestCase
         $menus->sequence = 1;
         $menus->save();
         $response = $this->actingAs($user)->get('/menu/element/edit?id=1' );
-        $response->assertSee('<option value="1" selected>test2</option>');
-        $response->assertSee('<input type="checkbox" name="role[]" value="admin" class="form-control"/>');
+        $response->assertSee('<option value="1" selected>test2</option>', false);
+        $response->assertSee('<input type="checkbox" name="role[]" value="admin" class="form-control"/>', false);
         $response->assertSee('test2');
         $response->assertSee('test4');
         $response->assertSee('test3');
