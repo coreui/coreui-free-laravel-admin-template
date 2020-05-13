@@ -23,7 +23,7 @@ class MenuTest extends TestCase
         $menulist->save();
         $response = $this->actingAs($user)->get('/menu/menu');
         $response->assertSee('test2');
-        $response->assertSee('<a class="btn btn-primary" href="http://localhost:8000/menu/element?menu=1">Show</a>');
+        $response->assertSee('<a class="btn btn-primary" href="'.env('APP_URL', 'http://localhost:8000').'/menu/element?menu=1">Show</a>', false);
         $response->assertSee('Add new menu');
         $response->assertSee('Menus list');
     }
