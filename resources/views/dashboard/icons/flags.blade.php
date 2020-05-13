@@ -4,7 +4,7 @@
 
 <link href="{{ asset('css/flag.min.css') }}" rel="stylesheet">
 
-@endsetion
+@endsection
 
 @section('content')
 
