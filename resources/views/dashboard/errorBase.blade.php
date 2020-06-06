@@ -39,7 +39,6 @@
     <link href="{{ asset('css/flag-icon.min.css') }}" rel="stylesheet"> <!-- icons -->
     <!-- Main styles for this application-->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/pace.min.css') }}" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
@@ -63,7 +62,6 @@
     @yield('content') 
 
     <!-- CoreUI and necessary plugins-->
-    <script src="{{ asset('js/pace.min.js') }}"></script> 
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
 
     @yield('javascript')
