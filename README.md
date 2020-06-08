@@ -2,9 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Please help us on [Product Hunt](https://www.producthunt.com/posts/coreui-open-source-bootstrap-4-admin-template-with-angular-2-react-js-vue-js-support) and [Designer News](https://www.designernews.co/stories/81127). Thanks in advance!
-
-[![Bootstrap Admin Template](https://coreui.io/assets/img/example-coureui.jpg)](https://coreui.io/)
+[![Bootstrap Admin Template](https://coreui.io/images/github/vue-free-template-3.gif)](https://coreui.io/)
 
 Curious why I decided to create CoreUI? Please read this article: [Jack of all trades, master of none. Why Bootstrap Admin Templates suck.](https://medium.com/@lukaszholeczek/jack-of-all-trades-master-of-none-5ea53ef8a1f#.7eqx1bcd8)
 
@@ -30,27 +28,27 @@ CoreUI is meant to be the UX game changer. Pure & transparent code is devoid of 
 
 CoreUI is built on top of Bootstrap 4 and supports popular frameworks.
 
-* [CoreUI Free Laravel Bootstrap Admin Template](https://github.com/coreui/coreui-free-laravel-admin-template)
 * [CoreUI Free Bootstrap Admin Template](https://github.com/coreui/coreui-free-bootstrap-admin-template)
-* [CoreUI Free Bootstrap Admin Template (Ajax)](https://github.com/coreui/coreui-free-bootstrap-admin-template-ajax)
-* [CoreUI Free Angular 2+ Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
-* 🚧 CoreUI Free .NET Core 3 Admin Template (Available Soon)
+* [CoreUI Free Angular Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
+* [CoreUI Free Laravel Admin Template](https://github.com/coreui/coreui-free-laravel-admin-template)
 * [CoreUI Free React.js Admin Template](https://github.com/coreui/coreui-free-react-admin-template)
 * [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
+* [CoreUI Free Vue.js + Laravel Admin Template](https://github.com/coreui/coreui-free-vue-laravel-admin-template)
 
 ## CoreUI Pro
 
 * 💪  [CoreUI Pro Bootstrap Admin Template](https://coreui.io/pro/)
-* 💪  [CoreUI Pro Bootstrap Admin Template (Ajax)](https://coreui.io/pro/)
 * 💪  [CoreUI Pro Angular Admin Template](https://coreui.io/pro/angular)
+* 💪  [CoreUI Pro Laravel Admin Template](https://coreui.io/pro/laravel)
 * 💪  [CoreUI Pro React Admin Template](https://coreui.io/pro/react)
 * 💪  [CoreUI Pro Vue Admin Template](https://coreui.io/pro/vue)
+* 💪  [CoreUI Pro Vue + Laravel Admin Template](https://coreui.io/pro/vue-laravel)
 
 ## Admin Templates built on top of CoreUI Pro
 
-| CoreUI Pro | Prime | Root | Alba | Leaf |
-| --- | --- | --- | --- | --- |
-| [![CoreUI Pro Admin Template](https://coreui.io/assets/img/example-coureui.jpg)](https://coreui.io/pro/) | [![Prime Admin Template](https://coreui.io/assets/img/responsive-prime.png)](https://coreui.io/admin-templates/bootstrap/prime/?support=1) | [![Root Admin Template](https://coreui.io/assets/img/responsive-root.png)](https://coreui.io/admin-templates/bootstrap/root/?support=1) | [![Alba Admin Template](https://coreui.io/assets/img/responsive-alba.png)](https://coreui.io/admin-templates/bootstrap/alba/?support=1) | [![Leaf Admin Template](https://coreui.io/assets/img/responsive-leaf.png)](https://coreui.io/admin-templates/bootstrap/leaf/?support=1)
+| Default Theme | Legacy Theme | Dark Layout |
+| --- | --- | --- |
+| [![CoreUI Pro Bootstrap Admin Template](https://coreui.io/images/mockups/mockup_3_1_default.png)](https://coreui.io/pro/laravel/) | [![CoreUI Pro Bootstrap Admin Template](https://coreui.io/images/mockups/mockup_3_1_legacy.png)](https://coreui.io/pro/laravel/)| [![CoreUI Pro Bootstrap Admin Template](https://coreui.io/images/mockups/mockup_3_1_dark.png)](https://coreui.io/pro/laravel/)
 
 ## Installation
 
