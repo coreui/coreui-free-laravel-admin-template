@@ -189,8 +189,6 @@ Click "Notes" on topbar menu and log in with credentials:
 * Password: _password_
 
 This user has roles: _user_ and _admin_
-* Role _user_ is required for **notes** management.
-* Role _admin_ is required for **users** management.
 
 --- 
 
