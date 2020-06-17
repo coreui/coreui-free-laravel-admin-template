@@ -208,7 +208,7 @@ $id = $this->insertLink( $rolesString, $visibleName, $href, $iconString);
 * `$rolesString` - a string with list of user roles this menu element will be available, ex. `"guest,user,admin"`
 * `$visibleName` - a string caption visible in sidebar
 * `$href` - a href, ex. `/homepage` or `http://example.com`
-* `$iconString` - a string containing valid CoreUI Icon name (kebab-case), ex. `cui-speedometer` or `cui-star`
+* `$iconString` - a string containing valid CoreUI Icon name (kebab-case), ex. `cil-speedometer` or `cil-pencil`
 
 To add a __title__ to the sidebar - use function `insertTitle()`:
 ```php
@@ -223,14 +223,14 @@ $id = $this->beginDropdown( $rolesString, $visibleName, $iconString);
 ```
 * `$rolesString` - a string with list of user roles this menu element will be available, ex. `"guest,user,admin"`
 * `$visibleName` - a string caption visible in sidebar
-* `$iconString` - a string containing valid CoreUI icon name (kebab-case). For example: `cui-speedometer` or `cui-star`
+* `$iconString` - a string containing valid CoreUI icon name (kebab-case). For example: `cil-speedometer` or `cil-pencil`
 
 To end dropdown section - use function `endDropdown()`. 
 
 To add __link__ to __dropdown__ call function `insertLink()` between function calls `beginDropdown()` and `endDropdown()`. 
 Example:
 ```php
-$id = $this->beginDropdown('guest,user,admin', 'Some dropdown', 'cui-puzzle');
+$id = $this->beginDropdown('guest,user,admin', 'Some dropdown', 'cil-puzzle');
 $id = $this->insertLink('guest,user,admin', 'Dropdown name', 'http://example.com');
 $this->endDropdown();
 ```
