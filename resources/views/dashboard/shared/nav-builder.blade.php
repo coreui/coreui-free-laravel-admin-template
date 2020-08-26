@@ -19,7 +19,7 @@ if(!function_exists('renderDropdown')){
             for($i = 0; $i < count($data); $i++){
                 if( $data[$i]['slug'] === 'link' ){
                     echo '<li class="c-sidebar-nav-item">';
-                    echo '<a class="c-sidebar-nav-link" href="' . env('APP_URL', '') . $data[$i]['href'] . '">';
+                    echo '<a class="c-sidebar-nav-link" href="' . url($data[$i]['href']) . '">';
                     echo '<span class="c-sidebar-nav-icon"></span>' . $data[$i]['name'] . '</a></li>';
                 }elseif( $data[$i]['slug'] === 'dropdown' ){
                     renderDropdown( $data[$i] );
@@ -30,13 +30,13 @@ if(!function_exists('renderDropdown')){
 }
 ?>
 
-      <div class="c-sidebar-brand"><img class="c-sidebar-brand-full" src="{{ env('APP_URL', '') }}/assets/brand/coreui-base-white.svg" width="118" height="46" alt="CoreUI Logo"><img class="c-sidebar-brand-minimized" src="assets/brand/coreui-signet-white.svg" width="118" height="46" alt="CoreUI Logo"></div>
+      <div class="c-sidebar-brand"><img class="c-sidebar-brand-full" src="{{ url('/assets/brand/coreui-base-white.svg') }}" width="118" height="46" alt="CoreUI Logo"><img class="c-sidebar-brand-minimized" src="assets/brand/coreui-signet-white.svg" width="118" height="46" alt="CoreUI Logo"></div>
         <ul class="c-sidebar-nav">
         @if(isset($appMenus['sidebar menu']))
             @foreach($appMenus['sidebar menu'] as $menuel)
                 @if($menuel['slug'] === 'link')
                     <li class="c-sidebar-nav-item">
-                        <a class="c-sidebar-nav-link" href="{{ env('APP_URL', '') . $menuel['href'] }}">
+                        <a class="c-sidebar-nav-link" href="{{ url($menuel['href']) }}">
                         @if($menuel['hasIcon'] === true)
                             @if($menuel['iconType'] === 'coreui')
                                 <i class="{{ $menuel['icon'] }} c-sidebar-nav-icon"></i>
