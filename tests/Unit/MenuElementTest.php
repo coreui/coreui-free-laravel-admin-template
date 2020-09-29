@@ -10,15 +10,16 @@ use Tests\TestCase;
 use App\Models\Menulist;
 use App\Models\Menus;
 use App\Models\Menurole;
+use App\Models\User;
 
 class MenuElementTest extends TestCase
 {
     use DatabaseMigrations;
 
     public function testMenuElementsIndex(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -32,9 +33,9 @@ class MenuElementTest extends TestCase
     }
 
     public function testMenuCreate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -45,9 +46,9 @@ class MenuElementTest extends TestCase
     }
 
     public function testMenuStore(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -79,9 +80,9 @@ class MenuElementTest extends TestCase
     }
 
     public function testMenuEdit(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -104,9 +105,9 @@ class MenuElementTest extends TestCase
     }
 
     public function testMenuUpdate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -157,9 +158,9 @@ class MenuElementTest extends TestCase
     }
 
     public function testMenuDelete(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menus = new Menus();
         $menus->slug = 'link';
         $menus->menu_id = 1;

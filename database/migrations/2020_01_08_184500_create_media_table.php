@@ -19,7 +19,9 @@ class CreateMediaTable extends Migration
             $table->string('file_name');
             $table->string('mime_type')->nullable();
             $table->string('disk');
+            $table->string('conversions_disk');
             $table->unsignedBigInteger('size');
+            $table->unsignedBigInteger('uuid');
             $table->json('manipulations');
             $table->json('custom_properties');
             $table->json('responsive_images');

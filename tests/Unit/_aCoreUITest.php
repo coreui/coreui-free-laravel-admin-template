@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Spatie\Permission\Models\Role;
+use App\Models\User;
 
 class _aCoreUITest extends TestCase
 {
@@ -27,9 +28,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testColorsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/colors' );
         $response->assertStatus(200);
     }
@@ -40,9 +41,9 @@ class _aCoreUITest extends TestCase
     }   
 
     public function testTypographyActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/typography' );
         $response->assertStatus(200);
     }
@@ -54,9 +55,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseBreadcrumbActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/breadcrumb' );
         $response->assertStatus(200);
     }
@@ -67,9 +68,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseCardsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/cards' );
         $response->assertStatus(200);
     }
@@ -80,9 +81,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseCarouselActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/carousel' );
         $response->assertStatus(200);
     }
@@ -93,9 +94,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseCollapseActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/collapse' );
         $response->assertStatus(200);
     }
@@ -106,9 +107,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseFormsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/forms' );
         $response->assertStatus(200);
     }
@@ -119,9 +120,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseJumbotronActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/jumbotron' );
         $response->assertStatus(200);
     }
@@ -132,9 +133,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseBaseListgroupActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/list-group' );
         $response->assertStatus(200);
     }
@@ -145,9 +146,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseNavsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/navs' );
         $response->assertStatus(200);
     }    
@@ -158,9 +159,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBasePaginationActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/pagination' );
         $response->assertStatus(200);
     }
@@ -171,9 +172,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBasePopoversActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/popovers' );
         $response->assertStatus(200);
     }
@@ -184,9 +185,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseProgressActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/progress' );
         $response->assertStatus(200);
     }
@@ -197,9 +198,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseScrollspyActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/scrollspy' );
         $response->assertStatus(200);
     }
@@ -210,9 +211,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseSwitchesActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/switches' );
         $response->assertStatus(200);
     }
@@ -223,9 +224,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseTablesActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/tables' );
         $response->assertStatus(200);
     }
@@ -236,9 +237,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseTabsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/tabs' );
         $response->assertStatus(200);
     }
@@ -249,9 +250,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBaseTooltipsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/base/tooltips' );
         $response->assertStatus(200);
     }
@@ -263,9 +264,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testButtonsButtonsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/buttons/buttons' );
         $response->assertStatus(200);
     }
@@ -276,9 +277,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testButtonsButtonsgroupActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/buttons/button-group' );
         $response->assertStatus(200);
     }
@@ -289,9 +290,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testButtonsDropdownsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/buttons/dropdowns' );
         $response->assertStatus(200);
     }
@@ -302,9 +303,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testBrandButtonsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/buttons/brand-buttons' );
         $response->assertStatus(200);
     }
@@ -317,9 +318,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testChartsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/charts' );
         $response->assertStatus(200);
     }
@@ -331,9 +332,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testIconsCoreuiIconsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/icon/coreui-icons' );
         $response->assertStatus(200);
     }
@@ -344,9 +345,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testIconsFlagsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/icon/flags' );
         $response->assertStatus(200);
     }
@@ -357,9 +358,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testIconsBrandsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/icon/brands' );
         $response->assertStatus(200);
     }
@@ -371,9 +372,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testNotificationsAlertsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/notifications/alerts' );
         $response->assertStatus(200);
     }
@@ -384,9 +385,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testNotificationsBadgeActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/notifications/badge' );
         $response->assertStatus(200);
     }
@@ -397,9 +398,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testNotificationsModalsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/notifications/modals' );
         $response->assertStatus(200);
     }
@@ -411,9 +412,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function testWidgetsActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/widgets' );
         $response->assertStatus(200);
     }
@@ -435,9 +436,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function test404ActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/404' );
         $response->assertStatus(200);
     }
@@ -448,9 +449,9 @@ class _aCoreUITest extends TestCase
     }
 
     public function test500ActingAsUser(){
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
         $response = $this->actingAs($user)->get( '/500' );
         $response->assertStatus(200);
     }

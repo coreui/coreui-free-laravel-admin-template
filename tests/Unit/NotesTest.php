@@ -8,6 +8,10 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 
+use App\Models\User;
+use App\Models\Notes;
+
+
 class NotesTest extends TestCase
 {
     use DatabaseMigrations;
@@ -17,11 +21,11 @@ class NotesTest extends TestCase
      */
     public function testCanReadListOfNotes()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $noteOne = factory('App\Models\Notes')->create();
-        $noteTwo = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $noteOne = Notes::factory()->create();
+        $noteTwo = Notes::factory()->create();
         $response = $this->actingAs($user)->get('/notes');
         $response->assertSee($noteOne->title)
         ->assertSee($noteOne->content)
@@ -34,10 +38,10 @@ class NotesTest extends TestCase
      */
     public function testCanReadSingleNote()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $note = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $note = Notes::factory()->create();
         $response = $this->actingAs($user)->get('/notes/' . $note->id );
         $response->assertSee($note->title)->assertSee($note->content);
     }
@@ -47,10 +51,10 @@ class NotesTest extends TestCase
      */
     public function testCanOpenNoteCreateForm()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $note = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $note = Notes::factory()->create();
         $response = $this->actingAs($user)->get('/notes/create');
         $response->assertSee('Create Note');
     }
@@ -60,10 +64,10 @@ class NotesTest extends TestCase
      */
     public function testCanCreateNewNote()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $note = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $note = Notes::factory()->create();
         $response = $this->actingAs($user)->post('/notes',  $note->toArray());
         $this->assertDatabaseHas('notes',['title' => $note->title, 'content' => $note->content]);
     }
@@ -73,10 +77,10 @@ class NotesTest extends TestCase
      */
     public function testCanOpenNoteEdition()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $note = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $note = Notes::factory()->create();
         $response = $this->actingAs($user)->get('/notes/'.$note->id . '/edit');
         $response->assertSee($note->title)->assertSee($note->content);
     }
@@ -86,10 +90,10 @@ class NotesTest extends TestCase
      */
     public function testCanEditNote()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $note = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $note = Notes::factory()->create();
         $note->title = 'Updated title';
         $note->content = 'Updated content';
         $this->actingAs($user)->put('/notes/'.$user->id, $note->toArray());
@@ -101,10 +105,10 @@ class NotesTest extends TestCase
      */
     public function testCanDeleteNote()
     {
-        $user = factory('App\User')->create();
-        Role::create(['name' => 'user']);
-        $user->assignRole('user');
-        $note = factory('App\Models\Notes')->create();
+        $user = User::factory()->create();
+        $roleUser = Role::create(['name' => 'user']);
+        $user->assignRole($roleUser);
+        $note = Notes::factory()->create();
         $this->actingAs( $user );
         $this->delete('/notes/'.$note->id);
         $this->assertDatabaseMissing('notes',['id'=> $note->id]);
