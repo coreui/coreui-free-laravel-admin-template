@@ -14,7 +14,7 @@ use App\Models\Form;
 use App\Models\Example;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-
+use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -126,9 +126,9 @@ class ResourceTest extends TestCase
     public function testIndexActingAsUserNoGuest(){
         $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -180,9 +180,9 @@ class ResourceTest extends TestCase
     public function testCreateActingAsUserNoGuest(){
         $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -250,9 +250,9 @@ class ResourceTest extends TestCase
     public function testStoreActingAsUserNoGuest(){
         $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -313,9 +313,9 @@ class ResourceTest extends TestCase
     public function testShowActingAsUserNoGuest(){
         $exampleId = $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -371,9 +371,9 @@ class ResourceTest extends TestCase
     public function testEditActingAsUserNoGuest(){
         $exampleId = $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -440,9 +440,9 @@ class ResourceTest extends TestCase
     public function testUpdateActingAsUserNoGuest(){
         $exampleId = $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -519,9 +519,9 @@ class ResourceTest extends TestCase
     public function testDeleteActingAsUserNoGuest(){
         $exampleId = $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 
@@ -544,9 +544,9 @@ class ResourceTest extends TestCase
     public function testDeleteMarkerActingAsUserNoGuest(){
         $exampleId = $this->helperCreateExample('Record_name_1');
         $formId = $this->helperCreateForm('Form_name_1', true);
-        $user = factory('App\User')->create();
+        $user = User::factory()->create();
         $role = Role::create(['name' => 'user']); 
-        $user->assignRole('user');
+        $user->assignRole($role);
         Permission::create(['name' => 'browse bread '   . $formId]); 
         Permission::create(['name' => 'read bread '     . $formId]); 
         Permission::create(['name' => 'edit bread '     . $formId]); 

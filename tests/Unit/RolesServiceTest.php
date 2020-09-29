@@ -10,6 +10,7 @@ use Tests\TestCase;
 use App\Services\RolesService;
 use App\Models\RoleHierarchy;
 use App\Models\Menurole;
+use App\Models\User;
 
 class RolesServiceTest extends TestCase
 {
@@ -26,27 +27,27 @@ class RolesServiceTest extends TestCase
     }
 
     public function testRolesIndex(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
         Role::create(['name' => 'xyzabc']);
-        $user->assignRole('admin');
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('/roles');
         $response->assertSee('admin');
         $response->assertSee('xyzabc');
     }
 
     public function testRolesCreate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('/roles/create');
         $response->assertSee('Create new role');
     }
 
     public function testRolesStore(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->post('/roles', ['name' => 'xyzxyz']);
         $this->assertDatabaseHas('roles',['name'=> 'xyzxyz']);
         $role = Role::where('name', '=', 'xyzxyz')->first(); 
@@ -54,38 +55,38 @@ class RolesServiceTest extends TestCase
     }
 
     public function testRolesEdit(){
-        $user = factory('App\User')->states('admin')->create();
+        $user = User::factory()->admin()->create();
         $id = Role::create(['name' => 'admin']);
         $rh = new RoleHierarchy();
         $rh->role_id = $id->id;
         $rh->hierarchy = 1;
         $rh->save();
-        $user->assignRole('admin');
+        $user->assignRole($id);
         $response = $this->actingAs($user)->get('/roles/' . $id->id . '/edit');
         $response->assertSee('Edit role');
         $response->assertSee('admin');
     }
 
     public function testRolesUpdate(){
-        $user = factory('App\User')->states('admin')->create();
+        $user = User::factory()->admin()->create();
         $id = Role::create(['name' => 'admin']);
         $rh = new RoleHierarchy();
         $rh->role_id = $id->id;
         $rh->hierarchy = 1;
         $rh->save();
-        $user->assignRole('admin');
+        $user->assignRole($id);
         $response = $this->actingAs($user)->post('/roles/' . $id->id, ['name' => 'abcdef', '_method' => 'PUT']);
         $this->assertDatabaseHas('roles',['id' => $id->id, 'name'=> 'abcdef']);
     }
 
     public function testRolesDestroy(){
-        $user = factory('App\User')->states('admin')->create();
+        $user = User::factory()->admin()->create();
         $id = Role::create(['name' => 'admin']);
         $rh = new RoleHierarchy();
         $rh->role_id = $id->id;
         $rh->hierarchy = 1;
         $rh->save();
-        $user->assignRole('admin');
+        $user->assignRole($id);
         $this->assertDatabaseHas('roles',['id' => $id->id, 'name' => 'admin']);
         $this->assertDatabaseHas('role_hierarchy',['role_id' => $id->id]);
         $response = $this->actingAs($user)->post('/roles/' . $id->id, ['id' => $id->id, '_method' => 'DELETE']);
@@ -95,7 +96,7 @@ class RolesServiceTest extends TestCase
     }
 
     public function testRolesNotDestroy(){
-        $user = factory('App\User')->states('admin')->create();
+        $user = User::factory()->admin()->create();
         $id = Role::create(['name' => 'admin']);
         $rh = new RoleHierarchy();
         $rh->role_id = $id->id;
@@ -105,7 +106,7 @@ class RolesServiceTest extends TestCase
         $menuRole->role_name = 'admin';
         $menuRole->menus_id = 1;
         $menuRole->save();
-        $user->assignRole('admin');
+        $user->assignRole($id);
         $this->assertDatabaseHas('roles',['id' => $id->id, 'name' => 'admin']);
         $this->assertDatabaseHas('role_hierarchy',['role_id' => $id->id]);
         $response = $this->actingAs($user)->post('/roles/' . $id->id, ['id' => $id->id, '_method' => 'DELETE']);
@@ -115,7 +116,7 @@ class RolesServiceTest extends TestCase
     }
 
     public function testRolesMoveUp(){
-        $user = factory('App\User')->states('admin')->create();
+        $user = User::factory()->admin()->create();
         $idRoleOne = Role::create(['name' => 'admin']);
         $idRoleTwo = Role::create(['name' => 'xyzabc']);
         $rh = new RoleHierarchy();
@@ -126,14 +127,14 @@ class RolesServiceTest extends TestCase
         $rh->role_id = $idRoleTwo->id;
         $rh->hierarchy = 2;
         $rh->save();
-        $user->assignRole('admin');
+        $user->assignRole($idRoleOne);
         $response = $this->actingAs($user)->get('/roles/move/move-up?id=' . $idRoleTwo->id );
         $this->assertDatabaseHas('role_hierarchy',['role_id' => $idRoleTwo->id, 'hierarchy' => 1 ]);
         $this->assertDatabaseHas('role_hierarchy',['role_id' => $idRoleOne->id, 'hierarchy' => 2 ]);
     }
 
     public function testRolesMoveDown(){
-        $user = factory('App\User')->states('admin')->create();
+        $user = User::factory()->admin()->create();
         $idRoleOne = Role::create(['name' => 'admin']);
         $idRoleTwo = Role::create(['name' => 'xyzabc']);
         $rh = new RoleHierarchy();
@@ -144,7 +145,7 @@ class RolesServiceTest extends TestCase
         $rh->role_id = $idRoleTwo->id;
         $rh->hierarchy = 2;
         $rh->save();
-        $user->assignRole('admin');
+        $user->assignRole($idRoleOne);
         $response = $this->actingAs($user)->get('/roles/move/move-down?id=' . $idRoleOne->id );
         $this->assertDatabaseHas('role_hierarchy',['role_id' => $idRoleTwo->id, 'hierarchy' => 1 ]);
         $this->assertDatabaseHas('role_hierarchy',['role_id' => $idRoleOne->id, 'hierarchy' => 2 ]);

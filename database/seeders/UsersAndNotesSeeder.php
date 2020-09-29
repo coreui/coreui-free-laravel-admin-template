@@ -1,11 +1,13 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
-use App\User;
+use App\Models\User;
 use App\Models\RoleHierarchy;
 
 class UsersAndNotesSeeder extends Seeder

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 use App\Models\Folder;
-
+use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,9 +17,9 @@ class MediaTest extends TestCase
     use DatabaseMigrations;
 
     public function testIndex(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $folder = new Folder();
         $folder->name = 'test1';
         $folder->save();
@@ -32,9 +32,9 @@ class MediaTest extends TestCase
     }
 
     public function testIndex2(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $folder = new Folder();
         $folder->name = 'test1';
         $folder->save();
@@ -51,17 +51,17 @@ class MediaTest extends TestCase
     }
 
     public function testFolderAdd(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('media/folder/store?thisFolder=45' );
         $this->assertDatabaseHas('folder',['name' => 'New Folder', 'folder_id' => 45 ]);
     }
 
     public function testFolderUpdate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $folder = new Folder();
         $folder->name = 'test1';
         $folder->save();
@@ -74,9 +74,9 @@ class MediaTest extends TestCase
     }
 
     public function testFolder(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $folder = new Folder();
         $folder->name = 'test1';
         $folder->save();
@@ -88,9 +88,9 @@ class MediaTest extends TestCase
     }
 
     public function testFolderMoveUp(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $folder = new Folder();
         $folder->name = 'test1';
         $folder->save();
@@ -111,9 +111,9 @@ class MediaTest extends TestCase
     }
 
     public function testFolderDelete(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $folder = new Folder();
         $folder->name = 'test1';
         $folder->save();
@@ -131,9 +131,9 @@ class MediaTest extends TestCase
 
 
     public function testFileAdd(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -143,14 +143,14 @@ class MediaTest extends TestCase
             'thisFolder' => $folder->id
         ]);
         $response->assertStatus(302);
-        $media = $folder->getMedia()->first();
-        $this->assertSame($media->name, 'file.jpg');
+        $media = $folder->getMedia();
+        $this->assertSame($media[0]['name'], 'file.jpg');
     }
 
     public function testFile(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -159,10 +159,11 @@ class MediaTest extends TestCase
             'file' => $file,
             'thisFolder' => $folder->id
         ]);
-        $media = $folder->getMedia()->first();
+        $media = $folder->getMedia();
+        $media = $media[0];
         $response = $this->actingAs($user)->json('GET', '/media/file?id=' . $media['id'] . '&thisFolder=' . $folder->id);
         $response->assertExactJson([
-            'id' =>         "$media->id",
+            'id' =>         strval($media['id']),
             'name' =>       $media['name'],
             'realName' =>   $media['file_name'],
             'url' =>        $media->getUrl(),
@@ -174,9 +175,9 @@ class MediaTest extends TestCase
     }
 
     public function testFileDelete(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -185,16 +186,16 @@ class MediaTest extends TestCase
             'file' => $file,
             'thisFolder' => $folder->id
         ]);
-        $media = $folder->getMedia()->first();
-        $this->assertDatabaseHas('media',[ 'id' => $media->id ]);
+        $media = $folder->getFirstMedia();
+        $this->assertDatabaseHas('media',[ 'id' => $media['id'] ]);
         $response = $this->actingAs($user)->post('/media/file/delete?id=' . $media['id'] . '&thisFolder=' . $folder->id);
-        $this->assertDatabaseMissing('media',['id' => $media->id ]);
+        $this->assertDatabaseMissing('media',['id' => $media['id'] ]);
     }
 
     public function testFileUpdate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -203,20 +204,20 @@ class MediaTest extends TestCase
             'file' => $file,
             'thisFolder' => $folder->id
         ]);
-        $media = $folder->getMedia()->first();
-        $this->assertDatabaseHas('media',[ 'id' => $media->id, 'name' => 'file.jpg' ]);
+        $media = $folder->getFirstMedia();
+        $this->assertDatabaseHas('media',[ 'id' => $media['id'], 'name' => 'file.jpg' ]);
         $response = $this->actingAs($user)->post('/media/file/update', [
-            'id' => $media->id,
+            'id' => $media['id'],
             'thisFolder' => $folder->id,
             'name' => 'newFileName.png'
         ]);
-        $this->assertDatabaseHas('media',['id' => $media->id, 'name' => 'newFileName.png']);
+        $this->assertDatabaseHas('media',['id' => $media['id'], 'name' => 'newFileName.png']);
     }
 
     public function testFileMoveUp(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -229,22 +230,22 @@ class MediaTest extends TestCase
             'file' => $file,
             'thisFolder' => $folder2->id
         ]);
-        $media = $folder2->getMedia()->first();
-        $this->assertDatabaseHas('media',[ 'id' => $media->id, 'model_id' => $folder2->id ]);
+        $media = $folder2->getFirstMedia();
+        $this->assertDatabaseHas('media',[ 'id' => $media['id'], 'model_id' => $folder2->id ]);
         $response = $this->actingAs($user)->post('/media/file/move', [
-            'id' => $media->id,
+            'id' => $media['id'],
             'thisFolder' => $folder2->id,
             'folder' => 'moveUp'
         ]);
-        $this->assertDatabaseMissing('media',[ 'id' => $media->id, 'model_id' => $folder2->id ]);
-        $media = $folder->getMedia()->first();
-        $this->assertDatabaseHas('media',['id' => $media->id, 'model_id' => $folder->id]);
+        $this->assertDatabaseMissing('media',[ 'id' => $media['id'], 'model_id' => $folder2->id ]);
+        $media = $folder->getFirstMedia();
+        $this->assertDatabaseHas('media',['id' => $media['id'], 'model_id' => $folder->id]);
     }
     
     public function testFileMove(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -257,16 +258,16 @@ class MediaTest extends TestCase
             'file' => $file,
             'thisFolder' => $folder->id
         ]);
-        $media = $folder->getMedia()->first();
-        $this->assertDatabaseHas('media',[ 'id' => $media->id, 'model_id' => $folder->id ]);
+        $media = $folder->getFirstMedia();
+        $this->assertDatabaseHas('media',[ 'id' => $media['id'], 'model_id' => $folder->id ]);
         $response = $this->actingAs($user)->post('/media/file/move', [
-            'id' => $media->id,
+            'id' => $media['id'],
             'thisFolder' => $folder->id,
             'folder' => $folder2->id
         ]);
-        $this->assertDatabaseMissing('media',[ 'id' => $media->id, 'model_id' => $folder->id ]);
-        $media = $folder2->getMedia()->first();
-        $this->assertDatabaseHas('media',['id' => $media->id, 'model_id' => $folder2->id]);
+        $this->assertDatabaseMissing('media',[ 'id' => $media['id'], 'model_id' => $folder->id ]);
+        $media = $folder2->getFirstMedia();
+        $this->assertDatabaseHas('media',['id' => $media['id'], 'model_id' => $folder2->id]);
     }
 
     public function testFileCropp(){
@@ -275,9 +276,9 @@ class MediaTest extends TestCase
     }
 
     public function testFileCopy(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $file = UploadedFile::fake()->image('file.jpg');
         $folder = new Folder();
         $folder->name = 'test1';
@@ -286,9 +287,9 @@ class MediaTest extends TestCase
             'file' => $file,
             'thisFolder' => $folder->id
         ]);
-        $media = $folder->getMedia()->first();
-        $this->assertDatabaseHas('media',[ 'id' => $media->id, 'model_id' => $folder->id ]);
-        $response = $this->actingAs($user)->get('/media/file/copy?id=' . $media->id . '&thisFolder=' . $folder->id );
+        $media = $folder->getFirstMedia();
+        $this->assertDatabaseHas('media',[ 'id' => $media['id'], 'model_id' => $folder->id ]);
+        $response = $this->actingAs($user)->get('/media/file/copy?id=' . $media['id'] . '&thisFolder=' . $folder->id );
         $folder = Folder::first();
         $media = $folder->getMedia();
         $this->assertSame( 2, count($media));

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 use App\Models\Menulist;
+use App\Models\User;
 
 class MenuTest extends TestCase
 {
@@ -15,9 +16,9 @@ class MenuTest extends TestCase
 
 
     public function testMenuIndex(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -29,25 +30,25 @@ class MenuTest extends TestCase
     }
 
     public function testMenuCreate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('/menu/menu/create');
         $response->assertSee('Create menu');
     }
 
     public function testMenuStore(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->post('/menu/menu/store',  ['name' => 'test3']);
         $this->assertDatabaseHas('menulist',['name' => 'test3']);
     }
 
     public function testMenuEdit(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -56,9 +57,9 @@ class MenuTest extends TestCase
     }
 
     public function testMenuUpdate(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -68,9 +69,9 @@ class MenuTest extends TestCase
     }
 
     public function testMenuDelete(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $menulist = new Menulist();
         $menulist->name = 'test2';
         $menulist->save();
@@ -85,9 +86,9 @@ class MenuTest extends TestCase
     */
     /*
     public function testEditMenu(){
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('/menu');
         $response->assertSee('<option>guest</option>');
         $response->assertSee('<option>user</option>');
@@ -100,9 +101,9 @@ class MenuTest extends TestCase
     /*
     public function testMenuSelected(){
         $menuElement = factory('App\Models\Menurole')->create();
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('menu/selected?role=guest');
         $response->assertSee('<a class="btn btn-primary" href="/menu/selected/switch?id=' . $menuElement->menus_id);
     }
@@ -113,9 +114,9 @@ class MenuTest extends TestCase
     /*
     public function testMenuSwitch(){
         $menuElement = factory('App\Models\Menurole')->create();
-        $user = factory('App\User')->states('admin')->create();
-        Role::create(['name' => 'admin']);
-        $user->assignRole('admin');
+        $user = User::factory()->admin()->create();
+        $adminRole = Role::create(['name' => 'admin']);
+        $user->assignRole($adminRole);
         $response = $this->actingAs($user)->get('menu/selected/switch?role=guest&id=' . $menuElement->menus_id);
         $this->assertDatabaseMissing('menu_role',['menus_id' => $menuElement->menus_id, 'role_name' => 'guest']);
         $response = $this->actingAs($user)->get('menu/selected/switch?role=guest&id=' . $menuElement->menus_id);
