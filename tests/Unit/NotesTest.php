@@ -22,13 +22,12 @@ class NotesTest extends TestCase
         $user = User::factory()->create();
         $roleUser = Role::create(['name' => 'user']);
         $user->assignRole($roleUser);
-        $noteOne = Notes::factory()->create();
-        $noteTwo = Notes::factory()->create();
+        $noteList = Notes::factory()->count(2)->create();
         $response = $this->actingAs($user)->get('/notes');
-        $response->assertSee($noteOne->title)
-        ->assertSee($noteOne->content)
-        ->assertSee($noteTwo->title)
-        ->assertSee($noteTwo->content);
+        $response->assertSee($noteList[0]->title)
+        ->assertSee($noteList[0]->content)
+        ->assertSee($noteList[1]->title)
+        ->assertSee($noteList[1]->content);
     }
 
     /**
@@ -52,7 +51,6 @@ class NotesTest extends TestCase
         $user = User::factory()->create();
         $roleUser = Role::create(['name' => 'user']);
         $user->assignRole($roleUser);
-        Notes::factory()->create();
         $response = $this->actingAs($user)->get('/notes/create');
         $response->assertSee('Create Note');
     }
