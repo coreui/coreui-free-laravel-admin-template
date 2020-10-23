@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v3.0.0-alpha.1
+* CoreUI Free Laravel Bootstrap Admin Template
+* @version v2.0.1
 * @link https://coreui.io
-* Copyright (c) 2019 creativeLabs Łukasz Holeczek
+* Copyright (c) 2020 creativeLabs Łukasz Holeczek
 * Licensed under MIT (https://coreui.io/license)
 -->
 
