@@ -345,6 +345,10 @@ class FormService{
             array(
                 'value' => 'image',
                 'name' => 'image'
+            ),
+            array(
+                'value' => 'current_user',
+                'name' => 'current user'
             )
         );
         return array_merge( $this->getFromOptionsStandardInput(), $otherOptions);
