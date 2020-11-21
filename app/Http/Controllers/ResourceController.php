@@ -22,6 +22,7 @@ class ResourceController extends Controller
      */
     public function index($table, Request $request)
     {
+        $guestHasPermission = false;
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('browse bread ' . $table)){
@@ -59,6 +60,9 @@ class ResourceController extends Controller
      */
     public function create($table, Request $request)
     {
+        $guestHasPermission = false;
+        $user = Auth::user();
+
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('add bread ' . $table)){
@@ -84,6 +88,7 @@ class ResourceController extends Controller
             
             return view('dashboard.resource.create', [
                 'form' => $form,
+                'user' => $user,
                 'columns' => $columns,
                 'relations' => $resourceService->getRelations( $columns ),
                 'inputOptions' => $formService->getFromOptionsStandardInput(),
@@ -101,6 +106,7 @@ class ResourceController extends Controller
      */
     public function store($table, Request $request)
     {
+        $guestHasPermission = false;
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('add bread ' . $table)){
@@ -143,6 +149,7 @@ class ResourceController extends Controller
      */
     public function show($table, $id, Request $request)
     {
+        $guestHasPermission = false;
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('read bread ' . $table)){
@@ -180,6 +187,7 @@ class ResourceController extends Controller
      */
     public function edit($table, $id)
     {
+        $guestHasPermission = false;
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('edit bread ' . $table)){
@@ -222,6 +230,7 @@ class ResourceController extends Controller
      */
     public function update($table, $id, Request $request)
     {
+        $guestHasPermission = false;
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('edit bread ' . $table)){
@@ -264,6 +273,7 @@ class ResourceController extends Controller
      */
     public function destroy($table, Request $request, $id)
     {
+        $guestHasPermission = false;
         $role = Role::where('name', '=', 'guest')->first();
         try {
             if($role->hasPermissionTo('delete bread ' . $table)){

@@ -88,7 +88,11 @@
                                     echo '<label class="col-form-label">' . $column->name . '</label>';
                                     echo '<textarea class="form-control" name="' . $column->column_name . '" rows="9"></textarea>';
                                     echo '</div>';
-                                }else{
+                                }elseif($column->type == 'current_user') {
+                                    //echo '<label>' . $column->name . '</label>';
+                                    echo '<input type="hidden" class="form-control" name="' . $column->column_name . '" value="' . $user->id . '">';
+                                }
+                                else{
                                     echo '<p>Not recognize field type: ' . $column->type . '</p>';
                                 }
                                 ?>
