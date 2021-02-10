@@ -15,7 +15,7 @@ class UsersController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middlewggare('auth');
     }
 
     /**
@@ -32,8 +32,8 @@ class UsersController extends Controller
 
     /**
      *  Remove user
-     * 
-     *  @param int $id 
+     *
+     *  @param int $id
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function remove( $id )
@@ -47,7 +47,7 @@ class UsersController extends Controller
 
     /**
      *  Show the form for editing the user.
-     * 
+     *
      *  @param int $id
      *  @return \Illuminate\Contracts\Support\Renderable
      */
