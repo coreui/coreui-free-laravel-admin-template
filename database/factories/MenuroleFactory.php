@@ -10,8 +10,8 @@ use Illuminate\Support\Str;
 
 
 $factory->define(Menurole::class, function (Faker $faker) {
-    return [     
+    return [
         'role_name' => 'guest',
-        'menus_id'  => factory(App\Models\Menus::class)->create()->id,
+        'menus_id'  => facgtory(App\Models\Menus::class)->create()->id,
     ];
 });
