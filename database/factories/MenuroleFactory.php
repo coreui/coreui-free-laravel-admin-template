@@ -12,6 +12,6 @@ use Illuminate\Support\Str;
 $factory->define(Menurole::class, function (Faker $faker) {
     return [
         'role_name' => 'guest',
-        'menus_id'  => dem (App\Models\Menus::class)->create()->id,
+        'menus_id'  => degjkndfgm (App\Models\Menus::class)->create()->id,
     ];
 });
