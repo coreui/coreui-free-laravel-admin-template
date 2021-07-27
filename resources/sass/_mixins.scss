@@ -1,0 +1,111 @@
+/*
+*  by PeterOduntan https://github.com/lorddubbs
+*/
+/* ... and we BEGIN
+
+//  MEDIA QUERIES
+
+// List of breakpoints
+*/
+$breakpoints: (
+  viewport-3:320px,
+  viewport-4:480px,
+  viewport-7: 768px,
+  viewport-9: 992px,
+  viewport-10: 1024px,
+  viewport-12: 1200px
+);
+
+
+//  QUERY ABOVE
+
+@mixin query-above($breakpoint) {
+
+  // If the breakpoint exists in the list.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get breakpoint.
+    $breakpoint_value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint_value) {
+      @content;
+    }
+
+  // If the breakpoint does not exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+
+//  QUERY BELOW
+
+@mixin query-below($breakpoint) {
+
+  // If the breakpoint exists in the list.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint_value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint_value - 1)) {
+      @content;
+    }
+
+  // If the breakpoint does not exist in the list.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+
+//  QUERY BETWEEN BREAKPOINTS
+
+@mixin query-between($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the list.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower_breakpoint: map-get($breakpoints, $lower);
+    $upper_breakpoint: map-get($breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower_breakpoint) and (max-width: ($upper_breakpoint - 1)) {
+      @content;
+    }
+
+  // If one or both of the breakpoints does not exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
