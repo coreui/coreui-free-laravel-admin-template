@@ -125,7 +125,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=8 <=14"
   },
   "browserslist": [
     "last 1 major version",
