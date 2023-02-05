@@ -1,14 +1,14 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-@import "node_modules/font-awesome/scss/font-awesome.scss";
-
-
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-
+@import "layout";
+@import "header";
+@import "footer";
+@import "services";
+@import "carousel";

@@ -1,0 +1,11 @@
+.carousel {
+    max-height: 400px;
+    overflow: hidden;
+    .carousel-control-prev, .carousel-control-next {
+        width: 5%;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,150 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*---------footer---------*/
+footer {
+    background-color: $secondary;
+    background-image: -webkit-linear-gradient( top, $secondary, #3c3c3e );
+    background-image: -moz-linear-gradient( top, $secondary, #3c3c3e );
+    background-image: -o-linear-gradient( top, $secondary, #3c3c3e );
+    background-image: linear-gradient( to bottom, $secondary, #3c3c3e );
+    color: #fff;
+    padding: 60px 0;
+    font-size: 17px;
+
+    a {
+        color: #fff;
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    h4 {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 2px;
+    }
+    .table {
+        color: $white;
+    }
+}
+.about-footer {
+    ul {
+        margin-top: 40px;
+    }
+    li {
+        padding-left: 40px;
+        position: relative;
+        margin-bottom: 40px;
+        i {
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+.footer-title {
+    border-bottom: 2px solid $primary;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+}
+
+ul {
+    &.footer-social {
+        float: right;
+        li {
+            display: inline;
+            margin-right: 16px;
+        }
+        i {
+            width: 30px;
+            height: 30px;
+            background: $white;
+            color: #000;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            font-weight: 800;
+        }
+    }
+}
+
+ul.footer-social li:last-child {
+    margin-right: 0;
+}
+
+ul.footer-social i:hover {
+    background: $primary;
+    color: $white;
+}
+
+.page-more-info li {
+    margin-bottom: 31px;
+}
+
+
+footer .table td:first-child {
+    font-weight: 600;
+    padding-left: 33px;
+}
+
+footer .table td:last-child {
+    text-align: right;
+}
+footer .table td {
+    padding: 0;
+    border: 0;
+}
+
+footer .table tr {
+}
+
+footer .table td i {
+    position: absolute;
+    left: 0;
+    font-size: 21px;
+    top: 6px;
+}
+
+footer .table td {
+    position: relative;
+    padding: 4px 0;
+}
+.footer-logo td {
+    padding-right: 4px;
+}
+
+.footer-logo td:last-child {
+    padding-right: 0;
+}
+footer hr {
+    border-color: $primary;
+}
+
+.footer-bottom p {
+    text-align: right;
+}
+.footer-bottom {
+    margin-top: 30px;
+}
+.open-hours hr {
+    margin: 30px 0;
+}
+.footer-logo {
+    width: 100%;
+    height: 110px;
+}

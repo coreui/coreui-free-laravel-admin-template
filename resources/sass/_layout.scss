@@ -1,0 +1,19 @@
+body{
+    .container {
+        max-width: 1600px;
+    }
+    a {
+        text-decoration: none;
+    }
+    .partner-img {
+        height: 80px;
+    }
+}
+
+.category {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1rem;
+    .card {
+        margin: 1rem 0;
+    }
+}
