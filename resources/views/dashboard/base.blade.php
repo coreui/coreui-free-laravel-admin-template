@@ -52,12 +52,14 @@
       }
       gtag('js', new Date());
       // Shared ID
-      gtag('config', 'UA-118965717-3');
+      gtag('config', '');
       // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
+      gtag('config', '');
     </script>
 
     <link href="{{ asset('css/coreui-chartjs.css') }}" rel="stylesheet">
+
+      <script src="//cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
   </head>
 
 
@@ -73,7 +75,7 @@
 
         <main class="c-main">
 
-          @yield('content') 
+          @yield('content')
 
         </main>
         @include('dashboard.shared.footer')
@@ -89,6 +91,10 @@
 
 
 
-
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor 4
+        // instance, using default configuration.
+        CKEDITOR.replace( 'ckEditorElement' );
+    </script>
   </body>
 </html>
