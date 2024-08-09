@@ -21,7 +21,7 @@ class CreateMediaTable extends Migration
             $table->string('disk');
             $table->string('conversions_disk');
             $table->unsignedBigInteger('size');
-            $table->unsignedBigInteger('uuid');
+            $table->string('uuid');
             $table->json('manipulations');
             $table->json('custom_properties');
             $table->json('responsive_images');
